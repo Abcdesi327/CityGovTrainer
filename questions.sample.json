@@ -1,0 +1,95 @@
+[
+  {
+    "id": "reserves-drawdown-council-pressure",
+    "type": "multiple-choice",
+    "case_study": "fiscal-cliff-after-a-major-employer-leaves.md",
+    "competencies": ["finance", "leadership", "finance/reserves-policy"],
+    "difficulty": 3,
+    "scenario": "Your city's largest private employer announced it will close its facility at the end of the fiscal year, removing roughly 9% of general fund revenue. The adopted reserve policy targets two months of operating expenditures; you currently hold about three months. Three councilmembers want to hold service levels flat for two years by drawing reserves down to the policy floor, arguing the economy will recover. Your finance director's forecast shows the gap persisting past year three.",
+    "prompt": "What is the most defensible course of action for the manager to recommend?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Recommend the reserve drawdown as requested, since it stays within adopted policy.",
+        "rationale": "Staying within policy is necessary but not sufficient. Using one-time resources to close a structural gap defers the problem and shrinks future flexibility."
+      },
+      {
+        "id": "b",
+        "text": "Present a multi-year forecast showing the structural gap, and propose a phased plan pairing limited reserve use with recurring reductions.",
+        "rationale": "Correct. This distinguishes a one-time cushion from a recurring deficit, keeps the council in the decision seat, and makes the tradeoff explicit rather than implicit."
+      },
+      {
+        "id": "c",
+        "text": "Refuse to prepare a budget using reserves and require the council to identify cuts first.",
+        "rationale": "The manager advises; the council decides. Refusing to prepare a requested option oversteps the role and damages the working relationship without improving the outcome."
+      },
+      {
+        "id": "d",
+        "text": "Propose an immediate across-the-board cut equal to the full revenue loss.",
+        "rationale": "Across-the-board cuts ignore differences in service priority and fixed costs, and moving at full magnitude in year one may be sharper than the situation requires."
+      }
+    ],
+    "answer": "b",
+    "explanation": "The core distinction is structural versus one-time. Reserves absorb one-time shocks; a permanent revenue loss is structural and must eventually be closed with recurring changes. The manager's job is not to win the argument but to make sure the council decides with the multi-year picture in front of them — which also protects the manager if the forecast proves right.",
+    "further_reading": [
+      { "title": "GFOA — Fund Balance Guidelines for the General Fund", "url": "https://www.gfoa.org/materials/fund-balance-guidelines-for-the-general-fund" }
+    ]
+  },
+  {
+    "id": "who-adopts-the-budget-council-manager",
+    "type": "multiple-choice",
+    "competencies": ["leadership/council-relations", "finance"],
+    "difficulty": 1,
+    "prompt": "In a council-manager form of government, who formally adopts the annual budget?",
+    "options": [
+      { "id": "a", "text": "The city manager", "rationale": "The manager prepares and proposes the budget but does not adopt it." },
+      { "id": "b", "text": "The elected council or governing body", "rationale": "Correct. Adoption is a legislative act." },
+      { "id": "c", "text": "The finance director", "rationale": "The finance director builds and administers the budget technically; adoption is not a staff function." },
+      { "id": "d", "text": "The state auditor", "rationale": "State oversight bodies may review or audit, but do not adopt a local budget." }
+    ],
+    "answer": "b",
+    "explanation": "The defining split in council-manager government: the council sets policy and adopts the budget; the manager proposes it and then administers it. Getting this boundary right underlies most of the harder judgment questions in this app."
+  },
+  {
+    "id": "capital-project-sequencing",
+    "type": "ordering",
+    "competencies": ["services/asset-management", "finance/capital-planning"],
+    "difficulty": 2,
+    "scenario": "You are building a five-year capital improvement plan with constrained funding.",
+    "prompt": "Order these projects from highest to lowest priority using standard asset-management logic.",
+    "options": [
+      { "id": "w", "text": "Replace a water main with three breaks in the past 18 months" },
+      { "id": "x", "text": "Rehabilitate a bridge rated structurally deficient by the state" },
+      { "id": "y", "text": "Resurface a collector street rated fair, before it degrades to poor" },
+      { "id": "z", "text": "Build a new splash pad requested at public comment" }
+    ],
+    "answer": ["x", "w", "y", "z"],
+    "explanation": "Life-safety risk leads (deficient bridge), then active service failure (repeating main breaks), then preventive maintenance where the cost curve is steepest (fair-condition pavement — deferring it multiplies eventual cost), then new amenities. This ordering is a heuristic, not a rule: strong grant funding or a bundled construction window can legitimately move an item up.",
+    "tags": ["heuristic", "defensible-alternatives-exist"]
+  },
+  {
+    "id": "revenue-projection-property-tax-lag",
+    "type": "numeric",
+    "competencies": ["finance/revenue-forecasting", "performance"],
+    "difficulty": 2,
+    "scenario": "Assessed valuation in your city is $4.0 billion. The council is considering a rate of $0.55 per $100 of assessed value. Assume a 97% collection rate.",
+    "prompt": "Estimate annual property tax revenue, in millions of dollars.",
+    "answer": 21.34,
+    "answer_tolerance": 0.3,
+    "explanation": "($4,000,000,000 / 100) x $0.55 = $22,000,000 levied; at 97% collection, roughly $21.34 million realized. The teaching point is the collection rate — budgeting the full levy overstates revenue every year, and the gap compounds. Note also that property tax reacts to market changes on a lag set by your reassessment cycle, so a downturn shows up in the levy one to three years later.",
+    "data_reference": {
+      "source": "Illustrative figures — replace with a real municipality's CAFR/ACFR for production use.",
+      "notes": "Good candidates: any city publishing an ACFR with a statistical section showing assessed value and levy history."
+    }
+  },
+  {
+    "id": "open-response-preemption-conflict",
+    "type": "open-response",
+    "competencies": ["igr/state-preemption", "engagement/crisis-communication"],
+    "difficulty": 3,
+    "scenario": "The council passes an ordinance on a subject your city attorney believes is preempted by state law. The state attorney general sends a letter threatening to withhold a state revenue-sharing allocation. Local advocacy groups are publicly urging the council to hold firm.",
+    "prompt": "As the manager, what do you do in the next 72 hours, and what do you tell staff to do?",
+    "answer": null,
+    "explanation": "There is no single right answer, and the app should not pretend otherwise. Strong responses typically: (1) get a written legal opinion on the specific exposure and the dollar amount at risk; (2) brief the full council together rather than individually, so no member is surprised; (3) keep the manager's public posture on implementation and cost, not on the policy merits; (4) instruct staff to continue administering existing law until directed otherwise, and document that direction; (5) open a line to state agency staff below the political level. Weak responses commit publicly to a side, or let the council learn the fiscal exposure from the newspaper."
+  }
+]
