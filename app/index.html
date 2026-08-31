@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CityGovTrainer</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f4b73'/%3E%3Cpath d='M8 22V13l8-5 8 5v9' stroke='white' stroke-width='2.5' fill='none' stroke-linejoin='round'/%3E%3Cpath d='M13 22v-5h6v5' stroke='white' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="./index.html">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">CityGov<strong>Trainer</strong></span>
+    </a>
+    <div class="topbar-actions">
+      <span id="session-meter" class="meter" hidden></span>
+      <button id="btn-quit" class="btn btn-quiet" hidden>End session</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+
+  <!-- ─── Loading / error ─────────────────────────────────────────── -->
+  <section id="view-loading" class="view">
+    <p class="loading">Loading question bank…</p>
+  </section>
+
+  <section id="view-error" class="view" hidden>
+    <div class="card card-warn">
+      <h2>Couldn't load the content</h2>
+      <p id="error-detail" class="muted"></p>
+      <p class="muted small">
+        This app reads JSON over <code>fetch</code>, which browsers block on
+        <code>file://</code>. Serve the repository over HTTP instead:
+      </p>
+      <pre class="code">cd CityGovTrainer
+python3 -m http.server 8000
+# then open http://localhost:8000/app/</pre>
+    </div>
+  </section>
+
+  <!-- ─── Setup ───────────────────────────────────────────────────── -->
+  <section id="view-setup" class="view" hidden>
+    <div class="hero">
+      <h1>Practice the judgment calls.</h1>
+      <p class="lede">
+        Scenario questions on local government management, drawn from case studies and
+        public municipal data. Every question explains its reasoning — and names what the
+        right answer gives up.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Build a session</h2>
+
+      <fieldset class="field">
+        <legend>Competencies</legend>
+        <div class="row-actions">
+          <button type="button" class="link" data-select="all">Select all</button>
+          <button type="button" class="link" data-select="none">Clear</button>
+        </div>
+        <div id="competency-chips" class="chips"></div>
+      </fieldset>
+
+      <fieldset class="field">
+        <legend>Difficulty</legend>
+        <div id="difficulty-chips" class="chips"></div>
+      </fieldset>
+
+      <div class="field-row">
+        <fieldset class="field">
+          <legend>Length</legend>
+          <div id="length-chips" class="chips"></div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend>Order</legend>
+          <div class="chips">
+            <label class="chip">
+              <input type="checkbox" id="opt-shuffle" checked>
+              <span>Shuffle questions</span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="start-bar">
+        <p id="pool-summary" class="muted" aria-live="polite"></p>
+        <button id="btn-start" class="btn btn-primary">Start session</button>
+      </div>
+    </div>
+
+    <p id="content-warnings" class="muted small" hidden></p>
+  </section>
+
+  <!-- ─── Quiz ────────────────────────────────────────────────────── -->
+  <section id="view-quiz" class="view" hidden>
+    <div class="progress" role="group" aria-label="Session progress">
+      <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+      <p id="progress-label" class="progress-label"></p>
+    </div>
+
+    <article class="card question-card">
+      <div class="qmeta">
+        <span id="q-difficulty" class="badge"></span>
+        <span id="q-competencies" class="tag-list"></span>
+      </div>
+
+      <p id="q-scenario" class="scenario" hidden></p>
+      <h2 id="q-prompt" class="prompt"></h2>
+
+      <p id="q-case-link" class="case-link" hidden>
+        <button type="button" class="link" id="btn-open-case">Read the case study</button>
+      </p>
+
+      <p id="q-note" class="note" hidden></p>
+
+      <form id="answer-form">
+        <div id="answer-area"></div>
+
+        <!-- Feedback sits between the answer and the Next control: the teaching
+             content is the point, so it must be read before moving on. -->
+        <div id="feedback" class="feedback" hidden aria-live="polite"></div>
+
+        <div class="actions">
+          <button type="submit" id="btn-submit" class="btn btn-primary">Submit answer</button>
+          <button type="button" id="btn-next" class="btn btn-primary" hidden>Next question</button>
+          <button type="button" id="btn-back-results" class="btn btn-quiet" hidden>Back to results</button>
+          <span id="keyboard-hint" class="muted small"></span>
+        </div>
+      </form>
+    </article>
+  </section>
+
+  <!-- ─── Results ─────────────────────────────────────────────────── -->
+  <section id="view-results" class="view" hidden>
+    <div id="results-body"></div>
+  </section>
+
+</main>
+
+<!-- ─── Case study drawer ─────────────────────────────────────────── -->
+<div id="case-overlay" class="overlay" hidden></div>
+<aside id="case-panel" class="drawer" role="dialog" aria-modal="true" aria-labelledby="case-title" hidden>
+  <div class="drawer-head">
+    <h2 id="case-title">Case study</h2>
+    <button id="btn-close-case" class="btn btn-quiet" aria-label="Close case study">Close</button>
+  </div>
+  <div id="case-body" class="drawer-body prose"></div>
+</aside>
+
+<footer class="wrap footer">
+  <p class="muted small">
+    Session-only — nothing is saved. Content is originally authored; copyrighted case
+    material is linked, never reproduced.
+  </p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
