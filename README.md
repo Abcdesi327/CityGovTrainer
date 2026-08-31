@@ -26,6 +26,10 @@ CityGovTrainer/
 │   └── questions.sample.json  # Working examples of each question type
 ├── data-sources/
 │   └── SOURCES.md             # Vetted external sources + licensing notes
+├── app/                       # The quiz runner (static, no build step)
+│   ├── index.html
+│   ├── styles.css
+│   └── js/
 └── docs/
     ├── AUTHORING.md           # How to write a good scenario question
     └── ROADMAP.md             # Suggested build order
@@ -38,10 +42,22 @@ A **case study** is a narrative with a decision point. One case seeds several
 taxonomy, a difficulty level, and — critically — an `explanation` field, because in
 this domain the reasoning matters more than the answer key.
 
+## Running the app
+
+```sh
+python3 -m http.server 8000
+# open http://localhost:8000/app/
+```
+
+Any static server works — the runner is plain HTML, CSS, and ES modules with no build
+step and no dependencies. It reads JSON over `fetch`, so it needs HTTP rather than
+`file://`. See `app/README.md` for what it does and how to point it at new content.
+
 ## Status
 
-Scaffold only. No question content is finalized; the samples in `quiz-data/` exist to
-pin down the schema.
+The quiz runner (roadmap Phase 2) is built and runs against the sample questions. No
+question content is finalized; the samples in `quiz-data/` exist to pin down the
+schema, and writing real content is the next step.
 
 ## Licensing note
 
