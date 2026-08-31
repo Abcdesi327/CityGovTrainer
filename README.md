@@ -16,6 +16,7 @@ documented cases and open municipal data into practice questions with explanatio
 ```
 CityGovTrainer/
 ├── README.md
+├── .nojekyll                  # Serve files verbatim on GitHub Pages
 ├── taxonomy/
 │   └── competencies.json      # Topic taxonomy used to tag every question
 ├── case-studies/
@@ -44,6 +45,8 @@ this domain the reasoning matters more than the answer key.
 
 ## Running the app
 
+Locally, from the repository root:
+
 ```sh
 python3 -m http.server 8000
 # open http://localhost:8000/app/
@@ -51,7 +54,24 @@ python3 -m http.server 8000
 
 Any static server works — the runner is plain HTML, CSS, and ES modules with no build
 step and no dependencies. It reads JSON over `fetch`, so it needs HTTP rather than
-`file://`. See `app/README.md` for what it does and how to point it at new content.
+`file://`. Serve the repository root, not `app/`: the app loads content from the
+sibling directories above it. See `app/README.md` for what it does and how to point
+it at new content.
+
+### On GitHub Pages
+
+Settings → Pages → **Deploy from a branch**, branch `main`, folder `/ (root)`. The
+app is then at:
+
+```
+https://abcdesi327.github.io/CityGovTrainer/app/
+```
+
+No workflow file and no build are needed. The empty `.nojekyll` at the repository
+root is required: Pages otherwise runs the site through Jekyll, which converts
+Markdown files carrying YAML front matter into HTML — that would take
+`case-studies/*.md` out from under the case-study panel, which fetches those files
+at their real paths.
 
 ## Status
 

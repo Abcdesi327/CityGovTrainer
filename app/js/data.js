@@ -25,7 +25,7 @@ export function rootOf(tag) {
 /**
  * Light structural check — enough to keep one malformed question from taking the
  * app down, and to surface authoring mistakes the schema would catch in CI.
- * This is deliberately not a full JSON Schema validator; schema.json is the
+ * This is deliberately not a full JSON Schema validator; quiz-data/schema.json is the
  * authority and belongs in a CI check (roadmap Phase 0).
  */
 function checkQuestion(q, knownCompetencies) {
