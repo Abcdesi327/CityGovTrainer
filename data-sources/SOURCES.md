@@ -46,7 +46,7 @@ Workable approaches, in order of safety:
 
 1. **Write original composite cases.** Draw the *pattern* from published cases and
    public reporting, invent the specifics. This is what
-   `fiscal-cliff-after-a-major-employer-leaves.md` does.
+   `case-studies/fiscal-cliff-after-a-major-employer-leaves.md` does.
 2. **Build from primary public documents.** City ACFRs, council agenda packets,
    ordinances, and audit reports are public records. A case built from a real city's
    published budget documents is on solid ground.

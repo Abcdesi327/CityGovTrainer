@@ -17,6 +17,11 @@ python3 -m http.server 8000
 Any static server works. There is no build step, no package manager, and no
 dependency — plain HTML, CSS, and ES modules.
 
+Serve the repository root rather than this directory: `js/config.js` points at
+`../taxonomy/`, `../quiz-data/`, and `../case-studies/`, so the app needs its
+siblings above it. The same holds on GitHub Pages, where the site root is the
+repository root — see the deployment note in the top-level README.
+
 ## What it does
 
 - **Session setup** — filter by competency and difficulty, pick a length, shuffle or
@@ -51,8 +56,8 @@ dependency — plain HTML, CSS, and ES modules.
 
 ## Adding content
 
-Drop a new question file next to `questions.sample.json` and add it to
-`questionFiles` in `js/config.js`. Files are concatenated, so questions can be split
+Drop a new question file into `quiz-data/` and add it to `questionFiles` in
+`js/config.js`. Files are concatenated, so questions can be split
 by competency or by author.
 
 `js/data.js` runs a light structural check on load — missing explanations, unknown

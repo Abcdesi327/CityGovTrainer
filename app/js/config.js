@@ -1,16 +1,15 @@
 /**
  * Where the app reads content from. Paths are relative to /app/.
  *
- * These match the current flat repository layout. When question files move under
- * quiz-data/ and case studies under case-studies/ (see README), update these two
- * entries and nothing else in the app needs to change.
+ * Adding a question file is a one-line change here — files are concatenated in
+ * order, so content can be split by competency or by author.
  */
 export const CONTENT = {
-  taxonomy: '../competencies.json',
+  taxonomy: '../taxonomy/competencies.json',
   questionFiles: [
-    '../questions.sample.json',
+    '../quiz-data/questions.sample.json',
   ],
-  caseStudyDir: '../',
+  caseStudyDir: '../case-studies/',
 };
 
 /** Session length choices offered on the setup screen. */
