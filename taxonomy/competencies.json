@@ -1,71 +1,144 @@
 {
-  "$comment": "Topic taxonomy for tagging questions. Structure loosely follows the functional areas used in local-government management education (leadership, ethics, intergovernmental relations, health and safety, finance, community futures, essential services). Adjust IDs before you have real content — renaming them later means a data migration.",
-  "version": "0.1.0",
+  "$comment": "Topic taxonomy for tagging questions. Structure loosely follows the functional areas used in local-government management education (leadership, ethics, intergovernmental relations, health and safety, finance, community futures, essential services). Adjust IDs before you have real content — renaming them later means a data migration. Subtopics are additive and safe to extend; the 0.2.0 set was widened for the second-wave sources in data-sources/SOURCES.md.",
+  "version": "0.2.0",
   "competencies": [
     {
       "id": "ethics",
       "label": "Ethics & Integrity",
       "description": "Conflicts of interest, gifts, transparency, whistleblowing, personal conduct of appointed officials.",
-      "subtopics": ["conflict-of-interest", "transparency", "personnel-discipline", "political-neutrality"]
+      "subtopics": [
+        "conflict-of-interest",
+        "transparency",
+        "personnel-discipline",
+        "political-neutrality"
+      ]
     },
     {
       "id": "finance",
       "label": "Budgeting & Financial Management",
       "description": "Operating and capital budgets, revenue forecasting, debt, reserves, audits, fiscal distress.",
-      "subtopics": ["revenue-forecasting", "capital-planning", "debt-management", "reserves-policy", "procurement"]
+      "subtopics": [
+        "revenue-forecasting",
+        "capital-planning",
+        "debt-management",
+        "reserves-policy",
+        "procurement",
+        "fines-and-fees",
+        "budget-process",
+        "cost-allocation"
+      ]
     },
     {
       "id": "leadership",
       "label": "Organizational Leadership",
       "description": "Managing staff, org design, change management, executive-council relations.",
-      "subtopics": ["council-relations", "org-design", "change-management", "succession-planning"]
+      "subtopics": [
+        "council-relations",
+        "org-design",
+        "change-management",
+        "succession-planning"
+      ]
     },
     {
       "id": "hr",
       "label": "Human Resources & Labor",
       "description": "Hiring, collective bargaining, discipline, compensation, workforce planning.",
-      "subtopics": ["collective-bargaining", "hiring", "compensation", "workforce-planning"]
+      "subtopics": [
+        "collective-bargaining",
+        "hiring",
+        "compensation",
+        "workforce-planning"
+      ]
     },
     {
       "id": "igr",
       "label": "Intergovernmental Relations",
       "description": "State preemption, county/city agreements, regional bodies, federal grants, mutual aid.",
-      "subtopics": ["state-preemption", "interlocal-agreements", "grants", "regional-planning"]
+      "subtopics": [
+        "state-preemption",
+        "interlocal-agreements",
+        "grants",
+        "regional-planning"
+      ]
     },
     {
       "id": "safety",
       "label": "Public Health & Safety",
       "description": "Police, fire, EMS, emergency management, public health emergencies.",
-      "subtopics": ["emergency-management", "policing-policy", "public-health", "continuity-of-operations"]
+      "subtopics": [
+        "emergency-management",
+        "policing-policy",
+        "public-health",
+        "continuity-of-operations"
+      ]
     },
     {
       "id": "services",
       "label": "Essential Services & Infrastructure",
       "description": "Water, sewer, solid waste, streets, transit, asset management, deferred maintenance.",
-      "subtopics": ["utilities", "asset-management", "deferred-maintenance", "service-delivery-models"]
+      "subtopics": [
+        "utilities",
+        "asset-management",
+        "deferred-maintenance",
+        "service-delivery-models",
+        "broadband",
+        "utility-billing"
+      ]
     },
     {
       "id": "community",
       "label": "Community Futures & Development",
       "description": "Land use, zoning, housing, economic development, climate adaptation, demographic change.",
-      "subtopics": ["land-use", "housing", "economic-development", "climate-adaptation", "demographics"]
+      "subtopics": [
+        "land-use",
+        "housing",
+        "economic-development",
+        "climate-adaptation",
+        "demographics",
+        "tax-increment-financing",
+        "brownfields",
+        "shrinking-cities"
+      ]
     },
     {
       "id": "engagement",
       "label": "Citizen Engagement & Communication",
       "description": "Public meetings, media, crisis communication, participatory processes.",
-      "subtopics": ["public-meetings", "crisis-communication", "media-relations", "participation-design"]
+      "subtopics": [
+        "public-meetings",
+        "crisis-communication",
+        "media-relations",
+        "participation-design"
+      ]
     },
     {
       "id": "performance",
       "label": "Performance Management & Data",
       "description": "KPIs, benchmarking, program evaluation, open data, service-level measurement.",
-      "subtopics": ["kpi-design", "benchmarking", "program-evaluation", "open-data"]
+      "subtopics": [
+        "kpi-design",
+        "benchmarking",
+        "program-evaluation",
+        "open-data",
+        "data-culture"
+      ]
     }
   ],
   "difficulty_levels": [
-    { "id": 1, "label": "Foundational", "description": "Definitions, structures, who-does-what." },
-    { "id": 2, "label": "Applied", "description": "Apply a known rule or practice to a clear situation." },
-    { "id": 3, "label": "Judgment", "description": "Competing goods, incomplete information, no clean answer." }
+    {
+      "id": 1,
+      "label": "Foundational",
+      "description": "Definitions, structures, who-does-what."
+    },
+    {
+      "id": 2,
+      "label": "Applied",
+      "description": "Apply a known rule or practice to a clear situation."
+    },
+    {
+      "id": 3,
+      "label": "Judgment",
+      "description": "Competing goods, incomplete information, no clean answer."
+    }
   ]
 }

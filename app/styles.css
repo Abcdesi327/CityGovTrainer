@@ -292,6 +292,25 @@ main { padding: 2rem 0 4rem; }
   border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink);
 }
 .textarea { max-width: none; font-family: var(--sans); line-height: 1.6; resize: vertical; }
+
+.input-with-unit { display: inline-flex; align-items: center; gap: .45rem; }
+.unit {
+  font-size: .85rem; color: var(--ink-soft); font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.parts { display: grid; gap: .7rem; }
+.part-row {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .75rem 1rem;
+  align-items: center; padding: .6rem .8rem;
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface-2);
+}
+.part-label { font-size: .93rem; }
+.part-row .text-input { max-width: 11ch; }
+.provenance { font-style: italic; }
+
+@media (max-width: 480px) {
+  .part-row { grid-template-columns: 1fr; }
+}
 .text-input:disabled { background: var(--surface-2); color: var(--ink-soft); }
 
 .actions {

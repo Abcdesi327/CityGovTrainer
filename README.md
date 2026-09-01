@@ -25,7 +25,8 @@ CityGovTrainer/
 │   └── *.md                   # One file per case study
 ├── quiz-data/
 │   ├── schema.json            # JSON Schema for question objects
-│   └── questions.sample.json  # Working examples of each question type
+│   ├── questions.sample.json  # Working examples of each question type
+│   └── seeds.json             # Agreed scenario backlog, not yet written
 ├── data-sources/
 │   └── SOURCES.md             # Vetted external sources + licensing notes
 ├── app/                       # The quiz runner (static, no build step)

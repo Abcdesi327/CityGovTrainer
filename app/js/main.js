@@ -9,7 +9,7 @@ import {
 } from './session.js';
 import {
   el, clear, renderAnswerArea, renderFeedback, renderResults,
-  competencyLabel, DIFFICULTY_LABEL,
+  competencyLabels, DIFFICULTY_LABEL,
 } from './ui.js';
 import { renderMarkdown, splitFrontMatter } from './markdown.js';
 
@@ -135,8 +135,8 @@ function renderQuestion() {
   $('q-difficulty').className = `badge badge-d${q.difficulty}`;
 
   const tags = clear($('q-competencies'));
-  q.competencies.forEach((tag) => {
-    tags.append(el('span', { class: 'tag', text: competencyLabel(state.content.byRoot, tag) }));
+  competencyLabels(state.content.byRoot, q.competencies).forEach((label) => {
+    tags.append(el('span', { class: 'tag', text: label }));
   });
 
   const scenario = $('q-scenario');
@@ -152,6 +152,7 @@ function renderQuestion() {
   const typeNote = {
     'multi-select': 'More than one option is correct.',
     ordering: 'Put the options in order.',
+    'numeric-multi': 'Several figures — each one is graded on its own.',
     'open-response': 'Written answer — no answer key.',
   }[q.type];
   note.textContent = typeNote || '';
@@ -201,13 +202,16 @@ function onSubmit(event) {
   const response = state.answerControl.getResponse();
 
   if (!hasResponse(q, response)) {
-    $('keyboard-hint').textContent = q.type === 'open-response'
-      ? 'Write something first — then compare against the model answer.'
-      : 'Choose an answer first.';
+    $('keyboard-hint').textContent = {
+      'open-response': 'Write something first — then compare against the model answer.',
+      'numeric-multi': 'Fill in every figure — a partial decomposition cannot be graded fairly.',
+      numeric: 'Enter a number first.',
+    }[q.type] || 'Choose an answer first.';
     state.answerControl.focusFirst();
     return;
   }
 
+  $('keyboard-hint').textContent = '';
   submit(state.session, response);
   state.answered = true;
   state.answerControl.lock();
