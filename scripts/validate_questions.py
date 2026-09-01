@@ -168,6 +168,25 @@ for q in questions:
     if cs and seeded.get(qid) != cs:
         warns.append(f"{qid}: not listed in case-studies/{cs}")
 
+# The app loads what quiz-data/manifest.json lists. A question file that exists
+# but is not listed there is invisible in the browser while looking perfectly
+# fine on disk, which is a hard failure to spot from the repository alone.
+if os.path.exists("quiz-data/manifest.json"):
+    manifest = json.load(open("quiz-data/manifest.json"))
+    listed = set(manifest.get("questionFiles", []))
+    for f in sorted(listed):
+        if not os.path.exists(f):
+            errs.append(f"manifest.json lists {f}, which does not exist")
+    for f in sorted(glob.glob("quiz-data/questions*.json")):
+        if f not in listed:
+            errs.append(f"{f} exists but manifest.json does not list it — the app will not load it")
+    for key in ("taxonomy", "caseStudyDir"):
+        target = manifest.get(key)
+        if not target or not os.path.exists(target):
+            errs.append(f"manifest.json {key} points at {target!r}, which does not exist")
+else:
+    warns.append("no quiz-data/manifest.json — the app falls back to its built-in file list")
+
 print(f"{len(questions)} questions across {len(paths)} file(s), {len(ids)} unique ids")
 print("types:", dict(Counter(q.get("type") for q in questions)))
 print("difficulty:", dict(sorted(Counter(q.get("difficulty") for q in questions).items())))
