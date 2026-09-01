@@ -5,6 +5,7 @@ competencies: [finance, leadership]
 difficulty: 3
 setting: "City of ~45,000, council-manager, coastal, aging water system"
 based_on: "Composite / adapted from public reporting — cite below. Do NOT paste source text."
+source_tier: link-only   # public-domain | link-only | design-reference | original
 sources:
   - title: ""
     url: ""

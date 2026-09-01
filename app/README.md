@@ -27,9 +27,11 @@ repository root — see the deployment note in the top-level README.
 - **Session setup** — filter by competency and difficulty, pick a length, shuffle or
   go in difficulty order. Chip counts show how much content each competency actually
   has; a dashed, dimmed chip is a taxonomy entry with nothing written for it yet.
-- **All five question types** in `quiz-data/schema.json`: multiple-choice,
+- **All six question types** in `quiz-data/schema.json`: multiple-choice,
   multi-select, ordering (move items up and down), numeric (graded against
-  `answer_tolerance`), and open-response.
+  `answer_tolerance` or an explicit `answer_range`, with `answer_unit` shown beside
+  the input), numeric-multi (several labelled figures, each graded independently so
+  the feedback can say which one went wrong), and open-response.
 - **Open-response is self-assessed.** There is no answer key, so the app shows the
   model reasoning and asks the user to rate their own answer. Those questions are
   tallied separately and never fold into the machine score.
@@ -37,6 +39,8 @@ repository root — see the deployment note in the top-level README.
   answer is marked, and the `explanation` follows. Questions tagged
   `defensible-alternatives-exist` say so.
 - **Case studies** open in a side panel, rendered from the Markdown source.
+- **Provenance.** A question's `source_tier` is shown with the explanation, so it is
+  visible whether the material behind it is public domain or a cited composite.
 - **Scoring by competency** at the end — weakest first — plus a by-difficulty
   breakdown, a per-question review, and "retry the ones I missed".
 
@@ -59,6 +63,12 @@ repository root — see the deployment note in the top-level README.
 Drop a new question file into `quiz-data/` and add it to `questionFiles` in
 `js/config.js`. Files are concatenated, so questions can be split
 by competency or by author.
+
+Validate before committing:
+
+```sh
+python3 scripts/validate_questions.py
+```
 
 `js/data.js` runs a light structural check on load — missing explanations, unknown
 competency tags, duplicate ids, malformed answers. Problems appear under the setup

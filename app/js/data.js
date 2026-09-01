@@ -11,7 +11,8 @@ async function fetchJSON(path) {
 }
 
 const TYPES = new Set([
-  'multiple-choice', 'multi-select', 'ordering', 'numeric', 'open-response',
+  'multiple-choice', 'multi-select', 'ordering', 'numeric', 'numeric-multi',
+  'open-response',
 ]);
 
 /**
@@ -60,6 +61,17 @@ function checkQuestion(q, knownCompetencies) {
   }
   if (q.type === 'numeric' && typeof q.answer !== 'number') {
     problems.push('numeric answer must be a number');
+  }
+  if (q.type === 'numeric-multi') {
+    if (!Array.isArray(q.parts) || q.parts.length < 2) {
+      problems.push('numeric-multi needs at least two parts');
+    } else {
+      q.parts.forEach((part, i) => {
+        const where = part && part.id ? `part "${part.id}"` : `part #${i + 1}`;
+        if (!part || !part.id || !part.label) problems.push(`${where} needs an id and a label`);
+        else if (typeof part.answer !== 'number') problems.push(`${where} answer must be a number`);
+      });
+    }
   }
   return problems;
 }

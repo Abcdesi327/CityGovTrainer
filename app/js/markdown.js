@@ -30,6 +30,17 @@ export function splitFrontMatter(text) {
   return { meta, body: text.slice(match[0].length) };
 }
 
+/**
+ * Pull a leading `# Heading` off the body and return it as the title. Front
+ * matter is preferred where it exists; this covers files written without it,
+ * which would otherwise show a raw filename in the drawer header.
+ */
+export function extractTitle(md) {
+  const match = /^\s*#\s+(.+?)\s*$/m.exec(md.split('\n').slice(0, 3).join('\n'));
+  if (!match) return { title: null, body: md };
+  return { title: match[1], body: md.replace(match[0], '') };
+}
+
 function inline(text) {
   let out = escapeHTML(text);
   out = out.replace(/`([^`]+)`/g, '<code>$1</code>');

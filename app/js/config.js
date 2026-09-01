@@ -8,6 +8,7 @@ export const CONTENT = {
   taxonomy: '../taxonomy/competencies.json',
   questionFiles: [
     '../quiz-data/questions.sample.json',
+    '../quiz-data/questions.downtown-redevelopment.json',
   ],
   caseStudyDir: '../case-studies/',
 };

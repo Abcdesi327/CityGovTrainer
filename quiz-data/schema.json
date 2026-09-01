@@ -12,8 +12,8 @@
       "description": "Stable slug. Never reuse or renumber."
     },
     "type": {
-      "enum": ["multiple-choice", "multi-select", "ordering", "numeric", "open-response"],
-      "description": "open-response has no machine-gradable answer; it shows model reasoning after the user commits an answer."
+      "enum": ["multiple-choice", "multi-select", "ordering", "numeric", "numeric-multi", "open-response"],
+      "description": "open-response has no machine-gradable answer; it shows model reasoning after the user commits an answer. numeric-multi asks for several labelled figures at once — use it when the teaching point is decomposing a total, not arithmetic."
     },
     "case_study": {
       "type": "string",
@@ -52,11 +52,56 @@
     },
     "answer_tolerance": {
       "type": "number",
-      "description": "For numeric questions: acceptable absolute deviation."
+      "description": "For numeric questions: acceptable absolute deviation, symmetric around answer."
+    },
+    "answer_range": {
+      "type": "object",
+      "description": "For numeric questions: an explicit accepted band, for cases where the defensible range is not symmetric around a point estimate. Use instead of answer_tolerance, not alongside it.",
+      "required": ["min", "max"],
+      "additionalProperties": false,
+      "properties": {
+        "min": { "type": "number" },
+        "max": { "type": "number" }
+      }
+    },
+    "answer_unit": {
+      "type": "string",
+      "description": "Unit for a numeric answer, shown beside the input and in feedback (e.g. \"$M\", \"%\", \"FTE\"). Omitting it invites unit-mismatch answers that look like reasoning errors."
+    },
+    "parts": {
+      "type": "array",
+      "description": "For numeric-multi: the labelled figures the user must supply. Each part is graded independently and the question is correct only when every part is; the feedback reports which parts were right.",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "answer"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" },
+          "answer": { "type": "number" },
+          "answer_tolerance": { "type": "number" },
+          "answer_range": {
+            "type": "object",
+            "required": ["min", "max"],
+            "additionalProperties": false,
+            "properties": {
+              "min": { "type": "number" },
+              "max": { "type": "number" }
+            }
+          },
+          "unit": { "type": "string" },
+          "rationale": { "type": "string", "description": "Why this figure is what it is. Shown per-part after answering." }
+        }
+      }
     },
     "explanation": {
       "type": "string",
       "description": "The teaching content. Required on every question — this is the point of the app."
+    },
+    "source_tier": {
+      "enum": ["public-domain", "link-only", "design-reference", "original"],
+      "description": "Licensing posture of the material this question is grounded in, so a change in posture is a query rather than a re-audit. public-domain: federal, state or municipal government works, whose figures and findings may be used directly. link-only: copyrighted but readable — cite by URL, write an original composite, reproduce nothing. design-reference: paid or gated material read for case architecture only, with no content drawn from it. original: invented from scratch with no external grounding. See data-sources/SOURCES.md."
     },
     "data_reference": {
       "type": "object",

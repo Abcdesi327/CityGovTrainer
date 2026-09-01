@@ -38,15 +38,41 @@ sanity-check them against a real city of similar size — a $42M general fund fo
 of 38,000 is roughly right; $420M is not, and a reader who works in local government
 will notice.
 
-For numeric questions always set `answer_tolerance`. Forecasting questions should
-reward the right method, not arithmetic precision.
+For numeric questions always set `answer_unit` and a band — either
+`answer_tolerance` (symmetric) or `answer_range` (an explicit min and max, for when
+the defensible spread is lopsided: under-forecasting revenue is not the same mistake
+as over-forecasting it). Forecasting questions should reward the right method, not
+arithmetic precision. A missing unit invites unit-mismatch answers that look like
+reasoning errors and grade like them.
+
+When the teaching point is *decomposing* a figure rather than producing one, use
+`numeric-multi` and give each figure its own `parts` entry with a label, a band, a
+unit, and a `rationale`. Each part is graded independently and the feedback says
+which figure went wrong, so a candidate who splits structural from one-time correctly
+but fumbles the recurring correction can see exactly that.
+
+## Provenance
+
+Set `source_tier` on every question to the licensing posture of whatever it is
+grounded in:
+
+| Value | Means | Consequence |
+| --- | --- | --- |
+| `public-domain` | Federal, state or municipal government work | Figures and findings may be used directly |
+| `link-only` | Copyrighted but readable | Original composite, cited by URL, nothing reproduced |
+| `design-reference` | Paid or gated, read for case architecture | No content drawn from it at all |
+| `original` | Invented, no external grounding | Sanity-check the numbers against a real city |
+
+This exists so that a change in licensing posture is a query rather than a re-audit.
+`data-sources/SOURCES.md` records which tier each source falls in.
 
 ## Checklist before committing a question
 
 - [ ] `id` is a stable slug and unique
+- [ ] `source_tier` is set, and matches what `data-sources/SOURCES.md` says
 - [ ] Competency tags exist in `taxonomy/competencies.json`
 - [ ] Every option has a `rationale`
 - [ ] `explanation` states the teaching point and the tradeoff
 - [ ] No copyrighted text pasted from any source
-- [ ] Numbers are plausible for the stated city size
+- [ ] Numbers are plausible for the stated city size, and carry a unit and a band
 - [ ] `further_reading` points to something the user can actually reach

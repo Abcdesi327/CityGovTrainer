@@ -1,5 +1,5 @@
 import { shuffle } from './data.js';
-import { answerKeyText } from './grading.js';
+import { answerKeyText, numericKeyText } from './grading.js';
 
 /* ── tiny DOM helpers ─────────────────────────────────────────────── */
 
@@ -33,6 +33,24 @@ export function competencyLabel(byRoot, tag) {
   return sub ? `${label} · ${sub.replace(/-/g, ' ')}` : label;
 }
 
+/**
+ * Labels for a question's tags, grouped by root so a question carrying two
+ * subtopics of one competency reads "Finance · forecasting, reserves policy"
+ * rather than naming the competency twice.
+ */
+export function competencyLabels(byRoot, tags) {
+  const groups = new Map();
+  for (const tag of tags || []) {
+    const [root, sub] = String(tag).split('/');
+    if (!groups.has(root)) groups.set(root, []);
+    if (sub) groups.get(root).push(sub.replace(/-/g, ' '));
+  }
+  return [...groups].map(([root, subs]) => {
+    const label = byRoot.get(root)?.label || root;
+    return subs.length ? `${label} · ${subs.join(', ')}` : label;
+  });
+}
+
 /* ── answer inputs ────────────────────────────────────────────────── */
 
 /**
@@ -49,6 +67,7 @@ export function renderAnswerArea(container, question, initial) {
     case 'multi-select': return choiceInput(container, question, true, initial);
     case 'ordering': return orderingInput(container, question, initial);
     case 'numeric': return numericInput(container, question, initial);
+    case 'numeric-multi': return numericMultiInput(container, question, initial);
     case 'open-response': return openInput(container, question, initial);
     default: return { getResponse: () => null, lock() {}, focusFirst() {} };
   }
@@ -166,17 +185,52 @@ function numericInput(container, question, initial) {
     placeholder: 'Your estimate', inputmode: 'decimal',
     value: initial == null ? '' : String(initial),
   });
-  container.append(el('div', { class: 'numeric-row' }, [input]));
-  if (Number.isFinite(question.answer_tolerance)) {
-    container.append(el('p', {
-      class: 'muted small',
-      text: `Judged within ±${question.answer_tolerance} — the method matters more than the arithmetic.`,
-    }));
-  }
+  container.append(el('div', { class: 'numeric-row' }, [
+    el('span', { class: 'input-with-unit' }, [
+      input,
+      question.answer_unit ? el('span', { class: 'unit', text: question.answer_unit }) : null,
+    ]),
+  ]));
+  const band = question.answer_range
+    ? `Judged against a range — the method matters more than the arithmetic.`
+    : (Number.isFinite(question.answer_tolerance)
+      ? `Judged within ±${question.answer_tolerance} — the method matters more than the arithmetic.`
+      : null);
+  if (band) container.append(el('p', { class: 'muted small', text: band }));
   return {
     getResponse: () => input.value,
     lock() { input.disabled = true; },
     focusFirst() { input.focus(); },
+  };
+}
+
+function numericMultiInput(container, question, initial) {
+  const inputs = new Map();
+  const parts = question.parts || [];
+
+  container.append(
+    el('p', { class: 'muted small', text: 'Give every figure — the decomposition is the point.' }),
+    el('div', { class: 'parts' }, parts.map((part) => {
+      const id = `part-${question.id}-${part.id}`;
+      const input = el('input', {
+        type: 'number', step: 'any', class: 'text-input', id, inputmode: 'decimal',
+        value: initial && initial[part.id] != null ? String(initial[part.id]) : '',
+      });
+      inputs.set(part.id, input);
+      return el('div', { class: 'part-row' }, [
+        el('label', { class: 'part-label', for: id, text: part.label }),
+        el('span', { class: 'input-with-unit' }, [
+          input,
+          part.unit ? el('span', { class: 'unit', text: part.unit }) : null,
+        ]),
+      ]);
+    })),
+  );
+
+  return {
+    getResponse: () => Object.fromEntries([...inputs].map(([id, i]) => [id, i.value])),
+    lock() { inputs.forEach((i) => { i.disabled = true; }); },
+    focusFirst() { const first = inputs.values().next().value; if (first) first.focus(); },
   };
 }
 
@@ -249,12 +303,37 @@ export function renderFeedback(container, question, record, { onSelfAssess } = {
   }
 
   if (question.type === 'numeric') {
+    const unit = question.answer_unit ? ` ${question.answer_unit}` : '';
     container.append(el('p', { class: 'numeric-verdict' }, [
       el('span', { class: 'muted', text: 'You answered ' }),
-      el('strong', { text: String(response) }),
+      el('strong', { text: `${response}${unit}` }),
       el('span', { class: 'muted', text: ' · accepted ' }),
       el('strong', { text: answerKeyText(question, optionText) }),
     ]));
+  }
+
+  if (question.type === 'numeric-multi') {
+    const byId = new Map((result.parts || []).map((p) => [p.id, p]));
+    container.append(
+      el('p', { class: 'kicker', text: `${result.correct} of ${result.total} figures` }),
+      el('ul', { class: 'rationales' }, (question.parts || []).map((part) => {
+        const got = byId.get(part.id) || {};
+        const unit = part.unit ? ` ${part.unit}` : '';
+        return el('li', { class: got.ok ? 'rationale is-key' : 'rationale' }, [
+          el('div', { class: 'rationale-head' }, [
+            el('span', { class: 'rationale-text', text: part.label }),
+            el('span', {
+              class: got.ok ? 'mark mark-key' : 'mark mark-you',
+              text: got.ok ? 'Correct' : 'Off',
+            }),
+          ]),
+          el('p', { class: 'rationale-body' }, [
+            el('span', { text: `You gave ${got.value === '' || got.value == null ? '—' : got.value}${unit} · accepted ${numericKeyText(part, part.unit)}` }),
+          ]),
+          part.rationale ? el('p', { class: 'rationale-body', text: part.rationale }) : null,
+        ]);
+      })),
+    );
   }
 
   if (question.type === 'open-response') {
@@ -277,6 +356,16 @@ export function renderFeedback(container, question, record, { onSelfAssess } = {
       class: 'note',
       text: 'Heuristic, not a rule — reasonable practitioners defend other answers here.',
     }));
+  }
+
+  if (question.source_tier) {
+    const label = {
+      'public-domain': 'Grounded in public-domain government material — figures usable directly.',
+      'link-only': 'Grounded in copyrighted material — original composite, cited by link.',
+      'design-reference': 'Structure drawn from a paid source; no content reproduced.',
+      original: 'Originally written, with no external grounding.',
+    }[question.source_tier];
+    if (label) container.append(el('p', { class: 'muted small provenance', text: label }));
   }
 
   if (question.data_reference) {

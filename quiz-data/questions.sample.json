@@ -2,6 +2,7 @@
   {
     "id": "reserves-drawdown-council-pressure",
     "type": "multiple-choice",
+    "source_tier": "link-only",
     "case_study": "fiscal-cliff-after-a-major-employer-leaves.md",
     "competencies": ["finance", "leadership", "finance/reserves-policy"],
     "difficulty": 3,
@@ -38,6 +39,7 @@
   {
     "id": "who-adopts-the-budget-council-manager",
     "type": "multiple-choice",
+    "source_tier": "original",
     "competencies": ["leadership/council-relations", "finance"],
     "difficulty": 1,
     "prompt": "In a council-manager form of government, who formally adopts the annual budget?",
@@ -53,15 +55,16 @@
   {
     "id": "capital-project-sequencing",
     "type": "ordering",
+    "source_tier": "original",
     "competencies": ["services/asset-management", "finance/capital-planning"],
     "difficulty": 2,
     "scenario": "You are building a five-year capital improvement plan with constrained funding.",
     "prompt": "Order these projects from highest to lowest priority using standard asset-management logic.",
     "options": [
-      { "id": "w", "text": "Replace a water main with three breaks in the past 18 months" },
-      { "id": "x", "text": "Rehabilitate a bridge rated structurally deficient by the state" },
-      { "id": "y", "text": "Resurface a collector street rated fair, before it degrades to poor" },
-      { "id": "z", "text": "Build a new splash pad requested at public comment" }
+      { "id": "w", "text": "Replace a water main with three breaks in the past 18 months", "rationale": "Second. An asset failing repeatedly is already imposing costs — emergency crews, water loss, road cuts — and each break raises the odds of the next one." },
+      { "id": "x", "text": "Rehabilitate a bridge rated structurally deficient by the state", "rationale": "First. Life-safety risk outranks everything else on this list, and a deficient rating carries liability and possible load posting that compounds if deferred." },
+      { "id": "y", "text": "Resurface a collector street rated fair, before it degrades to poor", "rationale": "Third. This is where the pavement cost curve is steepest: resurfacing a fair street is a fraction of reconstructing a poor one, so deferral multiplies eventual cost." },
+      { "id": "z", "text": "Build a new splash pad requested at public comment", "rationale": "Last. A genuine community priority, but adding a new asset while existing ones fail increases the maintenance liability the plan is trying to work down." }
     ],
     "answer": ["x", "w", "y", "z"],
     "explanation": "Life-safety risk leads (deficient bridge), then active service failure (repeating main breaks), then preventive maintenance where the cost curve is steepest (fair-condition pavement — deferring it multiplies eventual cost), then new amenities. This ordering is a heuristic, not a rule: strong grant funding or a bundled construction window can legitimately move an item up.",
@@ -70,12 +73,14 @@
   {
     "id": "revenue-projection-property-tax-lag",
     "type": "numeric",
+    "source_tier": "original",
     "competencies": ["finance/revenue-forecasting", "performance"],
     "difficulty": 2,
     "scenario": "Assessed valuation in your city is $4.0 billion. The council is considering a rate of $0.55 per $100 of assessed value. Assume a 97% collection rate.",
     "prompt": "Estimate annual property tax revenue, in millions of dollars.",
     "answer": 21.34,
     "answer_tolerance": 0.3,
+    "answer_unit": "$M",
     "explanation": "($4,000,000,000 / 100) x $0.55 = $22,000,000 levied; at 97% collection, roughly $21.34 million realized. The teaching point is the collection rate — budgeting the full levy overstates revenue every year, and the gap compounds. Note also that property tax reacts to market changes on a lag set by your reassessment cycle, so a downturn shows up in the levy one to three years later.",
     "data_reference": {
       "source": "Illustrative figures — replace with a real municipality's CAFR/ACFR for production use.",
@@ -83,8 +88,51 @@
     }
   },
   {
+    "id": "structural-versus-one-time-split",
+    "type": "numeric-multi",
+    "source_tier": "original",
+    "case_study": "fiscal-cliff-after-a-major-employer-leaves.md",
+    "competencies": ["finance/revenue-forecasting", "finance/reserves-policy"],
+    "difficulty": 3,
+    "scenario": "Riverbend's adopted general fund budget is $42.0 million. Finance staff project next year at a $4.6 million shortfall. Two items drive it: the manufacturer's closure removes $3.4 million of recurring payroll, utility, and sales tax revenue, and a settled lawsuit requires a single $1.2 million payment that falls in next year only. Reserves stand at about three months of operating expenditures against a two-month policy floor.",
+    "prompt": "Split the projected shortfall, then size the reduction the budget must eventually carry.",
+    "parts": [
+      {
+        "id": "structural",
+        "label": "Recurring (structural) share of the shortfall",
+        "answer": 3.4,
+        "answer_tolerance": 0.05,
+        "unit": "$M",
+        "rationale": "The revenue loss is permanent — the payroll, utility, and sales tax base leaves with the plant and does not come back on its own."
+      },
+      {
+        "id": "one-time",
+        "label": "One-time share of the shortfall",
+        "answer": 1.2,
+        "answer_tolerance": 0.05,
+        "unit": "$M",
+        "rationale": "The settlement is paid once. It is a cash problem next year, not a budget problem every year."
+      },
+      {
+        "id": "recurring-target",
+        "label": "Recurring reduction the budget must eventually absorb",
+        "answer": 3.4,
+        "answer_tolerance": 0.05,
+        "unit": "$M",
+        "rationale": "Equal to the structural share, not the headline $4.6M. Sizing the ongoing cut to the full shortfall over-corrects by the one-time item."
+      }
+    ],
+    "explanation": "The whole discipline is in the split. Reserves exist to absorb the $1.2M settlement — that is exactly the one-time shock they are for, and using them here does not weaken the position. The $3.4M is different in kind: it recurs, so it has to be closed with recurring changes, and every year it is deferred is a year the reserve is spent buying time rather than absorbing risk. The common error is sizing the ongoing reduction at $4.6M, which cuts services further than the situation requires and is hard to undo politically once done. The tradeoff worth naming: drawing reserves for the settlement is right, and it still leaves less cushion for the next surprise during a period when a rating review is coming.",
+    "data_reference": {
+      "source": "Illustrative figures, consistent with the Riverbend case. Replace with a real municipality's ACFR or EMMA official statement for production use.",
+      "notes": "EMMA official statements carry multi-year fund balance history and risk factor sections, which are the right substrate for realistic magnitudes."
+    },
+    "tags": ["decomposition"]
+  },
+  {
     "id": "open-response-preemption-conflict",
     "type": "open-response",
+    "source_tier": "original",
     "competencies": ["igr/state-preemption", "engagement/crisis-communication"],
     "difficulty": 3,
     "scenario": "The council passes an ordinance on a subject your city attorney believes is preempted by state law. The state attorney general sends a letter threatening to withhold a state revenue-sharing allocation. Local advocacy groups are publicly urging the council to hold firm.",

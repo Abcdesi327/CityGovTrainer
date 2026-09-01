@@ -1,0 +1,375 @@
+{
+  "$comment": "Scenario backlog: agreed question seeds that are not yet written. This is authoring input, not app content — the runner never loads this file. A seed graduates when the questions exist in a quiz-data question file, at which point set status to \"written\" and list the ids. Seeds came from the second-wave source review; see data-sources/SOURCES.md for the sources themselves. competencies are taxonomy ids and are validated against taxonomy/competencies.json; types and difficulty are intentions, not commitments. Naming: composites use fictional cities — Cedar Landing (~5,100, downtown redevelopment) and Riverbend (~38,000, fiscal cliff) exist in case-studies/; Rowan Falls (~9,000, state-route main street) is referenced by four questions whose case study has not landed yet.",
+  "version": "0.1.0",
+  "seeds": [
+    {
+      "id": "reserve-floor-drawdown",
+      "code": "B1",
+      "title": "The reserve floor",
+      "theme": "budgetary",
+      "summary": "Council wants to fund a popular recurring program by drawing the general fund balance below the adopted reserve policy floor for three consecutive years, arguing the policy is a guideline rather than a limit. Manager must sequence a response.",
+      "grounding": [
+        "GFOA fund balance best practice",
+        "GFOA reserve optimization research"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "finance/reserves-policy",
+        "leadership/council-relations",
+        "ethics"
+      ],
+      "types": [
+        "ordering",
+        "open-response"
+      ],
+      "status": "unwritten"
+    },
+    {
+      "id": "fines-and-fees-drift",
+      "code": "B2",
+      "title": "Fines and fees drift",
+      "theme": "budgetary",
+      "summary": "Over eight years a city's citation revenue has grown from 2% to 11% of general fund revenue while the code enforcement division's stated mission remained compliance, not revenue. The finance director's forecast now assumes that revenue continues.",
+      "grounding": [
+        "GFOA Rethinking Revenue — fines and fees"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "finance/fines-and-fees",
+        "ethics",
+        "community"
+      ],
+      "types": [
+        "multi-select",
+        "open-response"
+      ],
+      "note": "Pairs with the Cedar Landing enforcement case, case-studies/downtown-vacancy-carrots-and-sticks.md.",
+      "status": "unwritten"
+    },
+    {
+      "id": "decision-architect",
+      "code": "B3",
+      "title": "The decision architect",
+      "theme": "budgetary",
+      "summary": "Mid-sized city moves off line-item budgeting. Five departments, one budget officer, competing definitions of what “priority” means.",
+      "grounding": [
+        "GFOA Rethinking Budgeting core principles",
+        "Orange County VA example"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "finance/budget-process",
+        "leadership",
+        "performance",
+        "engagement"
+      ],
+      "types": [
+        "ordering",
+        "multiple-choice"
+      ],
+      "status": "unwritten"
+    },
+    {
+      "id": "structural-not-one-time",
+      "code": "B4",
+      "title": "Structural, not one-time",
+      "theme": "budgetary",
+      "summary": "Given a revenue and expenditure table, separate structural from one-time gap components and size the recurring correction.",
+      "grounding": [
+        "EMMA official statements, for realistic magnitudes"
+      ],
+      "source_tier": "public-domain",
+      "competencies": [
+        "finance/revenue-forecasting"
+      ],
+      "types": [
+        "numeric-multi"
+      ],
+      "difficulty": 3,
+      "note": "A driver for the numeric-multi type: the teaching point is the decomposition, not one figure.",
+      "status": "unwritten"
+    },
+    {
+      "id": "commercial-tif-offset",
+      "code": "R1",
+      "title": "The commercial TIF offset",
+      "theme": "redevelopment",
+      "summary": "A council majority wants a commercial TIF district on the strength of assessed value growth inside comparable districts. Manager knows the growth may be displaced rather than created, and that the answer differs for industrial use.",
+      "grounding": [
+        "Merriman, Lincoln Institute of Land Policy — Improving Tax Increment Financing"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "finance",
+        "community/tax-increment-financing",
+        "igr"
+      ],
+      "types": [
+        "multiple-choice",
+        "open-response"
+      ],
+      "difficulty": 3,
+      "status": "unwritten"
+    },
+    {
+      "id": "four-strategies-one-staff",
+      "code": "R2",
+      "title": "Four strategies, one staff",
+      "theme": "redevelopment",
+      "summary": "A 4,500-person town is simultaneously pursuing industrial recruitment, business retention, residential development, and partnership-building with two nonprofits, on 1.5 FTE of economic development capacity.",
+      "grounding": [
+        "UNC School of Government — Farmville NC profile"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "community/economic-development",
+        "leadership",
+        "performance"
+      ],
+      "types": [
+        "ordering",
+        "multi-select"
+      ],
+      "status": "unwritten"
+    },
+    {
+      "id": "shrinking-not-growing",
+      "code": "R3",
+      "title": "Shrinking, not growing",
+      "theme": "redevelopment",
+      "summary": "Vacant and abandoned properties in a declining neighborhood. Options include demolition, land banking, green infrastructure conversion, and hold-for-market. Infrastructure is sized for a population that left.",
+      "grounding": [
+        "EPA Saginaw MI land use and infrastructure strategy (2014)"
+      ],
+      "source_tier": "public-domain",
+      "competencies": [
+        "community/shrinking-cities",
+        "finance",
+        "services/asset-management",
+        "engagement"
+      ],
+      "types": [
+        "multi-select",
+        "open-response"
+      ],
+      "note": "Fills a real gap: every current case assumes a growth or recovery frame.",
+      "status": "unwritten"
+    },
+    {
+      "id": "broadband-as-economic-development",
+      "code": "R4",
+      "title": "Broadband as economic development",
+      "theme": "redevelopment",
+      "summary": "Small town weighing municipal broadband against an incumbent-partnership model, with a state preemption question hanging over it.",
+      "grounding": [
+        "UNC School of Government — Houston MN and Tryon NC profiles"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "igr/state-preemption",
+        "community/economic-development",
+        "services/broadband"
+      ],
+      "types": [
+        "multiple-choice",
+        "open-response"
+      ],
+      "status": "unwritten"
+    },
+    {
+      "id": "who-pays-for-hydrants",
+      "code": "P1",
+      "title": "Who pays for hydrants",
+      "theme": "public-works",
+      "summary": "A court holds that fire hydrant costs are a general government responsibility, not a water utility one. The utility has been carrying them for years; the general fund has no room. A rate study is already underway.",
+      "grounding": [
+        "Seattle Public Utilities performance audit",
+        "Okeson v. City of Seattle"
+      ],
+      "source_tier": "public-domain",
+      "competencies": [
+        "finance/cost-allocation",
+        "services/utilities",
+        "safety",
+        "igr"
+      ],
+      "types": [
+        "ordering",
+        "open-response"
+      ],
+      "difficulty": 3,
+      "status": "unwritten"
+    },
+    {
+      "id": "indirect-cost-allocation",
+      "code": "P2",
+      "title": "Indirect cost allocation",
+      "theme": "public-works",
+      "summary": "General fund charges the enterprise fund for central services; the methodology has not been revisited in nine years and appears to over-allocate. Fixing it opens a hole in the general fund.",
+      "grounding": [
+        "Seattle Public Utilities performance audit findings"
+      ],
+      "source_tier": "public-domain",
+      "competencies": [
+        "finance/cost-allocation",
+        "ethics",
+        "performance"
+      ],
+      "types": [
+        "numeric-multi",
+        "multiple-choice"
+      ],
+      "note": "A driver for the numeric-multi type: allocation split plus the resulting general fund gap.",
+      "status": "unwritten"
+    },
+    {
+      "id": "keep-the-asphalt-plant",
+      "code": "P3",
+      "title": "Keep the asphalt plant?",
+      "theme": "public-works",
+      "summary": "Make-versus-buy on a municipal asphalt operation. Aging equipment, a specialized crew, and a bid market with two regional suppliers.",
+      "grounding": [
+        "San Francisco Public Works municipal asphalt plant study"
+      ],
+      "source_tier": "public-domain",
+      "competencies": [
+        "services/service-delivery-models",
+        "finance",
+        "hr"
+      ],
+      "types": [
+        "multi-select",
+        "open-response"
+      ],
+      "status": "unwritten"
+    },
+    {
+      "id": "minimum-staffing-versus-outcomes",
+      "code": "P4",
+      "title": "Minimum staffing versus outcomes",
+      "theme": "public-works",
+      "summary": "Fire minimum staffing is contractually fixed; response-time outcomes have not moved in five years; a station relocation would help more than added staff.",
+      "grounding": [
+        "ICMA Center for Performance Measurement case study reports"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "safety",
+        "hr/collective-bargaining",
+        "performance",
+        "finance"
+      ],
+      "types": [
+        "multiple-choice",
+        "open-response"
+      ],
+      "difficulty": 3,
+      "status": "unwritten"
+    },
+    {
+      "id": "deferred-maintenance-backlog",
+      "code": "P5",
+      "title": "Deferred maintenance backlog",
+      "theme": "public-works",
+      "summary": "Pavement condition index has fallen for six years. Council will fund one of: full-depth reconstruction of the worst arterial, preventive sealing across the network, or a fleet replacement cycle that keeps crews operational.",
+      "grounding": [
+        "Oakland Public Works Agency performance audit",
+        "Asset management ROI literature"
+      ],
+      "source_tier": "public-domain",
+      "competencies": [
+        "services/deferred-maintenance",
+        "finance",
+        "performance"
+      ],
+      "types": [
+        "ordering",
+        "numeric"
+      ],
+      "status": "unwritten"
+    },
+    {
+      "id": "data-culture-problem",
+      "code": "X1",
+      "title": "The data culture problem",
+      "theme": "cross-cutting",
+      "summary": "A dashboard exists, nobody uses it, and a department head disputes the numbers in a public meeting.",
+      "grounding": [
+        "Bloomberg Harvard City Leadership Initiative — Data and Evidence case set"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "performance/data-culture",
+        "leadership",
+        "engagement"
+      ],
+      "types": [
+        "open-response"
+      ],
+      "status": "unwritten"
+    },
+    {
+      "id": "standing-up-a-new-department",
+      "code": "X2",
+      "title": "Standing up a new department",
+      "theme": "cross-cutting",
+      "summary": "Neighborhood engagement function built from nothing inside an existing structure — where it reports, what it is allowed to promise, how it survives a manager change.",
+      "grounding": [
+        "Bloomberg Harvard — Lansing MI, “Operation Pufferfish”"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "engagement",
+        "leadership/org-design",
+        "hr"
+      ],
+      "types": [
+        "open-response"
+      ],
+      "status": "unwritten"
+    },
+    {
+      "id": "utility-shutoff-policy",
+      "code": "X3",
+      "title": "Utility shutoff policy",
+      "theme": "cross-cutting",
+      "summary": "Delinquency, low-income discount eligibility, and the collection practices the council is comfortable defending publicly.",
+      "grounding": [
+        "MRSC utility billing series"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "services/utility-billing",
+        "ethics",
+        "community"
+      ],
+      "types": [
+        "multi-select",
+        "open-response"
+      ],
+      "note": "Abstract away the WA statutory specifics (RCW citations) or set the scenario explicitly in a WA-like state.",
+      "status": "unwritten"
+    },
+    {
+      "id": "succession-cliff",
+      "code": "X4",
+      "title": "Succession cliff",
+      "theme": "cross-cutting",
+      "summary": "Three department heads eligible to retire within eighteen months, no internal bench.",
+      "grounding": [
+        "ICMA / Cal-ICMA — Local Governments Preparing the Next Generation (28 case studies)",
+        "MissionSquare talent gap research"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "hr/workforce-planning",
+        "leadership/succession-planning"
+      ],
+      "types": [
+        "ordering",
+        "open-response"
+      ],
+      "status": "unwritten"
+    }
+  ]
+}
