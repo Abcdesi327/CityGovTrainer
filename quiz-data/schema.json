@@ -99,6 +99,10 @@
       "type": "string",
       "description": "The teaching content. Required on every question — this is the point of the app."
     },
+    "community_type": {
+      "type": "string",
+      "description": "Id from taxonomy/community-types.json — what kind of place the scenario is set in. Orthogonal to competencies: the same topic has different right answers in a legacy industrial city and a high-growth exurb. Omit only for questions that are genuinely place-independent, such as definitional ones. Validated by scripts/validate_questions.py rather than by an enum here, so adding a type is a taxonomy change."
+    },
     "source_tier": {
       "enum": ["public-domain", "link-only", "design-reference", "original"],
       "description": "Licensing posture of the material this question is grounded in, so a change in posture is a query rather than a re-audit. public-domain: federal, state or municipal government works, whose figures and findings may be used directly. link-only: copyrighted but readable — cite by URL, write an original composite, reproduce nothing. design-reference: paid or gated material read for case architecture only, with no content drawn from it. original: invented from scratch with no external grounding. See data-sources/SOURCES.md."

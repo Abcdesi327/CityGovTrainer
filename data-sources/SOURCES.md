@@ -40,7 +40,16 @@ assuming.
 | ICMA books | Copyrighted, paid | Design reference only |
 | ICMA free PDFs (28 Cases, CPM) | Copyrighted, free download | Link-only + original composites |
 | Lincoln Institute PDFs | Copyrighted, free download | Link-only + original composites |
+| **HUD / HUD Exchange** | **Public domain (federal)** | **Direct use permitted** |
 | **EPA / federal reports** | **Public domain** | **Direct use permitted** |
+| Federal Reserve Board publications | Public domain | Direct use |
+| Reserve Bank publications (Boston, NY, SF, Chicago) | Generally reproducible with attribution; check per item | Direct use with attribution; composites preferred |
+| Pew Charitable Trusts | Copyrighted, freely readable | Link-only + original composites |
+| Upjohn Institute reports | Copyrighted, freely readable | Link-only + original composites |
+| Upjohn Bartik model **outputs** | Your own computation | Direct use |
+| NADO Research Foundation | Copyrighted, freely readable | Link-only + original composites |
+| HPAIED / Honoring Nations | Copyrighted, freely readable | Link-only + composites; see the cultural caution in that entry |
+| Main Street America | Copyrighted; statistics are published figures | Cite figures, paraphrase everything else |
 | **UGA Carl Vinson Institute (CVIOG)** | Copyrighted, freely readable; **no Creative Commons grant** | Link-only + original composites; abstract away Georgia-specific mechanisms |
 | MRSC | Copyrighted, freely readable | Link-only; abstract away WA statutes |
 | Alliance for Innovation | Member-gated | Avoid until access confirmed |
@@ -125,6 +134,173 @@ Eastern cases that break the US-centrism of the rest of the bank). Named example
 Louisville KY, Lansing MI ("Operation Pufferfish").
 
 Serves: performance, leadership, engagement, services.
+
+### Federal Reserve System — community development
+Portal across all twelve banks: `https://fedcommunities.org/` · Board publications:
+`https://www.federalreserve.gov/consumerscommunities/community-development-publications.htm`
+
+Each Reserve Bank tailors its community development work to its district, which is
+what makes the body of work geographically diverse rather than nationally generic.
+
+**The single best artifact is the 2008 concentrated poverty report** (with Brookings,
+`http://www.frbsf.org/cpreport/`): sixteen case studies of high-poverty communities —
+Albany GA, Atlantic City NJ, Austin TX, Blackfeet Reservation MT, Cleveland OH, El
+Paso TX, Fresno CA, Greenville NC, Holmes County MS, Martin County KY, McDowell
+County WV, McKinley County NM, Miami FL, Milwaukee WI, Rochester NY, Springfield MA.
+That list solves the community-diversity problem in one document: Rust Belt city,
+immigrant gateway, resort economy, reservation, Appalachian coal county, Delta
+county, Sunbelt boomtown, college town. Each asks the same three questions — what
+produced the concentration, what does it create, what local capacity exists to change
+it — which gives one analytical spine across very different places. It is dated;
+treat it as scenario substrate and refresh figures from ACS.
+
+Also worth mining: **Chicago Fed** on the economics of state-mandated lead service
+line replacement, a genuinely underused topic at the community development and public
+works intersection; **New York Fed** case studies of multifamily affordable housing
+financed without LIHTC (Schenectady, Brooklyn, Jersey City — three market contexts,
+one financing question); **San Francisco Fed** *Community Development Investment
+Review*; and the Board's *Putting Data to Work* and *REO and Vacant Properties*
+volumes.
+
+Serves: community, performance, services, finance.
+
+### Boston Fed — Working Cities / Working Places Challenge
+`https://www.bostonfed.org/workingplaces/`
+
+**The best-documented community development intervention available, and it comes with
+independent evaluations.** Boston Fed researchers working on Springfield MA between
+2008 and 2011 asked whether a city like it was fated to decline; the finding that
+recovery correlated with sustained cross-sector collaboration toward a shared
+long-term goal became the Working Cities Challenge in 2013.
+
+What makes it usable is unusual: **a defined comparison set** of twenty eligible
+Massachusetts cities — same state, same statutory environment, very different
+trajectories, which is a clean setup for comparative questions. **Independent
+evaluation** by Mt. Auburn Associates of the first round (Chelsea, Holyoke,
+Fitchburg, Lawrence), which contains what grantee press releases do not. And **named,
+measurable goals**: Chelsea Thrives targeted a 30% crime reduction over ten years;
+Middletown CT targeted cutting single-parent families below the federal poverty line
+from 35% to 20% over ten years. Concrete enough to build performance-measurement
+questions on.
+
+Corroborating work on smaller industrial cities in PA, NJ and DE points the same way,
+which lets you write a question whose correct answer is about *governance capacity*
+rather than about a program.
+
+Serves: community, leadership, engagement, IGR, performance.
+
+### HUD Exchange — CDBG (public domain)
+Project profiles: `https://www.hudexchange.info/programs/cdbg/project-profiles/` ·
+CDBG-DR Economic Revitalization Guide:
+`https://www.hudexchange.info/programs/cdbg-dr/economic-revitalization-guide/`
+
+**CDBG Project Profiles** is a browsable bank of short writeups selected for being
+innovative and replicable — already question-sized. A sanitary sewer project for a
+town whose wastewater provider ceased operations, protecting service for 360
+residents and 13 businesses, is a complete scenario in one sentence and sits across
+community development, public works, IGR and finance at once.
+
+The **CDBG-DR Economic Revitalization Guide** carries named cases — Louisiana small
+business lending, Puerto Rico workforce training and tourism marketing, Mississippi's
+Jackson County Maritime Training Facility, the Port of Gulfport restoration. This is
+**disaster recovery economic development**, a category the bank otherwise lacks.
+
+Also here: Section 108 loan guarantees, state versus entitlement CDBG mechanics, an
+Opportunity Zones playbook, and historic tax credit projects. Worth building at least
+one question purely on **national objective compliance** — LMI benefit, slum and
+blight, urgent need — because it separates people who have administered a grant from
+people who have read about one.
+
+*Federal works, public domain. Draw directly.*
+
+Serves: community, finance, IGR, services.
+
+### Economic development incentives — Pew and Upjohn
+Pew toolkit: `https://www.pew.org/en/research-and-analysis/data-visualizations/2024/economic-development-incentives-evaluation-toolkit` ·
+Upjohn portal: `https://research.upjohn.org/incentives/` ·
+Bartik benefit-cost model: `https://research.upjohn.org/reports/287/`
+
+**The richest vein for hard judgment questions in any of these inventories.**
+
+The concept a manager needs and most candidates miss is **additionality** — the share
+of incented activity that would not have happened anyway. Bartik has a working paper
+on plausible "but for" percentages. Its companion is **displacement**: activity spurred
+at the expense of other businesses in the same jurisdiction. Note how cleanly this
+rhymes with the Lincoln Institute TIF finding logged above — same structural insight,
+different instrument, and a question that makes a candidate recognize the shared logic
+across TIF and abatements is a good difficulty-3 question.
+
+Practical hooks: the **Bartik benefit-cost model** ships as an Excel workbook and as
+Python that does not require knowing Python — it is a numeric question generator whose
+outputs are defensible answer keys, and outputs you compute are your own. The **Panel
+Database on Incentives and Taxes** covers 1990–2015, 33 states, 45 industries.
+**Realistic Local Job Multipliers** (Bartik and Sotherland) is the antidote to the
+inflated multipliers in consultant impact studies presented to councils. The **NCSL
+State Tax Incentive Evaluations Database** aggregates 250+ state and city evaluations
+of public documents.
+
+Serves: finance, community, ethics, performance.
+
+### NADO — rural and regional development organizations
+`https://www.nado.org/awards/` · `https://www.nado.org/wealthworks-case-studies/`
+
+The Impact Award recipient lists are the asset: each entry is an organization plus a
+project title, and the titles function as scenario seeds — rural blight code
+enforcement, an abandoned carbide plant brownfield, water regionalization, a regional
+housing study, county broadband partnerships, telehealth feasibility, site-readiness
+tooling, regional NG911. **WealthWorks** case studies apply a rural wealth-creation
+frame built on existing assets and local ownership.
+
+Why it matters: the **regional development organization** — council of governments,
+planning district, economic development district — is a governance form this taxonomy
+touched only through IGR, and for a small-city manager it is often the single most
+consequential intergovernmental relationship they have.
+
+Serves: IGR, community, services, finance.
+
+### Harvard Project on American Indian Economic Development / Honoring Nations
+`https://hpaied.org/research` · `https://indigenousgov.hks.harvard.edu/honoring-nations`
+
+136+ tribal government programs from 100+ nations recognized since 1998, with case
+studies generated from the honoree pool. The **selection criteria are themselves a
+good analytic framework** worth borrowing regardless of subject: effectiveness,
+significance to sovereignty, cultural relevance, transferability, sustainability —
+that last pair being exactly what a manager should ask about any program a peer city
+recommends.
+
+**Handle with care.** Tribal governance is a distinct sovereign context, not a variant
+of municipal government, and a question treating a tribal nation as "a city with
+different rules" would be both wrong and offensive. The defensible use is scenarios
+about municipal–tribal intergovernmental relations *from the city manager's side*:
+jurisdiction, taxation, service agreements, consultation obligations, cross-boundary
+infrastructure. Write from the seat the user occupies. Material here should also get a
+read from someone with tribal government experience before it ships.
+
+Serves: IGR, community, ethics.
+
+### Main Street America and the downtown revitalization evidence problem
+`https://mainstreet.org/our-network/collective-impact` · critical literature:
+`https://andrewvanleuven.com/files/papers/wp_msp2021.pdf`
+
+The headline figures are everywhere — since 1980 the network reports $124.67 billion
+reinvested, 188,583 net new businesses, 852,443 net new jobs; 2023 alone reports an
+$18-to-$1 reinvestment ratio.
+
+**Build the question around the evidence problem, not the numbers.** Studies of the
+program typically rely on data supplied by the participating communities themselves
+and cannot be independently verified, and rural data quality is weaker than urban to
+begin with. The scenario writes itself: a council member brings the $18:1 ratio to a
+budget hearing, and the manager has to respond without either endorsing an unverified
+figure or dismissing a program that may well work. That tests analytic honesty,
+political judgment, and the ability to say "the evidence is weaker than the number
+suggests" without torching a council relationship.
+
+Mine separately: permitting and construction review timelines as a determinant of
+whether investment happens locally or moves next door. Slow permitting and mismatched
+zoning are the unglamorous half of economic development and are almost never what
+candidates reach for first.
+
+Serves: community, performance, ethics, engagement, leadership.
 
 ### UGA Carl Vinson Institute of Government (CVIOG)
 `https://cviog.uga.edu/resources/index.html`
@@ -358,6 +534,23 @@ Drives `taxonomy/competencies.json`.
 | UrbanSim (UC Berkeley Urban Data Science Toolkit) | Land use and transport scenario modeling, if questions should ever be backed by a simulation rather than hand-built numbers. |
 
 ---
+
+## Community typology
+
+Topic is not the only axis that matters: a downtown vacancy problem in a legacy
+industrial city and the same problem in a high-growth exurb are different questions
+with different right answers. `taxonomy/community-types.json` holds the thirteen
+types, every question carries a `community_type`, and the results screen scores by
+it — a learner can see which kinds of place they have never practised, not just which
+topics.
+
+Twelve types come from the third-wave source review. The thirteenth,
+`small-town-county-seat`, was added here because that matrix had no slot for the
+setting most common in this bank already.
+
+Four types still have no questions: `immigrant-gateway`, `resort-seasonal`,
+`resource-dependent`, and `tribal-adjacent`. The first three are ordinary gaps. The
+fourth is deliberate — see the HPAIED entry above.
 
 ## Gap worth knowing about
 

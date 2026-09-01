@@ -41,8 +41,10 @@ repository root — see the deployment note in the top-level README.
 - **Case studies** open in a side panel, rendered from the Markdown source.
 - **Provenance.** A question's `source_tier` is shown with the explanation, so it is
   visible whether the material behind it is public domain or a cited composite.
-- **Scoring by competency** at the end — weakest first — plus a by-difficulty
-  breakdown, a per-question review, and "retry the ones I missed".
+- **Scoring by competency** at the end — weakest first — plus breakdowns by kind of
+  community and by difficulty, a per-question review, and "retry the ones I missed".
+  The community breakdown answers a different question from the competency one: not
+  which topic you are weak on, but which kind of place you have never practised.
 
 ## Files
 

@@ -19,7 +19,8 @@ CityGovTrainer/
 ├── index.html                 # Site root: redirects to app/ on GitHub Pages
 ├── .nojekyll                  # Serve files verbatim on GitHub Pages
 ├── taxonomy/
-│   └── competencies.json      # Topic taxonomy used to tag every question
+│   ├── competencies.json      # Topic taxonomy used to tag every question
+│   └── community-types.json   # What kind of place a scenario is set in
 ├── case-studies/
 │   ├── TEMPLATE.md            # Structure for authoring a new case
 │   └── *.md                   # One file per case study
@@ -105,9 +106,10 @@ describe the authoring bar in `docs/AUTHORING.md` and do not fail the run.
 
 ## Status
 
-The quiz runner (roadmap Phase 2) is built. The bank holds 21 questions across six
-types, covering all ten competencies, plus three case studies. Content is still the
-bottleneck: `quiz-data/seeds.json` tracks agreed scenarios that are not yet written.
+The quiz runner (roadmap Phase 2) is built. The bank holds 36 questions across six
+question types and nine kinds of community, covering all ten competencies, plus three
+case studies. Content is still the bottleneck: `quiz-data/seeds.json` tracks agreed
+scenarios that are not yet written.
 
 ## Licensing note
 

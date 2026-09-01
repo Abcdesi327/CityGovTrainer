@@ -51,6 +51,22 @@ unit, and a `rationale`. Each part is graded independently and the feedback says
 which figure went wrong, so a candidate who splits structural from one-time correctly
 but fumbles the recurring correction can see exactly that.
 
+## Where the scenario is set
+
+Set `community_type` on every question that has a scenario, using an id from
+`taxonomy/community-types.json`. Omit it only when the question is genuinely
+place-independent — a definition, or arithmetic that would read the same anywhere.
+
+This is a second axis, orthogonal to competency, and it exists because the same topic
+has different right answers in different places. Downtown vacancy in a legacy
+industrial city is a capacity problem; in a high-growth exurb it is a market-timing
+problem. A candidate trained only on one carries a single implicit model of "a city"
+into a career that may not match it.
+
+Spread each batch across the axis the way you already spread it across question type.
+`scripts/validate_questions.py` prints the distribution and names the types with no
+questions yet.
+
 ## Provenance
 
 Set `source_tier` on every question to the licensing posture of whatever it is
@@ -69,6 +85,7 @@ This exists so that a change in licensing posture is a query rather than a re-au
 ## Checklist before committing a question
 
 - [ ] `id` is a stable slug and unique
+- [ ] `community_type` is set, or the question is genuinely place-independent
 - [ ] `source_tier` is set, and matches what `data-sources/SOURCES.md` says
 - [ ] Competency tags exist in `taxonomy/competencies.json`
 - [ ] Every option has a `rationale`

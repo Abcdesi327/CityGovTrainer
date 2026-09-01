@@ -134,6 +134,12 @@ function renderQuestion() {
   $('q-difficulty').textContent = `${DIFFICULTY_LABEL[q.difficulty] || ''}`;
   $('q-difficulty').className = `badge badge-d${q.difficulty}`;
 
+  const place = $('q-community-type');
+  const ct = q.community_type && state.content.byCommunityType.get(q.community_type);
+  place.textContent = ct ? ct.label : '';
+  place.title = ct?.constraint || '';
+  place.hidden = !ct;
+
   const tags = clear($('q-competencies'));
   competencyLabels(state.content.byRoot, q.competencies).forEach((label) => {
     tags.append(el('span', { class: 'tag', text: label }));
@@ -239,6 +245,7 @@ function showResults() {
   state.reviewing = false;
   renderResults($('results-body'), state.session, summarize(state.session), {
     byRoot: state.content.byRoot,
+    byCommunityType: state.content.byCommunityType,
     onRetryMissed: () => startSession(missedQuestions(state.session)),
     onRestart: () => { state.session = null; showView('setup'); renderSetup(); },
     onReview: (index) => {

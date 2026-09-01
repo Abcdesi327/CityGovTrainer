@@ -3,6 +3,7 @@
     "id": "downtown-vacancy-carrots-before-sticks",
     "type": "ordering",
     "source_tier": "link-only",
+    "community_type": "small-town-county-seat",
     "case_study": "downtown-vacancy-carrots-and-sticks.md",
     "competencies": [
       "community/economic-development",
@@ -55,6 +56,7 @@
     "id": "public-property-maintenance-first",
     "type": "multiple-choice",
     "source_tier": "link-only",
+    "community_type": "small-town-county-seat",
     "case_study": "downtown-vacancy-carrots-and-sticks.md",
     "competencies": [
       "ethics/transparency",
@@ -97,6 +99,7 @@
     "id": "blight-enforcement-political-will",
     "type": "multiple-choice",
     "source_tier": "link-only",
+    "community_type": "small-town-county-seat",
     "case_study": "downtown-vacancy-carrots-and-sticks.md",
     "competencies": [
       "leadership/council-relations",
@@ -139,6 +142,7 @@
     "id": "commissioner-property-interest-blight-vote",
     "type": "multiple-choice",
     "source_tier": "link-only",
+    "community_type": "small-town-county-seat",
     "case_study": "downtown-vacancy-carrots-and-sticks.md",
     "competencies": [
       "ethics/conflict-of-interest",
@@ -179,6 +183,7 @@
     "id": "vacant-property-registry-fee-escalation",
     "type": "numeric",
     "source_tier": "link-only",
+    "community_type": "small-town-county-seat",
     "case_study": "downtown-vacancy-carrots-and-sticks.md",
     "competencies": [
       "community/land-use",
@@ -199,6 +204,7 @@
     "id": "downtown-vacancy-rate-calculation",
     "type": "numeric",
     "source_tier": "link-only",
+    "community_type": "small-town-county-seat",
     "case_study": "downtown-vacancy-carrots-and-sticks.md",
     "competencies": [
       "performance/kpi-design",
@@ -220,6 +226,7 @@
     "id": "facade-grant-maintenance-covenant",
     "type": "multiple-choice",
     "source_tier": "link-only",
+    "community_type": "small-town-county-seat",
     "case_study": "downtown-vacancy-carrots-and-sticks.md",
     "competencies": [
       "ethics/transparency",
@@ -261,6 +268,7 @@
     "id": "plan-implementation-first-agenda",
     "type": "multiple-choice",
     "source_tier": "link-only",
+    "community_type": "small-town-county-seat",
     "case_study": "donor-funded-plan-implementation-gap.md",
     "competencies": [
       "engagement/media-relations",
@@ -303,6 +311,7 @@
     "id": "action-items-external-leads",
     "type": "multiple-choice",
     "source_tier": "link-only",
+    "community_type": "small-town-county-seat",
     "case_study": "donor-funded-plan-implementation-gap.md",
     "competencies": [
       "leadership/org-design",
@@ -344,6 +353,7 @@
     "id": "plan-progress-indicators",
     "type": "multi-select",
     "source_tier": "link-only",
+    "community_type": "small-town-county-seat",
     "case_study": "donor-funded-plan-implementation-gap.md",
     "competencies": [
       "performance/kpi-design",
@@ -389,6 +399,7 @@
     "id": "donor-accountability-reporting",
     "type": "open-response",
     "source_tier": "link-only",
+    "community_type": "small-town-county-seat",
     "case_study": "donor-funded-plan-implementation-gap.md",
     "competencies": [
       "ethics/transparency",
@@ -409,6 +420,7 @@
     "id": "state-route-main-street-authority",
     "type": "multiple-choice",
     "source_tier": "link-only",
+    "community_type": "small-town-county-seat",
     "competencies": [
       "igr/state-preemption",
       "services/asset-management"
@@ -450,6 +462,7 @@
     "id": "road-diet-resurfacing-window",
     "type": "multiple-choice",
     "source_tier": "link-only",
+    "community_type": "small-town-county-seat",
     "competencies": [
       "igr/interlocal-agreements",
       "finance/capital-planning",
@@ -492,6 +505,7 @@
     "id": "side-street-sequencing-multiselect",
     "type": "multi-select",
     "source_tier": "link-only",
+    "community_type": "small-town-county-seat",
     "competencies": [
       "services/asset-management",
       "engagement/public-meetings",
@@ -537,6 +551,7 @@
     "id": "road-diet-tradeoff-open-response",
     "type": "open-response",
     "source_tier": "link-only",
+    "community_type": "small-town-county-seat",
     "competencies": [
       "safety",
       "engagement/public-meetings",
