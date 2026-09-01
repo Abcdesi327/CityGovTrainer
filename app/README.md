@@ -61,8 +61,16 @@ repository root — see the deployment note in the top-level README.
 ## Adding content
 
 Drop a new question file into `quiz-data/` and add it to `questionFiles` in
-`js/config.js`. Files are concatenated, so questions can be split
-by competency or by author.
+`quiz-data/manifest.json`. Files are concatenated, so questions can be split by
+competency or by author.
+
+The list lives in that manifest rather than in `js/config.js` on purpose. Question
+JSON is fetched with `cache: 'no-store'` and is always current, but a JavaScript
+module is cached by the browser and the CDN like any other asset — so a file list
+embedded in a module can lag behind the content after a deploy, and the app quietly
+loads yesterday's set. Keeping the list in data means new content appears on the next
+page load. `js/config.js` keeps a copy as a fallback, and the app shows a warning if
+it ever has to use it.
 
 Validate before committing:
 

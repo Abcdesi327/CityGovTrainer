@@ -1,0 +1,9 @@
+{
+  "$comment": "What content the app loads, as data rather than code. Paths are relative to the repository root, which is also the published site root. This file is fetched with cache: 'no-store', so adding a question file here takes effect on the next page load — it does not wait for a browser or CDN to expire a cached copy of app/js/config.js, which is what happens when the list lives in a module. Keep it in sync with quiz-data/questions*.json; scripts/validate_questions.py checks that.",
+  "taxonomy": "taxonomy/competencies.json",
+  "questionFiles": [
+    "quiz-data/questions.sample.json",
+    "quiz-data/questions.downtown-redevelopment.json"
+  ],
+  "caseStudyDir": "case-studies/"
+}

@@ -1,4 +1,4 @@
-import { CONTENT } from './config.js';
+import { MANIFEST, ROOT, FALLBACK_CONTENT } from './config.js';
 
 async function fetchJSON(path) {
   const res = await fetch(path, { cache: 'no-store' });
@@ -76,8 +76,42 @@ function checkQuestion(q, knownCompetencies) {
   return problems;
 }
 
+/**
+ * Resolved content paths for this session. Set by loadContent so that
+ * loadCaseStudy uses the same source the questions came from.
+ */
+let content = FALLBACK_CONTENT;
+
+async function resolveContent() {
+  try {
+    const m = await fetchJSON(MANIFEST);
+    if (!m.taxonomy || !Array.isArray(m.questionFiles) || !m.questionFiles.length) {
+      throw new Error('manifest is missing taxonomy or questionFiles');
+    }
+    return {
+      resolved: {
+        taxonomy: ROOT + m.taxonomy,
+        questionFiles: m.questionFiles.map((f) => ROOT + f),
+        caseStudyDir: ROOT + (m.caseStudyDir || 'case-studies/'),
+      },
+      warning: null,
+    };
+  } catch (err) {
+    // Falling back is better than failing to start, but it means the app may be
+    // reading a stale file list, so say so rather than doing it silently.
+    return {
+      resolved: FALLBACK_CONTENT,
+      warning: `could not read ${MANIFEST} (${err.message}) — using the built-in file list, `
+        + 'which may be out of date',
+    };
+  }
+}
+
 export async function loadContent() {
-  const taxonomy = await fetchJSON(CONTENT.taxonomy);
+  const { resolved, warning: manifestWarning } = await resolveContent();
+  content = resolved;
+
+  const taxonomy = await fetchJSON(content.taxonomy);
 
   const competencies = taxonomy.competencies || [];
   const known = new Set(competencies.map((c) => c.id));
@@ -87,10 +121,10 @@ export async function loadContent() {
     { id: 3, label: 'Judgment' },
   ];
 
-  const files = await Promise.all(CONTENT.questionFiles.map(fetchJSON));
+  const files = await Promise.all(content.questionFiles.map(fetchJSON));
 
   const questions = [];
-  const warnings = [];
+  const warnings = manifestWarning ? [manifestWarning] : [];
   const seen = new Set();
 
   files.flat().forEach((q, i) => {
@@ -137,7 +171,7 @@ export function shuffle(list) {
 }
 
 export async function loadCaseStudy(filename) {
-  const res = await fetch(CONTENT.caseStudyDir + filename, { cache: 'no-store' });
+  const res = await fetch(content.caseStudyDir + filename, { cache: 'no-store' });
   if (!res.ok) throw new Error(`Could not load ${filename} (HTTP ${res.status})`);
   return res.text();
 }

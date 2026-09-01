@@ -25,7 +25,8 @@ CityGovTrainer/
 │   └── *.md                   # One file per case study
 ├── quiz-data/
 │   ├── schema.json            # JSON Schema for question objects
-│   ├── questions.*.json       # Question banks, loaded in config order
+│   ├── manifest.json          # What the app loads — add new question files here
+│   ├── questions.*.json       # Question banks, loaded in manifest order
 │   └── seeds.json             # Agreed scenario backlog, not yet written
 ├── scripts/
 │   └── validate_questions.py  # Schema + taxonomy check; exits non-zero for CI
@@ -96,8 +97,10 @@ python3 scripts/validate_questions.py          # all quiz-data/questions*.json
 
 Checks every question against `quiz-data/schema.json` and `taxonomy/competencies.json`
 — unknown competency tags, duplicate ids, missing option rationales, numeric answers
-with no stated band, dangling `case_study` links, and case studies that list questions
-which do not exist. Exits non-zero on error, so it drops straight into CI. Warnings
+with no stated band, dangling `case_study` links, case studies that list questions
+which do not exist, and question files that exist but are missing from
+`quiz-data/manifest.json` (which look fine in the repository and are invisible in the
+browser). Exits non-zero on error, so it drops straight into CI. Warnings
 describe the authoring bar in `docs/AUTHORING.md` and do not fail the run.
 
 ## Status
