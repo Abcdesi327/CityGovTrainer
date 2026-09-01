@@ -16,6 +16,7 @@ documented cases and open municipal data into practice questions with explanatio
 ```
 CityGovTrainer/
 ├── README.md
+├── index.html                 # Site root: redirects to app/ on GitHub Pages
 ├── .nojekyll                  # Serve files verbatim on GitHub Pages
 ├── taxonomy/
 │   └── competencies.json      # Topic taxonomy used to tag every question
@@ -60,18 +61,29 @@ it at new content.
 
 ### On GitHub Pages
 
-Settings → Pages → **Deploy from a branch**, branch `main`, folder `/ (root)`. The
-app is then at:
+Settings → Pages → **Deploy from a branch**, branch `main`, folder `/ (root)`. No
+workflow file and no build are needed. The site root redirects into the app, so both
+of these work:
 
 ```
-https://abcdesi327.github.io/CityGovTrainer/app/
+https://abcdesi327.github.io/CityGovTrainer/        # redirects to /app/
+https://abcdesi327.github.io/CityGovTrainer/app/    # the app itself
 ```
 
-No workflow file and no build are needed. The empty `.nojekyll` at the repository
-root is required: Pages otherwise runs the site through Jekyll, which converts
-Markdown files carrying YAML front matter into HTML — that would take
-`case-studies/*.md` out from under the case-study panel, which fetches those files
-at their real paths.
+Two files exist only to make that work, and both should stay:
+
+- **`index.html`** at the repository root redirects to `app/`. The app cannot simply
+  live at the root, because it loads content from `taxonomy/`, `quiz-data/`, and
+  `case-studies/` — those have to be the root's siblings. Without this redirect the
+  published site 404s at `/`, which is where the "Visit site" button lands.
+- **`.nojekyll`** stops Pages from running the site through Jekyll, which converts
+  Markdown carrying YAML front matter into HTML. That would take `case-studies/*.md`
+  out from under the case-study panel, which fetches those files at their real paths
+  at runtime.
+
+If you point Pages at a topic branch to preview it, remember to set the source back
+to `main` after merging — Pages keeps serving whatever branch it is configured for,
+and deleting that branch takes the site down.
 
 ## Status
 
