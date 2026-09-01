@@ -64,6 +64,12 @@ Drop a new question file into `quiz-data/` and add it to `questionFiles` in
 `js/config.js`. Files are concatenated, so questions can be split
 by competency or by author.
 
+Validate before committing:
+
+```sh
+python3 scripts/validate_questions.py
+```
+
 `js/data.js` runs a light structural check on load — missing explanations, unknown
 competency tags, duplicate ids, malformed answers. Problems appear under the setup
 form and in the browser console; a question that cannot be presented or graded is

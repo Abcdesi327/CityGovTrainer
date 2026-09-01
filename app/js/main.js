@@ -11,7 +11,7 @@ import {
   el, clear, renderAnswerArea, renderFeedback, renderResults,
   competencyLabels, DIFFICULTY_LABEL,
 } from './ui.js';
-import { renderMarkdown, splitFrontMatter } from './markdown.js';
+import { renderMarkdown, splitFrontMatter, extractTitle } from './markdown.js';
 
 const $ = (id) => document.getElementById(id);
 
@@ -284,6 +284,10 @@ async function openCase(filename) {
   $('btn-close-case').focus();
 
   if (!caseCache.has(filename)) {
+    // The panel is already open at this point, so clear the previous case's
+    // heading before awaiting the fetch — otherwise it shows the wrong title
+    // for as long as the load takes.
+    $('case-title').textContent = 'Loading…';
     body.innerHTML = '<p class="muted">Loading…</p>';
     try {
       caseCache.set(filename, await loadCaseStudy(filename));
@@ -294,8 +298,9 @@ async function openCase(filename) {
     }
   }
 
-  const { meta, body: markdown } = splitFrontMatter(caseCache.get(filename));
-  $('case-title').textContent = meta.title || filename;
+  const { meta, body: rest } = splitFrontMatter(caseCache.get(filename));
+  const { title, body: markdown } = extractTitle(rest);
+  $('case-title').textContent = meta.title || title || filename;
   body.innerHTML = renderMarkdown(markdown);
   if (meta.setting) {
     body.prepend(el('p', { class: 'case-setting', text: meta.setting }));

@@ -41,6 +41,7 @@ assuming.
 | ICMA free PDFs (28 Cases, CPM) | Copyrighted, free download | Link-only + original composites |
 | Lincoln Institute PDFs | Copyrighted, free download | Link-only + original composites |
 | **EPA / federal reports** | **Public domain** | **Direct use permitted** |
+| **UGA Carl Vinson Institute (CVIOG)** | Copyrighted, freely readable; **no Creative Commons grant** | Link-only + original composites; abstract away Georgia-specific mechanisms |
 | MRSC | Copyrighted, freely readable | Link-only; abstract away WA statutes |
 | Alliance for Innovation | Member-gated | Avoid until access confirmed |
 | EMMA filings | Public disclosure documents | Direct use of figures |
@@ -124,6 +125,70 @@ Eastern cases that break the US-centrism of the rest of the bank). Named example
 Louisville KY, Lansing MI ("Operation Pufferfish").
 
 Serves: performance, leadership, engagement, services.
+
+### UGA Carl Vinson Institute of Government (CVIOG)
+`https://cviog.uga.edu/resources/index.html`
+
+The Georgia Downtown Renaissance Partnership's **Renaissance Strategic Vision and
+Planning (RSVP)** reports are full downtown strategic plans for small Georgia cities,
+each following the same three steps: public input for "where are we now", design
+renderings for "where are we going", and sequenced action items for "how do we get
+there". Action items carry a named lead, named partners, numbered steps, and a
+short/medium/long-term timeline.
+
+This is the richest freely-readable material on how small-city redevelopment
+decisions actually get sequenced, and **the action-item format is close to an answer
+key for questions about implementation order.**
+
+- Augusta (2024) · Baxley (2023) · Buena Vista (2022) · Carrollton (2024) ·
+  Homerville (2022) · Lafayette (2022) — `https://issuu.com/rsvpstudio`
+- Hawkinsville full report, locally hosted PDF and easier to read programmatically:
+  `https://hawkinsvillechamber.org/wp-content/uploads/2020/05/Hawkinsville-RSVP_Full-Report.pdf`
+
+Prefer a locally hosted PDF over the Issuu copies where one exists.
+
+**Compliance Auditing in Georgia Counties and Municipalities** —
+`https://cviog.uga.edu/resources/compliance-auditing-publication.html` walks statutory
+compliance areas title by title; the closest thing CVIOG publishes to a general
+local-government reference. Good for foundational (difficulty 1) questions about who
+is required to do what, though the citations are Georgia code.
+
+Structural reference, not question material: the **Certified Public Manager** program
+(`https://cviog.uga.edu/training/leadership-development/cpm.html`) is a second
+competency framework worth cross-checking `taxonomy/competencies.json` against — its
+value is confirming the taxonomy is not missing a whole functional area. The **Public
+Finance Leadership Academy** and **Community Planning Program** course sequences are
+reasonable proxies for what a practicing finance officer and planner are expected to
+know, mapping onto `finance` and `community`.
+
+Data and background: **Georgia County Guide / GeorgiaData.org**
+(`https://georgiadata.org/data/data-tables`) publishes county-level demographic and
+economic tables — public data, safe to use directly, and good backing for
+`data_reference`. The **Georgia Municipal Association** (`gacities.com`) publishes
+follow-up coverage on RSVP communities, which is how you find out whether a plan was
+actually implemented — **that gap between plan and outcome is the most interesting
+question material in the whole set**, and is what
+`case-studies/donor-funded-plan-implementation-gap.md` is built on.
+
+Two constraints specific to this source:
+
+- **No open license.** CVIOG publications are freely readable but carry no Creative
+  Commons grant. Read as background and write original scenarios; cite by title and
+  URL; do not reproduce renderings, tables, action-item pages, or paragraphs.
+  Restating factual findings — a vacancy count, a traffic volume — is fine as far as
+  copyright goes, but a question built on a named real city's real numbers turns a
+  living community into a teaching specimen and dates badly. Change the city, the
+  names, and the magnitudes; keep the structure of the problem.
+- **Nearly everything is Georgia-specific.** Downtown development authority powers,
+  Rural Zone credits, the Georgia Land Bank Act, and millage-rate blight taxes are
+  creatures of Georgia law. Treat them as examples of a *category* of tool, not as
+  the national baseline. Where a question depends on a Georgia-specific mechanism,
+  say so in the `explanation`.
+
+CVIOG publishes no question bank, no teaching case collection, and no assessment
+material. Every question in this repo is authored by hand.
+
+Serves: community, engagement, performance, leadership, finance.
 
 ### City and state performance audits (government works)
 - Oakland — `https://www.oaklandauditor.com` (Public Works Agency: org structure,

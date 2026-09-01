@@ -25,8 +25,10 @@ CityGovTrainer/
 │   └── *.md                   # One file per case study
 ├── quiz-data/
 │   ├── schema.json            # JSON Schema for question objects
-│   ├── questions.sample.json  # Working examples of each question type
+│   ├── questions.*.json       # Question banks, loaded in config order
 │   └── seeds.json             # Agreed scenario backlog, not yet written
+├── scripts/
+│   └── validate_questions.py  # Schema + taxonomy check; exits non-zero for CI
 ├── data-sources/
 │   └── SOURCES.md             # Vetted external sources + licensing notes
 ├── app/                       # The quiz runner (static, no build step)
@@ -86,11 +88,23 @@ If you point Pages at a topic branch to preview it, remember to set the source b
 to `main` after merging — Pages keeps serving whatever branch it is configured for,
 and deleting that branch takes the site down.
 
+## Validating content
+
+```sh
+python3 scripts/validate_questions.py          # all quiz-data/questions*.json
+```
+
+Checks every question against `quiz-data/schema.json` and `taxonomy/competencies.json`
+— unknown competency tags, duplicate ids, missing option rationales, numeric answers
+with no stated band, dangling `case_study` links, and case studies that list questions
+which do not exist. Exits non-zero on error, so it drops straight into CI. Warnings
+describe the authoring bar in `docs/AUTHORING.md` and do not fail the run.
+
 ## Status
 
-The quiz runner (roadmap Phase 2) is built and runs against the sample questions. No
-question content is finalized; the samples in `quiz-data/` exist to pin down the
-schema, and writing real content is the next step.
+The quiz runner (roadmap Phase 2) is built. The bank holds 21 questions across six
+types, covering all ten competencies, plus three case studies. Content is still the
+bottleneck: `quiz-data/seeds.json` tracks agreed scenarios that are not yet written.
 
 ## Licensing note
 

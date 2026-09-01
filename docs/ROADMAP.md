@@ -8,9 +8,11 @@ expensive to reverse.
 Finalize `taxonomy/competencies.json` and `quiz-data/schema.json` before writing bulk
 content. Renaming a competency ID after 200 questions exist means a migration.
 
-Add a CI check that validates every question file against the schema and rejects
-unknown competency tags. The validation snippet in this repo's history is a starting
-point.
+A CI check now exists: `scripts/validate_questions.py` validates every question file
+against the schema and rejects unknown competency tags, among other checks. It reads
+the allowed fields and types out of `quiz-data/schema.json` rather than restating
+them, so it does not drift when the schema changes. Wiring it into a workflow is all
+that remains.
 
 ## Phase 1 — Twenty questions, one competency
 

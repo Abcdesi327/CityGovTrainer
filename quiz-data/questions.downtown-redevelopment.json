@@ -1,0 +1,557 @@
+[
+  {
+    "id": "downtown-vacancy-carrots-before-sticks",
+    "type": "ordering",
+    "source_tier": "link-only",
+    "case_study": "downtown-vacancy-carrots-and-sticks.md",
+    "competencies": [
+      "community/economic-development",
+      "leadership/change-management"
+    ],
+    "difficulty": 3,
+    "scenario": "Cedar Landing has a 30% downtown building vacancy rate, four redevelopment incentives that most property owners cannot name, a half-time code enforcement officer who has issued four citations in two years, and a visibly neglected city public works annex a block off the main commercial street. Two commissioners want a vacant property registry and a blight tax. All four of the steps below are things the city should eventually do.",
+    "prompt": "Put these four steps in the most defensible order.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Audit and repair the city's own downtown property",
+        "rationale": "Goes early. It is cheap, fast, entirely within city control, and it removes the hypocrisy objection before anyone can raise it at a hearing."
+      },
+      {
+        "id": "b",
+        "text": "Publish and actively promote the incentives that already exist",
+        "rationale": "Goes first. It costs almost nothing, and it eliminates the 'nobody told me help was available' defense that will otherwise appear at every enforcement hearing for years."
+      },
+      {
+        "id": "c",
+        "text": "Adopt minimum maintenance standards and secure an explicit commission commitment to back enforcement",
+        "rationale": "Goes third. The ordinance is meaningless without the political commitment, and both are premature until owners know what assistance exists and the city has cleaned its own house."
+      },
+      {
+        "id": "d",
+        "text": "Adopt a vacant property registry with escalating fees",
+        "rationale": "Goes last. It is the sharpest instrument and lands hardest on a small identifiable group. Deploying it before the softer steps guarantees a reversal at the first sympathetic case."
+      }
+    ],
+    "answer": [
+      "b",
+      "a",
+      "c",
+      "d"
+    ],
+    "explanation": "Sequencing is the whole question. Enforcement adopted before owners know what help exists reads as revenue extraction and collapses politically at the first elderly owner who cannot afford a roof. Incentives publicized first are cheap, build goodwill, and are absorbed mainly by owners already inclined to invest — which is fine, because their visible progress is what makes the later enforcement defensible. Fixing city-owned property costs little and is the difference between a code officer with standing and one who gets asked about the annex at every hearing. Note that all four steps are correct on the merits; a manager who recommends only carrots or only sticks has answered a different and easier question.",
+    "further_reading": [
+      {
+        "title": "Georgia Cities Foundation — Blight & Redevelopment Toolkit",
+        "url": "https://www.gacities.com"
+      }
+    ],
+    "tags": [
+      "sequencing",
+      "composite-case"
+    ]
+  },
+  {
+    "id": "public-property-maintenance-first",
+    "type": "multiple-choice",
+    "source_tier": "link-only",
+    "case_study": "downtown-vacancy-carrots-and-sticks.md",
+    "competencies": [
+      "ethics/transparency",
+      "leadership/council-relations",
+      "services/deferred-maintenance"
+    ],
+    "difficulty": 2,
+    "scenario": "You are drafting minimum property maintenance standards for downtown Cedar Landing. The city's own public works annex, one block off the main commercial street, has peeling paint, a broken security light, and a heaving brick sidewalk that has needed repair for six years.",
+    "prompt": "How should the condition of the city's annex factor into your recommendation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It is irrelevant. Public buildings serve a different function and are generally exempt from private property maintenance codes.",
+        "rationale": "Legally often true, and beside the point. The objection you will face is not a legal one."
+      },
+      {
+        "id": "b",
+        "text": "Fund and complete visible repairs to city-owned downtown property before the standards take effect, and say publicly that you are doing so.",
+        "rationale": "Correct. It is inexpensive, it is entirely within your control, and it converts the most predictable attack on the ordinance into evidence for it."
+      },
+      {
+        "id": "c",
+        "text": "Include public buildings in the ordinance so the standard applies equally, and let enforcement proceed on the same timeline.",
+        "rationale": "Better than ignoring it, but a city that cites itself and then does not fix the problem has documented its own noncompliance rather than resolved it."
+      },
+      {
+        "id": "d",
+        "text": "Address it in the next capital improvement plan cycle so the repair is properly budgeted rather than rushed.",
+        "rationale": "Defensible process, wrong timing. The repair is small enough to handle with maintenance funds, and deferring it to a CIP cycle means the ordinance launches with the objection intact."
+      }
+    ],
+    "answer": "b",
+    "explanation": "The teaching point is credibility as an operational asset rather than a virtue. Every property owner cited under the new standard will point at the annex, and each time they do, the code officer loses ground. The repair is cheap; the standing it buys is not purchasable any other way. The broader principle — a government's own property sets the floor for what it can credibly demand of private owners — shows up in nearly every downtown plan that recommends enforcement.",
+    "tags": [
+      "credibility",
+      "composite-case"
+    ]
+  },
+  {
+    "id": "blight-enforcement-political-will",
+    "type": "multiple-choice",
+    "source_tier": "link-only",
+    "case_study": "downtown-vacancy-carrots-and-sticks.md",
+    "competencies": [
+      "leadership/council-relations",
+      "hr",
+      "community/land-use"
+    ],
+    "difficulty": 3,
+    "scenario": "Cedar Landing's commission is ready to adopt a blight ordinance. Your code enforcement officer is half-time, shared with the building department, and has issued four citations in two years. Roughly a dozen downtown owners will be affected, several of them locally prominent.",
+    "prompt": "What is the most important thing to secure before the ordinance passes?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A legal opinion from the city attorney confirming the ordinance is enforceable.",
+        "rationale": "Necessary, but this is the easy part and almost certainly already in hand. Legal authority is rarely what fails."
+      },
+      {
+        "id": "b",
+        "text": "An explicit, on-the-record commission commitment to back enforcement against politically connected owners, plus the staffing to do it.",
+        "rationale": "Correct. The variable that actually determines whether the ordinance works is whether the officer still has support after the third uncomfortable citation."
+      },
+      {
+        "id": "c",
+        "text": "A public education campaign so no owner can claim surprise.",
+        "rationale": "Genuinely important and should happen — but it protects the process, not the officer. An owner who is not surprised can still make a phone call."
+      },
+      {
+        "id": "d",
+        "text": "A hardship exemption for owners who cannot afford required repairs.",
+        "rationale": "A good design element that keeps the ordinance from producing an unsympathetic first case. It does not address who backs the officer when the first well-connected owner objects."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Blight enforcement fails politically far more often than it fails legally. The predictable failure sequence is: ordinance passes unanimously, officer cites a prominent owner, a commissioner calls the manager, enforcement quietly stops, and the ordinance becomes a dead letter that cost the city credibility to pass. A manager who obtains the ordinance without obtaining the commitment has handed a half-time employee an unwinnable assignment. Getting that commitment on the record, in a public work session, is what makes it costly to reverse.",
+    "tags": [
+      "defensible-alternatives-exist",
+      "composite-case"
+    ]
+  },
+  {
+    "id": "commissioner-property-interest-blight-vote",
+    "type": "multiple-choice",
+    "source_tier": "link-only",
+    "case_study": "downtown-vacancy-carrots-and-sticks.md",
+    "competencies": [
+      "ethics/conflict-of-interest",
+      "leadership/council-relations"
+    ],
+    "difficulty": 2,
+    "scenario": "A Cedar Landing commissioner owns a downtown commercial building. During three work sessions on the proposed blight tax, she has said nothing. Her building is maintained and would almost certainly not be assessed, though it sits in the affected district.",
+    "prompt": "What is the manager's appropriate action?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Raise the question with the city attorney before the vote and ask for a written analysis of whether disclosure or recusal is required.",
+        "rationale": "Correct. The manager surfaces the issue to the right professional at the right time, and does not adjudicate it personally."
+      },
+      {
+        "id": "b",
+        "text": "Nothing. Her building would not be assessed, so there is no financial interest to disclose.",
+        "rationale": "The manager is not positioned to decide that. Whether an interest is disqualifying turns on rules and on whether the effect is particularized or general — a legal judgment, not a factual one about this building."
+      },
+      {
+        "id": "c",
+        "text": "Speak with the commissioner privately and suggest she recuse herself to avoid the appearance of a conflict.",
+        "rationale": "Oversteps. The manager is advising an elected official to give up a vote based on the manager's own reading of ethics rules, without a legal basis in hand."
+      },
+      {
+        "id": "d",
+        "text": "Raise it publicly at the next work session so the full commission can discuss it.",
+        "rationale": "Ambushing a commissioner with an ethics question in open session damages the working relationship and produces a worse answer than a lawyer would give."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Two things are being tested. First, timing: a conflict question raised after the vote is a scandal, and raised before the vote is routine housekeeping. Second, role: the manager's job is to route the question to the city attorney, not to interpret the ethics ordinance or to counsel an elected official on whether to vote. The silence itself is worth noticing — it often signals that the commissioner already senses the problem — but noticing is not the same as acting on a private theory.",
+    "tags": [
+      "composite-case"
+    ]
+  },
+  {
+    "id": "vacant-property-registry-fee-escalation",
+    "type": "numeric",
+    "source_tier": "link-only",
+    "case_study": "downtown-vacancy-carrots-and-sticks.md",
+    "competencies": [
+      "community/land-use",
+      "finance"
+    ],
+    "difficulty": 2,
+    "scenario": "Cedar Landing is modeling a vacant property registry. The draft ordinance charges $1,000 for the first year a building is registered as vacant, and the annual fee increases by $200 for each additional consecutive year of vacancy. A building has been registered and vacant continuously for five years.",
+    "prompt": "What is the fee owed for the fifth year, in dollars?",
+    "answer": 1800,
+    "answer_tolerance": 0,
+    "answer_unit": "$",
+    "explanation": "Year one is $1,000, and each subsequent year adds $200: 1,000 / 1,200 / 1,400 / 1,600 / 1,800. The arithmetic is trivial; the design question is not. Escalating fees are meant to make prolonged vacancy more expensive than either selling or filling the building. That only works if the escalation eventually exceeds the owner's cost of doing nothing, and if the city actually collects. Many such ordinances refund accumulated fees once a building is occupied and certified free of violations, which reframes the fee as a returnable deposit on good behavior rather than a penalty — a distinction that matters a great deal in how the ordinance is received.",
+    "tags": [
+      "composite-case"
+    ]
+  },
+  {
+    "id": "downtown-vacancy-rate-calculation",
+    "type": "numeric",
+    "source_tier": "link-only",
+    "case_study": "downtown-vacancy-carrots-and-sticks.md",
+    "competencies": [
+      "performance/kpi-design",
+      "community/economic-development"
+    ],
+    "difficulty": 1,
+    "scenario": "A survey of Cedar Landing's downtown district counts 118 parcels. Of those, 36 contain vacant structures. Separately, 14 parcels are classified as blighted, and an additional group of parcels are vacant lots or surface parking.",
+    "prompt": "What is the downtown building vacancy rate, as a percentage, using only the figures needed for that specific measure?",
+    "answer": 30.5,
+    "answer_tolerance": 0.6,
+    "answer_unit": "%",
+    "explanation": "36 of 118 is 30.5%. The point of the question is the denominator discipline, not the division. Building vacancy, land vacancy, and blight are three different measures with three different denominators, and they get conflated constantly in public discussion — usually by whoever benefits from the larger number. A manager quoting 45% (which counts vacant lots and parking) as a 'vacancy rate' is not lying, but is describing a different thing, and will be caught out by the first person who reads the underlying survey. Define the measure before quoting it, and keep quoting the same one year over year so the trend means something.",
+    "tags": [
+      "measurement",
+      "composite-case"
+    ]
+  },
+  {
+    "id": "facade-grant-maintenance-covenant",
+    "type": "multiple-choice",
+    "source_tier": "link-only",
+    "case_study": "downtown-vacancy-carrots-and-sticks.md",
+    "competencies": [
+      "ethics/transparency",
+      "finance/procurement",
+      "community/economic-development"
+    ],
+    "difficulty": 2,
+    "scenario": "Cedar Landing awards roughly $25,000 a year in façade grants from the general fund. Two buildings that received grants four years ago have visibly deteriorated again. A commissioner asks whether the program is worth continuing.",
+    "prompt": "What is the most useful change to recommend?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Attach a maintenance covenant to future grants, requiring the owner to maintain the improvement for a defined term.",
+        "rationale": "Correct. It is a standard, low-cost instrument that protects the public investment without shrinking the program or punishing the many owners who did maintain their work."
+      },
+      {
+        "id": "b",
+        "text": "Suspend the program until an evaluation is complete.",
+        "rationale": "Over-corrects on two data points, and suspension is far easier than restart. Programs paused for evaluation frequently never come back."
+      },
+      {
+        "id": "c",
+        "text": "Reduce individual award sizes so the same money reaches more buildings.",
+        "rationale": "Spreads the risk without addressing it, and smaller awards often fall below the threshold at which an owner can afford to do the work at all."
+      },
+      {
+        "id": "d",
+        "text": "Shift the program from grants to low-interest loans so the city recovers its money.",
+        "rationale": "A reasonable instrument in its own right, but it changes who can participate. Owners who cannot service debt are frequently the ones holding the worst buildings."
+      }
+    ],
+    "answer": "a",
+    "explanation": "The underlying principle is stewardship of public money in a subsidy program: when taxpayers fund a private improvement, the public interest does not end at the ribbon cutting. Covenants, clawbacks, and maintenance terms are the ordinary tools for extending that interest across time. The secondary lesson is proportionality — two failures out of several years of awards is a design gap, not a program failure, and a manager who recommends suspension over a covenant has let one commissioner's frustration set the scale of the response.",
+    "tags": [
+      "composite-case"
+    ]
+  },
+  {
+    "id": "plan-implementation-first-agenda",
+    "type": "multiple-choice",
+    "source_tier": "link-only",
+    "case_study": "donor-funded-plan-implementation-gap.md",
+    "competencies": [
+      "engagement/media-relations",
+      "ethics/transparency",
+      "performance/program-evaluation"
+    ],
+    "difficulty": 3,
+    "scenario": "Fourteen months after Cedar Landing adopted its downtown plan, 6 of 41 action items are complete, 4 are in progress, and 31 have not started. A resident who donated $2,500 toward the planning effort asked publicly at the last meeting what her money bought. You have fifteen minutes on the next agenda.",
+    "prompt": "How should you open?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Lead with the six completed items and the momentum they represent, then address the remaining items.",
+        "rationale": "The six are precisely the items that required nothing from anyone. Leading with them reads as deflection, and the person who reads it that way will say so from the podium."
+      },
+      {
+        "id": "b",
+        "text": "State the figure — 6 of 41 — at the top, explain the structural reason, and present a specific restart plan.",
+        "rationale": "Correct. Reporting the unflattering number first is what lets you frame it; reporting it second means someone else already has."
+      },
+      {
+        "id": "c",
+        "text": "Explain that adoption of the plan was itself the deliverable and that implementation was always contingent on future funding.",
+        "rationale": "Technically defensible and politically fatal. It tells sixty-two donors that their contribution bought a document, which is exactly the suspicion being voiced."
+      },
+      {
+        "id": "d",
+        "text": "Ask the commission to reaffirm the plan and direct staff to return with an implementation schedule in ninety days.",
+        "rationale": "Buys time without answering the question asked, and a ninety-day study on a fourteen-month-old problem reads as another delay."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Two related instincts are being trained. The first is that bad numbers get worse when withheld — the manager who volunteers the unflattering metric is reporting, and the one who is asked for it is being audited. The second is that an explanation is only credible when paired with a remedy: '6 of 41, and here is the structural reason, and here are three things funded in the coming budget with dates on them' is a report; '6 of 41, and it is complicated' is an excuse. Note that the honest framing is also the one that protects you, since the number was going to surface regardless.",
+    "tags": [
+      "defensible-alternatives-exist",
+      "composite-case"
+    ]
+  },
+  {
+    "id": "action-items-external-leads",
+    "type": "multiple-choice",
+    "source_tier": "link-only",
+    "case_study": "donor-funded-plan-implementation-gap.md",
+    "competencies": [
+      "leadership/org-design",
+      "performance/program-evaluation",
+      "engagement/participation-design"
+    ],
+    "difficulty": 3,
+    "scenario": "Of Cedar Landing's 31 unstarted action items, 22 are assigned to a lead who is not a city employee — the DDA chair, the chamber director, individual property owners. The nine assigned to city staff have moved further.",
+    "prompt": "What does this pattern most directly indicate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The external partners were not sufficiently committed to the plan they helped create.",
+        "rationale": "Blames the volunteers for a structure the plan imposed on them. Partners without a work plan, a deadline, or a supervisor behave exactly this way, regardless of commitment."
+      },
+      {
+        "id": "b",
+        "text": "The plan assigned accountability to people the city cannot hold accountable, without designating anyone to chase those items.",
+        "rationale": "Correct. This is a design flaw in the plan, and it is fixable — every external item gets a city-side owner responsible for following up, or it gets reclassified honestly."
+      },
+      {
+        "id": "c",
+        "text": "The city should take over the 22 items directly and remove the external partners.",
+        "rationale": "Discards the partnerships that made the plan legitimate, and many of these items genuinely require someone other than the city to act."
+      },
+      {
+        "id": "d",
+        "text": "The plan contained too many action items to be realistic for a city of this size.",
+        "rationale": "Possibly true and worth revisiting, but it does not explain the specific split between internal and external leads, which is the actual signal in the data."
+      }
+    ],
+    "answer": "b",
+    "explanation": "The distinction is between assigning a task and assigning accountability. A named external lead in a plan document looks like accountability and functions as a hope. Volunteers and partner organizations have no deadline, no performance review, and no obligation to your timeline — which is not a criticism of them, it is what volunteering means. The fix is either a city-side owner for each external item whose job is following up, or honest reclassification from 'action item' to 'aspiration.' The related lesson is that this plan also ran on one person's energy, and she left; single-champion dependency is the ordinary case, not bad luck, and institutionalizing against it belongs at adoption rather than after the champion departs.",
+    "tags": [
+      "composite-case"
+    ]
+  },
+  {
+    "id": "plan-progress-indicators",
+    "type": "multi-select",
+    "source_tier": "link-only",
+    "case_study": "donor-funded-plan-implementation-gap.md",
+    "competencies": [
+      "performance/kpi-design",
+      "performance/open-data"
+    ],
+    "difficulty": 2,
+    "scenario": "Cedar Landing's downtown plan contains no indicators. You want to establish a small set of measures that city staff can compile annually without new systems or new positions, and that will still mean something in five years.",
+    "prompt": "Which of these are appropriate starting indicators? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Downtown storefront occupancy, counted the same way each year",
+        "rationale": "Include. Directly tied to the plan's central goal, countable by walking the district, and meaningful over time if the counting method is held constant."
+      },
+      {
+        "id": "b",
+        "text": "Active business licenses within the downtown district boundary",
+        "rationale": "Include. Already collected for other reasons, so the marginal cost is near zero, and it captures activity that a storefront count misses."
+      },
+      {
+        "id": "c",
+        "text": "Number of façade grant applications received per year",
+        "rationale": "Include. A leading indicator of owner intent, and it moves before physical change is visible — useful in the years when nothing looks different yet."
+      },
+      {
+        "id": "d",
+        "text": "Resident satisfaction with downtown, measured by an annual statistically valid survey",
+        "rationale": "Exclude at this stage. A defensible survey costs real money each year, and a city that cannot fund 31 action items will not sustain it. Worth revisiting once the cheap measures are running."
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "The constraint doing the work here is sustainability, not sophistication. An indicator that lapses after two years is worse than none, because it leaves a broken series that invites arguments about why measurement stopped. Start with measures already produced as a byproduct of existing operations, hold the counting method fixed even when a better method appears, and add expensive instruments only once the cheap ones are established. The survey in option D is not a bad measure — it is a bad first measure for this city in this year.",
+    "tags": [
+      "measurement",
+      "composite-case"
+    ]
+  },
+  {
+    "id": "donor-accountability-reporting",
+    "type": "open-response",
+    "source_tier": "link-only",
+    "case_study": "donor-funded-plan-implementation-gap.md",
+    "competencies": [
+      "ethics/transparency",
+      "engagement/participation-design",
+      "leadership/council-relations"
+    ],
+    "difficulty": 3,
+    "scenario": "Sixty-two individuals and small businesses donated $38,000 toward Cedar Landing's downtown planning effort. The money paid for the planning process, and the plan was delivered and adopted. Legally, the city's obligation is complete. Fourteen months later, most of the plan has not been implemented, and one donor has raised the question publicly.",
+    "prompt": "What obligation does the city have to these donors now, and how would you discharge it? Commit to a position before reading the discussion.",
+    "answer": null,
+    "explanation": "There is a defensible position on either side of the legal question, and reasonable managers land differently. What is not defensible is treating the legal answer as the whole answer.\n\nThe case for a minimal obligation: the donation funded a process, the process ran, the deliverable exists, and implementation was always contingent on budget cycles and partner action that no one promised. Manufacturing an ongoing duty to donors sets a precedent where anyone who contributes to a city effort acquires standing to direct it, which is a genuinely bad principle in public administration.\n\nThe case for a larger obligation: sixty-two donors in a city of five thousand are not anonymous contributors, they are the most engaged constituency in town and the people who will fund the next effort. They gave money to a municipal purpose on the strength of a described outcome. Whatever the legal position, the relational obligation is real and cheap to meet.\n\nThe practical resolution most managers converge on is that the obligation is one of reporting rather than performance. The city does not owe donors implementation on their timeline; it owes them an honest, unprompted accounting of where things stand — ideally an annual written status, delivered before anyone asks. Note what has already happened here: because no one reported, the accounting is now being extracted in a public meeting by a frustrated donor, which is the same information at several times the political cost. The strongest version of the answer identifies that timing failure as the actual error, distinct from the implementation failure.",
+    "tags": [
+      "defensible-alternatives-exist",
+      "composite-case"
+    ]
+  },
+  {
+    "id": "state-route-main-street-authority",
+    "type": "multiple-choice",
+    "source_tier": "link-only",
+    "competencies": [
+      "igr/state-preemption",
+      "services/asset-management"
+    ],
+    "difficulty": 1,
+    "scenario": "Rowan Falls' downtown commercial spine, Mill Street, is also State Route 41. The merchants association has campaigned for three years for angled parking on Mill Street, and two council members have promised it.",
+    "prompt": "Which best describes the city's authority over the lane configuration and parking layout on Mill Street?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The city may reconfigure the street as it chooses, since the roadway lies within municipal boundaries.",
+        "rationale": "Municipal boundaries do not determine roadway jurisdiction. A state route running through a city remains under state control."
+      },
+      {
+        "id": "b",
+        "text": "Lane configuration, striping, crossings, posted speed, and right-of-way plantings all require state DOT concurrence.",
+        "rationale": "Correct. On a state route the city is a stakeholder and advocate, not the decision maker, even where the pavement runs past city hall."
+      },
+      {
+        "id": "c",
+        "text": "The city controls parking and crossings; the state controls only travel lanes and posted speed.",
+        "rationale": "A common misconception. Parking layout and crosswalk placement occupy the state right-of-way and are part of the same approval."
+      },
+      {
+        "id": "d",
+        "text": "Authority depends on which government most recently funded maintenance on the corridor.",
+        "rationale": "Maintenance funding arrangements vary and can be complex, but they do not transfer design authority over the route."
+      }
+    ],
+    "answer": "b",
+    "explanation": "A foundational point that trips up new managers and, more consequentially, elected officials who make promises in campaign season. When a downtown main street doubles as a state or federal highway — extremely common in small cities, since the highway is usually why the town is there — the city becomes an advocate in someone else's process. The manager's first duty is to say this out loud, early, to both the council and the merchants, before three more years of advocacy accumulate behind something the city cannot unilaterally deliver. Specific arrangements vary by state, and some states delegate more to municipalities than others, so verify locally rather than assuming.",
+    "tags": [
+      "foundational",
+      "composite-case",
+      "awaiting-case-study"
+    ]
+  },
+  {
+    "id": "road-diet-resurfacing-window",
+    "type": "multiple-choice",
+    "source_tier": "link-only",
+    "competencies": [
+      "igr/interlocal-agreements",
+      "finance/capital-planning",
+      "services/asset-management"
+    ],
+    "difficulty": 3,
+    "scenario": "The state DOT has programmed a resurfacing of Mill Street in eighteen months and has agreed in principle to restripe four travel lanes down to two plus a center turn lane and bike lanes. That configuration consumes the width needed for the angled parking the merchants want. The DOT considers the center turn lane a safety element on a commercial state route and is not inclined to trade it. Final design is in ninety days.",
+    "prompt": "What should the city ask for?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Hold out for angled parking, since it is the community's stated priority and appears in the adopted plan.",
+        "rationale": "Risks the entire reconfiguration to pursue the one element the DOT has signaled it will not concede, and likely pushes everything to the next resurfacing cycle."
+      },
+      {
+        "id": "b",
+        "text": "Accept the DOT configuration and pursue the achievable safety items — speed reduction, a midblock crossing, a crosswalk at the theater — while pursuing angled parking as a separate long-term effort.",
+        "rationale": "Correct. It captures the improvements available in this window and keeps the contested item alive without holding the rest hostage to it."
+      },
+      {
+        "id": "c",
+        "text": "Ask the DOT to delay the resurfacing until the city and merchants reach consensus on the configuration.",
+        "rationale": "Programmed projects are not easily rescheduled, and a delay likely means losing the window entirely. It also outsources a local political problem to the state."
+      },
+      {
+        "id": "d",
+        "text": "Propose the city fund the difference to build angled parking as a separate project after resurfacing.",
+        "rationale": "Worth exploring eventually, but it does not resolve the width conflict — the parking and the turn lane compete for the same pavement regardless of who pays."
+      }
+    ],
+    "answer": "b",
+    "explanation": "The teaching point is that a programmed resurfacing is a window rather than a deadline the city controls. Reconfiguration is nearly free when it rides on paint being laid anyway and expensive as a standalone project, so missing the cycle can mean waiting years. That timing pressure should drive a hard separation between what is achievable now and what is genuinely contested. Bundling the achievable safety items with the disputed parking risks losing both. The hard part is not the analysis but delivering it to a merchants association that has organized around angled parking for three years — which is exactly why the authority conversation should have happened in year one.",
+    "tags": [
+      "defensible-alternatives-exist",
+      "composite-case",
+      "awaiting-case-study"
+    ]
+  },
+  {
+    "id": "side-street-sequencing-multiselect",
+    "type": "multi-select",
+    "source_tier": "link-only",
+    "competencies": [
+      "services/asset-management",
+      "engagement/public-meetings",
+      "community/land-use"
+    ],
+    "difficulty": 2,
+    "scenario": "While the Mill Street process runs through the state DOT, Rowan Falls fully controls three downtown side streets: Lumpkin, Fourth, and Depot. Budget is limited but not zero.",
+    "prompt": "Which arguments support doing streetscape work on the side streets first? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It gives the community a physical demonstration of angled parking and bump-outs that no rendering can match",
+        "rationale": "Include. A built example converts an abstract argument into something residents and merchants can park in and walk through."
+      },
+      {
+        "id": "b",
+        "text": "It shows visible movement during a state process that will otherwise produce nothing observable for eighteen months",
+        "rationale": "Include. Long approval timelines are where public support for plans quietly dies. Visible work is what sustains patience."
+      },
+      {
+        "id": "c",
+        "text": "It builds an evidence base — actual parking counts and speeds — to bring to the state for the Mill Street conversation",
+        "rationale": "Include. Local data from a comparable street is more persuasive to state engineers than a community's stated preference."
+      },
+      {
+        "id": "d",
+        "text": "It satisfies the merchants association's core demand, allowing the city to close out the Mill Street question",
+        "rationale": "Exclude. Side street work is a complement to the Mill Street effort, not a substitute for it, and presenting it as a substitute will be recognized immediately as a bait and switch."
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Working where you have authority while advocating where you do not is a general pattern in intergovernmental work, and it pays three ways: demonstration, momentum, and evidence. The one thing it must never be is a substitute. The merchants asked for angled parking on Mill Street, and delivering it on Depot while quietly letting the Mill Street ask lapse is the kind of maneuver that costs a manager credibility permanently, because it will be understood correctly the moment it happens.",
+    "tags": [
+      "composite-case",
+      "awaiting-case-study"
+    ]
+  },
+  {
+    "id": "road-diet-tradeoff-open-response",
+    "type": "open-response",
+    "source_tier": "link-only",
+    "competencies": [
+      "safety",
+      "engagement/public-meetings",
+      "ethics/transparency"
+    ],
+    "difficulty": 3,
+    "scenario": "In February, a resident was struck in a Mill Street crosswalk and injured. She recovered. Downtown speeds run about 44 mph at the 85th percentile against a posted 35. You are presenting the reconfiguration proposal to a council that includes two members who promised angled parking and will not get it.",
+    "prompt": "How do you use the February incident, if at all, in that presentation? Commit to a position before reading the discussion.",
+    "answer": null,
+    "explanation": "Practitioners disagree here, and the disagreement is worth sitting with rather than resolving too quickly.\n\nOne view: the incident is a fact about the corridor's safety performance, the council is entitled to it, and declining to mention a real injury in a presentation about pedestrian safety is a strange kind of squeamishness that protects no one and weakens a case that should be made.\n\nThe competing view: an injury deployed as an argument is recognizable as such, and the person being deployed lives in town. Councils notice when a manager reaches for an emotional lever, and the reach can undercut the technical case it was meant to support. There is also the resident's own interest in not becoming a municipal talking point without her say.\n\nThe approach most managers find defensible is to present the objective record — speed study results, crash history, the relationship between impact speed and pedestrian survival — and let the February incident sit in the room without being wielded. Everyone present already knows about it. In a city of nine thousand, the manager who states the data plainly and stops has made the point more forcefully than the one who names it. If the incident does need naming, doing so factually and once, without adjectives, is the version that holds up. A strong answer also notices that this is a question about the manager's credibility as an honest broker, which is a resource spent every time an argument is dressed up.",
+    "tags": [
+      "defensible-alternatives-exist",
+      "judgment",
+      "composite-case",
+      "awaiting-case-study"
+    ]
+  }
+]

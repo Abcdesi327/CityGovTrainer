@@ -54,6 +54,11 @@ memo; a service-level reduction menu with dollar values and FTE impacts.
 3. What does the manager owe the bond rating agency, and when?
 4. At what point, if any, does the redevelopment plan belong in the revenue forecast?
 
+## Questions seeded from this case
+
+See `quiz-data/questions.sample.json`:
+`reserves-drawdown-council-pressure`, `structural-versus-one-time-split`
+
 ## Question seeds
 
 - Difficulty 3, multiple-choice on reserve drawdown vs. phased recurring cuts
