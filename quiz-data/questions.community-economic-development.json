@@ -1,0 +1,734 @@
+[
+  {
+    "id": "downtown-reinvestment-ratio-evidence",
+    "type": "multiple-choice",
+    "community_type": "college-town",
+    "competencies": [
+      "community/economic-development",
+      "ethics/transparency",
+      "performance/program-evaluation",
+      "leadership/council-relations"
+    ],
+    "difficulty": 3,
+    "scenario": "At a budget hearing in Ashgrove (population 21,000, anchored by a state university), a council member argues for a new Main Street program by citing the national network's reported $18-to-$1 reinvestment ratio. You know the figure comes from data the participating communities report about themselves, with no independent verification, and that data quality in smaller programs is weaker still. You also think a downtown program is probably a good use of the money.",
+    "prompt": "How should you respond, on the record, at that hearing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Support the proposal using the $18-to-$1 figure, since it is the industry's own published number and the program is one you favor anyway.",
+        "rationale": "Borrowing a number you know is unverified spends your credibility on someone else's arithmetic. The first person who reads the methodology finds it, and then every figure you present is suspect."
+      },
+      {
+        "id": "b",
+        "text": "Say the ratio is self-reported and unverified, that you would not budget against it, and that you support the program on grounds you can defend — and name those grounds.",
+        "rationale": "Correct. It separates the claim from the conclusion. The council still gets a recommendation, and it rests on something that survives scrutiny."
+      },
+      {
+        "id": "c",
+        "text": "Correct the record on the ratio and recommend against funding until an independent evaluation of downtown programs is available.",
+        "rationale": "Lets the weakness of one statistic decide a question it does not settle. Waiting for independent evaluation of a modest program is a standard no dollar of this budget could meet."
+      },
+      {
+        "id": "d",
+        "text": "Avoid the methodological question in open session and raise your concerns with the council member privately afterward.",
+        "rationale": "The number is now in the public record unchallenged, and correcting it later looks like reversal. Private correction also denies the rest of the council the basis for its vote."
+      }
+    ],
+    "answer": "b",
+    "explanation": "The hard part is that the manager agrees with the conclusion and distrusts the evidence for it, which is the ordinary condition of the job rather than a dilemma. Endorsing a number you cannot defend to win a vote you were going to win anyway is the worst trade available: it risks the one asset — being believed — on a claim you did not need. Say plainly what the figure is and is not, then make the case on grounds that hold: vacancy trend, permit activity, what comparable programs cost, what the city would measure. The tradeoff is real and worth naming — you are handing a council member a weaker argument than the one they brought, in public, and that costs something in the relationship. It costs less than being the manager whose numbers need checking.",
+    "further_reading": [
+      {
+        "title": "Main Street America — Collective Impact",
+        "url": "https://mainstreet.org/our-network/collective-impact"
+      },
+      {
+        "title": "Van Leuven, The Impact of Main Street Revitalization",
+        "url": "https://andrewvanleuven.com/files/papers/wp_msp2021.pdf"
+      }
+    ],
+    "tags": [
+      "defensible-alternatives-exist",
+      "evidence-quality"
+    ],
+    "source_tier": "link-only"
+  },
+  {
+    "id": "wastewater-provider-ceases-operations",
+    "type": "ordering",
+    "community_type": "rural-regional-cooperation",
+    "competencies": [
+      "services/utilities",
+      "igr/grants",
+      "finance/capital-planning",
+      "community"
+    ],
+    "difficulty": 3,
+    "scenario": "Little Vernon has 360 residents and 13 businesses. The private company that has operated its wastewater collection and treatment for thirty years has notified the town it will cease operations in 120 days. The town has no utility staff, no engineering capacity, and a general fund under $500,000. The regional planning commission has a circuit-rider engineer. State CDBG funds are available on an annual competitive cycle.",
+    "prompt": "Order these four steps from first to last.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Secure continuity of operations past the shutoff date — an emergency contract, a receivership, or an interim operator through the regional commission",
+        "rationale": "First. Untreated discharge is a public health and permit violation on day 121. Nothing else on this list matters if the plant stops."
+      },
+      {
+        "id": "b",
+        "text": "Get an engineering condition assessment and valuation of the system the town would be acquiring",
+        "rationale": "Second. You cannot negotiate a purchase, set a rate, or size a grant request for an asset whose condition you have not established. It also tells you whether acquiring is even the right answer."
+      },
+      {
+        "id": "c",
+        "text": "Adopt a rate structure that covers operations and a renewal and replacement reserve for the system as assessed",
+        "rationale": "Third. Rates have to follow the condition assessment, not precede it, and a grant application is stronger when the applicant has already priced the ongoing obligation."
+      },
+      {
+        "id": "d",
+        "text": "Submit the state CDBG application for capital funding",
+        "rationale": "Last of these, though it should be prepared in parallel. The application is competitive and needs the assessment, the rate commitment, and a documented national objective — filing before those exist wastes the cycle."
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "explanation": "Continuity first is not obvious to everyone: the instinct in a small town facing a large capital problem is to reach for the grant, because the grant is the part that feels solvable. But the deadline that binds is the shutoff, and an emergency operating arrangement is cheap relative to a consent order. After that the sequence is ordinary asset management run at speed — know what you are buying, price what it costs to keep, then ask someone else to help with the capital. The tradeoff is that an emergency operator will cost more per month than a negotiated one, and the town will pay that premium for the months it takes to do the rest properly. That is the correct trade. Note also what this town has that its size disguises: the regional commission is staff capacity the town could never hire, and a manager who has not built that relationship before the crisis is negotiating it during one.",
+    "further_reading": [
+      {
+        "title": "HUD Exchange — CDBG Project Profiles",
+        "url": "https://www.hudexchange.info/programs/cdbg/project-profiles/"
+      }
+    ],
+    "tags": [
+      "sequencing"
+    ],
+    "source_tier": "public-domain"
+  },
+  {
+    "id": "cdbg-national-objective-area-benefit",
+    "type": "multiple-choice",
+    "community_type": "inner-ring-suburb",
+    "competencies": [
+      "igr/grants",
+      "finance",
+      "ethics/transparency",
+      "community"
+    ],
+    "difficulty": 2,
+    "scenario": "Fairhaven is an inner-ring suburb of 34,000 and a CDBG entitlement community. Staff have programmed a popular streetscape project on a commercial corridor and assumed it qualifies under the low- and moderate-income area benefit national objective. Asked for the underlying numbers, the community development director says the service area is 'roughly half' LMI and that the survey data is several years old.",
+    "prompt": "What should you do before the project goes into the action plan?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Establish the service area and its LMI percentage from current acceptable data, and only then decide which national objective the project can meet — if any.",
+        "rationale": "Correct. Area benefit turns on a defined service area and a documented LMI share. 'Roughly half' is on the wrong side of the threshold as often as not, and the determination has to precede the programming decision."
+      },
+      {
+        "id": "b",
+        "text": "Program it under area benefit and document the LMI percentage during implementation, when staff have time to run the survey.",
+        "rationale": "Reverses the order the regulation requires and puts the city at risk of repaying drawn funds. National objective compliance is a precondition, not a deliverable."
+      },
+      {
+        "id": "c",
+        "text": "Reclassify it under the prevention or elimination of slums and blight so the LMI question does not arise.",
+        "rationale": "Slum and blight has its own documentation burden — a designated area, evidence of the conditions, and a project that addresses them. Switching objectives to dodge a numbers problem invites exactly the finding you are avoiding."
+      },
+      {
+        "id": "d",
+        "text": "Fund it from the general fund instead, and reserve CDBG for projects with clean documentation.",
+        "rationale": "A legitimate fallback, and it may be where this lands. But choosing it before establishing the facts gives up grant funds the project may well qualify for."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Area benefit requires a service area whose residents are at least 51% low- and moderate-income, established from HUD-provided data or a survey meeting HUD's standards. (Some grantees qualify under an exception for communities where no area reaches that share; check whether yours does rather than assuming.) The teaching point is order of operations: the national objective determination is the eligibility gate, and programming a project first and documenting later is how a grantee ends up repaying funds years afterward, usually under a different manager. The tradeoff is that doing this properly may kill a popular project, and the council will hear that as staff obstruction. Establishing the number early means that conversation happens before expectations are set publicly, which is the only version of it that goes well.",
+    "further_reading": [
+      {
+        "title": "HUD Exchange — CDBG Program",
+        "url": "https://www.hudexchange.info/programs/cdbg/"
+      }
+    ],
+    "source_tier": "public-domain"
+  },
+  {
+    "id": "cdbg-lmi-area-benefit-threshold",
+    "type": "numeric",
+    "community_type": "inner-ring-suburb",
+    "competencies": [
+      "igr/grants",
+      "performance/kpi-design",
+      "finance"
+    ],
+    "difficulty": 2,
+    "scenario": "A survey meeting HUD's standards covers Fairhaven's proposed streetscape service area. Of 2,480 residents in the service area, 1,240 are low- and moderate-income.",
+    "prompt": "What share of the service area is low- and moderate-income, as a percentage?",
+    "answer": 50.0,
+    "answer_tolerance": 0.3,
+    "answer_unit": "%",
+    "explanation": "1,240 of 2,480 is exactly 50.0%, which does not meet the 51% area benefit threshold — by ten residents. The arithmetic is trivial and the point is that the threshold is a cliff, not a slope: 50.0% and 51.0% are the same neighborhood and opposite eligibility answers. Two things follow. First, the service area boundary is a real decision, and redrawing it to capture eligibility is defensible only when the new boundary honestly describes who the project serves — drawing to the answer is how findings happen. Second, a project this close to the line should have its documentation built to survive a monitoring visit years later, because it will get one.",
+    "further_reading": [
+      {
+        "title": "HUD Exchange — CDBG Program",
+        "url": "https://www.hudexchange.info/programs/cdbg/"
+      }
+    ],
+    "tags": [
+      "measurement"
+    ],
+    "source_tier": "public-domain"
+  },
+  {
+    "id": "convening-without-money",
+    "type": "ordering",
+    "community_type": "legacy-industrial",
+    "competencies": [
+      "leadership/change-management",
+      "engagement/participation-design",
+      "igr/interlocal-agreements",
+      "community/economic-development"
+    ],
+    "difficulty": 3,
+    "scenario": "Millbrook (population 41,000) lost its anchor manufacturer in the 1980s. Three nonprofits, a hospital, a community college, and the city all run workforce programs aimed at the same residents, none aware of the others' caseloads. The city has the smallest budget of the six and the only democratic mandate. A regional funder has signalled it would support a collaborative, but wants to see one first.",
+    "prompt": "Order these four moves from first to last.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Convene the six around a shared description of the problem, with no ask and no city program attached",
+        "rationale": "First. Every party will read an early ask as the city recruiting them into its own initiative. A meeting whose only product is a shared picture is the one they will all attend."
+      },
+      {
+        "id": "b",
+        "text": "Agree one measurable outcome the group will hold itself to, and who reports it",
+        "rationale": "Second. A collaborative without a named number is a standing meeting. Agreeing the measure early, while goodwill is high, is far easier than retrofitting accountability later."
+      },
+      {
+        "id": "c",
+        "text": "Assign each partner a defined piece of the work with a named owner and a date",
+        "rationale": "Third. Division of labour only sticks once the group agrees what it is collectively trying to move; assigned before that, it hardens existing programs in place."
+      },
+      {
+        "id": "d",
+        "text": "Take the collaborative to the regional funder as a funding request",
+        "rationale": "Last. The funder asked to see a collaborative, and the thing that makes one real is a shared measure and named owners. Arriving earlier converts the group into applicants before it is a group."
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "explanation": "The city's asset here is legitimacy, not money, and legitimacy is spent differently: it buys the ability to call a meeting that everyone attends and to ask a question nobody else can ask without it sounding like competition. The sequence protects that. The most common failure is jumping to the funding request, because the money is the visible prize — but a collaborative assembled to chase a grant dissolves when the grant ends, and funders have seen enough of them to recognize one. The tradeoff worth naming: this order is slower, and the funder's interest may not wait. A manager who takes that risk should say so out loud to the council rather than let it look like drift. Note too that this arrangement depends heavily on the person convening it, which is a foreseeable risk — build the standing report and the named owners now, so the collaborative survives the manager who started it.",
+    "further_reading": [
+      {
+        "title": "Boston Fed — Working Cities / Working Places Challenge",
+        "url": "https://www.bostonfed.org/workingplaces/"
+      }
+    ],
+    "tags": [
+      "sequencing",
+      "defensible-alternatives-exist"
+    ],
+    "source_tier": "link-only"
+  },
+  {
+    "id": "ten-year-target-interim-indicators",
+    "type": "multi-select",
+    "community_type": "legacy-industrial",
+    "competencies": [
+      "performance/program-evaluation",
+      "performance/kpi-design",
+      "finance/budget-process",
+      "leadership/council-relations"
+    ],
+    "difficulty": 3,
+    "scenario": "Three years ago a Millbrook cross-sector collaborative committed publicly to cutting the share of single-parent households below the federal poverty line from 35% to 20% within ten years. You arrived last year. The headline share has moved to 33%, which is inside the margin of error of the survey it comes from. The council wants to know whether to keep funding the city's $180,000 annual contribution.",
+    "prompt": "Which of these belong in your recommendation? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "That the headline indicator cannot answer the question at year three, because a ten-year population outcome does not move detectably in three years",
+        "rationale": "Include. Reporting a statistically indistinguishable change as progress or as failure both misrepresent it. Saying so is the precondition for an honest answer."
+      },
+      {
+        "id": "b",
+        "text": "Interim measures the collaborative can move and be judged on now — families enrolled, placements retained at six months, partner cost per placement",
+        "rationale": "Include. A ten-year target needs a chain of shorter measures underneath it, and their absence is itself a finding about how the collaborative was set up."
+      },
+      {
+        "id": "c",
+        "text": "Whether the collaborative still has the partners and the shared measure it started with, independent of the outcome number",
+        "rationale": "Include. In a cross-sector effort the durable asset is the working relationship. A collaborative that has quietly become one nonprofit and a mailing list is a different funding decision than one that is intact."
+      },
+      {
+        "id": "d",
+        "text": "A recommendation to keep funding at the current level until the ten-year mark, since the target was a public commitment",
+        "rationale": "Exclude. A prior public commitment is a reason to be careful about withdrawing, not a reason to suspend judgment for seven more years. Treating the pledge as binding is how a program outlives its evidence."
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Long-horizon targets are good politics and bad management instruments on their own: they are chosen because they describe something that matters, and they are unmeasurable on the timescale a budget runs. The manager's job is to build the intermediate chain that connects the annual appropriation to the ten-year claim, and to be candid that the top-line number is not evidence yet in either direction. The tradeoff is that this is an unsatisfying answer to a council that asked a yes-or-no question, and some members will hear it as evasion. It is worth pairing with a decision rule — what you would need to see by year five to keep recommending it — so that the honesty comes with a commitment attached rather than an open-ended wait.",
+    "further_reading": [
+      {
+        "title": "Boston Fed — Working Cities / Working Places Challenge",
+        "url": "https://www.bostonfed.org/workingplaces/"
+      }
+    ],
+    "tags": [
+      "measurement",
+      "defensible-alternatives-exist"
+    ],
+    "source_tier": "link-only"
+  },
+  {
+    "id": "lead-service-line-sequencing",
+    "type": "ordering",
+    "community_type": "large-legacy-metro",
+    "competencies": [
+      "services/utilities",
+      "safety/public-health",
+      "community",
+      "finance/capital-planning",
+      "igr"
+    ],
+    "difficulty": 3,
+    "scenario": "Wexford (population 310,000) faces a state mandate to replace all lead service lines within ten years. The utility has no complete inventory; the best estimate is 24,000 to 40,000 lines, concentrated in the oldest and lowest-income neighborhoods. State funds cover part of the cost and require an inventory before disbursement. Replacing only the public side of a line and leaving the private side can raise lead levels at the tap for a period afterward.",
+    "prompt": "Order these four from first to last.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Complete the service line inventory, using predictive modelling and records review to prioritize field verification",
+        "rationale": "First. It is the gate on state money, it converts a 16,000-line uncertainty band into a program you can price, and every other decision depends on knowing where the lines are."
+      },
+      {
+        "id": "b",
+        "text": "Adopt a replacement sequence and publish the criteria behind it, including how neighborhood exposure and vulnerable populations are weighted",
+        "rationale": "Second. With more lines than years, sequence is the whole equity question. Publishing the criteria before the first block is chosen is what makes the answer defensible when a neighborhood asks why it is in year eight."
+      },
+      {
+        "id": "c",
+        "text": "Resolve the private-side problem — replacement authority, cost coverage, and consent — before crews begin",
+        "rationale": "Third. Partial replacements can leave residents worse off for a period. A program that starts before this is settled will produce exactly that outcome in its first year, in its most exposed neighborhoods."
+      },
+      {
+        "id": "d",
+        "text": "Begin full replacements at scale under the published sequence",
+        "rationale": "Last. Everything above is a precondition for doing this without creating a harm or a scandal, and none of it takes long relative to a ten-year mandate."
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "explanation": "This is where public works, public health, equity and intergovernmental finance stop being separate problems. Three things make it hard. The inventory looks like a delay and is actually the fastest route to money and to a defensible plan. The sequence is presented as an engineering question and is a distributive one — with a ten-year window and concentrated exposure, deciding who goes last is a policy choice that belongs in front of the council with its reasoning attached. And the private side is the trap: a city that replaces its half and declares victory can raise exposure at the tap in the homes it was trying to protect, which is worse than not having started. The tradeoff is that all of this delays visible progress in year one, on a mandate whose clock is running and whose politics reward digging. Specific requirements vary by state and have been changing; confirm the mandate and the funding conditions locally rather than assuming this shape.",
+    "further_reading": [
+      {
+        "title": "Chicago Fed — Community Development and Policy Studies",
+        "url": "https://www.chicagofed.org/region/community-development-policy-studies"
+      }
+    ],
+    "tags": [
+      "sequencing",
+      "defensible-alternatives-exist"
+    ],
+    "source_tier": "link-only"
+  },
+  {
+    "id": "rural-data-capacity-targeting",
+    "type": "multiple-choice",
+    "community_type": "persistent-poverty-rural",
+    "competencies": [
+      "performance/data-culture",
+      "performance/open-data",
+      "community",
+      "engagement/participation-design"
+    ],
+    "difficulty": 2,
+    "scenario": "Tallow County (population 9,400) wants to target housing rehabilitation where it will do the most good. There is no local data system, parcel records are paper for anything before 2009, and the county's American Community Survey estimates carry margins of error wide enough that two neighborhoods with visibly different conditions are statistically indistinguishable.",
+    "prompt": "What is the most useful first move?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Build a small, repeatable local dataset the county can maintain — a windshield condition survey on a fixed route, coded the same way each year.",
+        "rationale": "Correct. It produces data at the geography the decision is actually made at, it is within the county's capacity to sustain, and holding the method fixed makes the second year worth more than the first."
+      },
+      {
+        "id": "b",
+        "text": "Commission a consultant study to establish a baseline using the best available federal and commercial data.",
+        "rationale": "Buys a document rather than a capability. When the study is two years old the county is back where it started, and the underlying federal estimates have the same margin problem at this population."
+      },
+      {
+        "id": "c",
+        "text": "Use the ACS estimates as they stand, since they are the standard source and defensible on that basis.",
+        "rationale": "Defensible as a citation and useless as a targeting instrument. Estimates whose error bands overlap cannot rank two neighborhoods, which is precisely the decision being made."
+      },
+      {
+        "id": "d",
+        "text": "Target the neighborhoods with the most code complaints, since that data already exists.",
+        "rationale": "Administrative data reflects who complains as much as where conditions are worst, and in a county with thin enforcement it under-counts exactly the areas with the least capacity to complain."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Small places are told to be data-driven with instruments built for large ones. Federal survey estimates are designed for populations that a county of 9,400 does not have, and their margins of error at that scale can be wider than the differences being measured — which is a fact about the instrument, not a reason to guess. The move is to generate the small amount of local data the decision actually needs, in a form the county can repeat without new staff. The tradeoff is honest: a windshield survey is cruder than a consultant's model and is subject to who is doing the driving, so the coding rules and the route have to be written down and held. In exchange the county owns a series that gets more valuable every year, instead of a study that starts depreciating on delivery.",
+    "further_reading": [
+      {
+        "title": "Federal Reserve Board — Community Development Publications",
+        "url": "https://www.federalreserve.gov/consumerscommunities/community-development-publications.htm"
+      }
+    ],
+    "tags": [
+      "measurement"
+    ],
+    "source_tier": "link-only"
+  },
+  {
+    "id": "abatement-but-for-additionality",
+    "type": "open-response",
+    "community_type": "high-growth-sunbelt",
+    "competencies": [
+      "finance/incentives",
+      "ethics/transparency",
+      "community/economic-development",
+      "leadership/council-relations"
+    ],
+    "difficulty": 3,
+    "scenario": "Copper Mesa (population 88,000, growing 3% a year) has a request from a manufacturer for a ten-year property tax abatement worth roughly $9 million in forgone revenue, against 300 promised jobs. The company's site selection consultant says the firm will locate in another state without it, but will not name the competing site. Two council members have already appeared with the company at a groundbreaking-style press event. Your community is short of industrial land and long on residential growth that is outrunning its infrastructure.",
+    "prompt": "How do you evaluate and present this request? Commit to a position before reading the discussion.",
+    "answer": null,
+    "explanation": "The concept the request turns on is additionality — the share of incented activity that would not have happened anyway. An abatement that rewards a decision already made buys nothing, and the published estimates of how often incentives are actually decisive are uncomfortably low; Bartik's work on plausible 'but for' percentages puts the defensible range well below what most proposals assume. An unnamed competing site is not evidence, and a consultant's assertion is a negotiating position, not a finding.\n\nThat does not make refusal the answer, and managers land differently here. One view: the expected value is negative under any honest additionality assumption, the manager should say so plainly, and a council that proceeds anyway has at least done it with the number in front of it. The competing view: a city short of industrial land has a strategic interest that a per-job calculation does not capture, and treating the request as a pure arithmetic problem misreads what the council is buying.\n\nWhat is not defensible is presenting a gross jobs figure as a benefit, or a foregone revenue figure as a cost, without adjusting either for additionality — that is the analysis the proposal arrives with, and reproducing it is how a manager becomes a conduit. Strong answers do several things: state an explicit additionality assumption and show the result at more than one value; distinguish forgone revenue from cash outlay and name the service costs 300 households bring; insist on performance conditions and clawbacks so the abatement follows the jobs rather than preceding them; and handle the two councilmembers' public appearance as a fact about the politics to be managed, not a reason to soften the analysis. The strongest answers notice that the scarce industrial land is the real leverage — a city with somewhere to put a factory and a growth problem to fund has more room to negotiate than the request implies.",
+    "further_reading": [
+      {
+        "title": "Upjohn Institute — Incentives research portal",
+        "url": "https://research.upjohn.org/incentives/"
+      },
+      {
+        "title": "Pew — Economic Development Incentives Evaluation Toolkit",
+        "url": "https://www.pew.org/en/research-and-analysis/data-visualizations/2024/economic-development-incentives-evaluation-toolkit"
+      }
+    ],
+    "tags": [
+      "defensible-alternatives-exist",
+      "judgment"
+    ],
+    "source_tier": "link-only"
+  },
+  {
+    "id": "impact-study-multiplier-cost-per-job",
+    "type": "numeric-multi",
+    "community_type": "high-growth-sunbelt",
+    "competencies": [
+      "finance/incentives",
+      "performance/program-evaluation",
+      "ethics/transparency"
+    ],
+    "difficulty": 3,
+    "scenario": "A developer's economic impact study supporting a $12 million incentive package claims 500 direct jobs and applies a local employment multiplier of 4.0, for 2,000 total jobs. The literature on realistic local job multipliers puts a defensible figure for this industry nearer 2.0. Separately, an honest additionality assumption is that roughly 20% of the direct jobs would not have occurred here without the incentive.",
+    "prompt": "Work out the cost per job under each assumption. Round to the nearest dollar.",
+    "parts": [
+      {
+        "id": "as-claimed",
+        "label": "Cost per total job, as the study presents it",
+        "answer": 6000,
+        "answer_tolerance": 50,
+        "unit": "$",
+        "rationale": "$12,000,000 ÷ 2,000 = $6,000. This is the number in the executive summary, and it is the only one most readers will see."
+      },
+      {
+        "id": "realistic-multiplier",
+        "label": "Cost per total job at a multiplier of 2.0",
+        "answer": 12000,
+        "answer_tolerance": 50,
+        "unit": "$",
+        "rationale": "500 × 2.0 = 1,000 total jobs; $12,000,000 ÷ 1,000 = $12,000. Correcting only the multiplier doubles the cost per job."
+      },
+      {
+        "id": "with-additionality",
+        "label": "Cost per total job at a multiplier of 2.0 and 20% additionality",
+        "answer": 60000,
+        "answer_tolerance": 250,
+        "unit": "$",
+        "rationale": "500 × 20% = 100 caused direct jobs; × 2.0 = 200 total; $12,000,000 ÷ 200 = $60,000. The two corrections compound rather than add."
+      }
+    ],
+    "explanation": "The point is that the two standard corrections multiply. An inflated multiplier and an unstated additionality assumption each move the answer by a factor of two to five, and together they move it by ten — from a figure that sounds like a bargain to one that invites a different decision entirely. Neither correction requires disputing the developer's honesty; both are defaults that impact studies adopt because nobody asks. The manager's job is to ask for the assumptions, restate the result at defensible values, and present the range rather than a point. The tradeoff: this analysis will read to the council as staff arguing against jobs, and it is worth saying explicitly that the corrected number is not an argument for refusal — it is the price, and the council is entitled to pay it knowingly. Note the shared structure with tax increment financing, where growth inside a district can be displaced from elsewhere in the same jurisdiction rather than created. Different instrument, same question: compared to what would have happened anyway?",
+    "further_reading": [
+      {
+        "title": "Upjohn Institute — Realistic Local Job Multipliers",
+        "url": "https://research.upjohn.org/incentives/"
+      },
+      {
+        "title": "Upjohn Institute — Bartik benefit-cost model user's guide",
+        "url": "https://research.upjohn.org/reports/287/"
+      }
+    ],
+    "tags": [
+      "decomposition",
+      "measurement"
+    ],
+    "source_tier": "link-only"
+  },
+  {
+    "id": "neighbor-jurisdiction-incentive-poaching",
+    "type": "multi-select",
+    "community_type": "inner-ring-suburb",
+    "competencies": [
+      "finance/incentives",
+      "igr/interlocal-agreements",
+      "ethics",
+      "leadership/council-relations"
+    ],
+    "difficulty": 3,
+    "scenario": "A 140-employee firm in Fairhaven has been offered a package by the adjacent township to relocate four miles, staying in the same labor market and the same county. Matching would cost Fairhaven more in forgone revenue than the firm generates. The mayor wants to match. The county economic development partnership, which both jurisdictions fund, has no anti-poaching provision.",
+    "prompt": "Which of these should shape your recommendation? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "That a four-mile move within the same labor market creates no new regional jobs, so the two jurisdictions are bidding over where existing activity sits",
+        "rationale": "Include. It names what is actually being purchased. The employees keep their jobs either way; what moves is the tax base and the commute."
+      },
+      {
+        "id": "b",
+        "text": "That matching above the firm's value to the city is a loss even if it works, and sets the price for every subsequent retention conversation",
+        "rationale": "Include. Incentives are precedent-setting in a way one-off analyses miss — the next three firms will have heard what Fairhaven paid."
+      },
+      {
+        "id": "c",
+        "text": "That the county partnership is the forum where an anti-poaching or revenue-sharing understanding could be raised, whatever happens with this firm",
+        "rationale": "Include. The structural problem outlives this deal, and the jointly funded body is the only place both jurisdictions sit. Raising it while losing a firm is when it is most likely to be heard."
+      },
+      {
+        "id": "d",
+        "text": "That the firm's stated intention to move should be treated as settled, since it has a written offer in hand",
+        "rationale": "Exclude. A written offer is leverage, not a decision. Relocation carries real costs — buildout, downtime, employee attrition — and the firm's own numbers on those are worth asking for before conceding the premise."
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Jurisdictional competition within one labor market is close to a pure transfer: the region gains nothing, the winning jurisdiction pays for what already existed, and the firm captures the difference. Knowing that does not settle what Fairhaven should do, because the tax base is real to Fairhaven even when it is not new to the region — a manager who refuses on regional-welfare grounds is spending their own residents' revenue on a principle their neighbors have not adopted. The recommendation that holds is usually a bounded counter tied to what the firm is actually worth, plus an explicit push to change the rules of the game at the county partnership. Name the tradeoff plainly: raising anti-poaching at the partnership may cost Fairhaven a tool it would want in the other direction next year, and that is a genuine cost, not an obvious win.",
+    "further_reading": [
+      {
+        "title": "Upjohn Institute — Incentives research portal",
+        "url": "https://research.upjohn.org/incentives/"
+      }
+    ],
+    "tags": [
+      "defensible-alternatives-exist"
+    ],
+    "source_tier": "link-only"
+  },
+  {
+    "id": "clawback-partial-compliance",
+    "type": "ordering",
+    "community_type": "legacy-industrial",
+    "competencies": [
+      "finance/incentives",
+      "ethics/transparency",
+      "hr",
+      "leadership/council-relations"
+    ],
+    "difficulty": 3,
+    "scenario": "Four years into a ten-year agreement, Millbrook's largest private employer has exceeded its $40 million capital investment commitment but reached 210 of the 400 jobs it committed to. The agreement contains a pro-rata clawback tied to job commitments. The company says the shortfall is automation it did not foresee, and that enforcement would jeopardize a second phase.",
+    "prompt": "Order these four steps from first to last.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Establish the facts against the agreement: verified job counts by the contract's own definition, the investment actually made, and precisely what the clawback provision requires",
+        "rationale": "First. Every subsequent conversation depends on whether 210 is the contract's number or the company's, and on whether the clawback is discretionary or automatic."
+      },
+      {
+        "id": "b",
+        "text": "Get the city attorney's reading of whether enforcement is mandatory, and of the city's exposure if it is waived",
+        "rationale": "Second. Whether the council even has discretion is a legal question, and a manager who negotiates before knowing the answer may be bargaining away something that was never theirs to trade."
+      },
+      {
+        "id": "c",
+        "text": "Brief the full council together on the facts, the legal position, and the options — including waiver, partial recovery, and renegotiation against phase two",
+        "rationale": "Third. This is the council's decision, and it must be made by all of them at once. Individually briefed members on a question this political produces leaks and separate deals."
+      },
+      {
+        "id": "d",
+        "text": "Open negotiation with the company on the option the council directs",
+        "rationale": "Last. Negotiating before the council has set a position means the manager is inventing the city's position at the table, and will be held to it."
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "explanation": "Clawbacks exist precisely for outcomes like this one, and they are hardest to use exactly when they matter — against the largest employer, with a second phase dangled. Two habits do the work. Establish the facts against the instrument before anyone argues about fairness, because 'they hit their investment number' is true and irrelevant if the clawback is tied to jobs. And keep the manager in the advisory seat: whether to enforce against the town's biggest employer is a political judgment with real consequences either way, and it belongs to the council, briefed together and on the record. The tradeoff is genuine and should be presented as one — enforcing recovers money and signals that commitments bind, and it may cost a second phase in a town that needs one; waiving preserves the relationship and teaches every future applicant what Millbrook's agreements are worth. The automation explanation is worth taking seriously as a fact about the world and not as a legal excuse: it is a reason to write future agreements against outcomes the company controls, which is the durable lesson here.",
+    "further_reading": [
+      {
+        "title": "Pew — Lessons from a decade of studying state economic development tax incentives",
+        "url": "https://www.pew.org/en/research-and-analysis/articles/2025/08/08/lessons-from-a-decade-of-studying-state-economic-development-tax-incentives"
+      }
+    ],
+    "tags": [
+      "sequencing",
+      "defensible-alternatives-exist"
+    ],
+    "source_tier": "link-only"
+  },
+  {
+    "id": "disaster-recovery-not-restoration",
+    "type": "multi-select",
+    "community_type": "disaster-exposed-coastal",
+    "competencies": [
+      "community/disaster-recovery",
+      "finance/capital-planning",
+      "igr/grants",
+      "leadership/change-management"
+    ],
+    "difficulty": 3,
+    "scenario": "Eighteen months after a hurricane, Bay Point (population 26,000) must commit its CDBG-DR economic revitalization allocation. The pre-storm economy was commercial fishing and seasonal tourism, both of which were declining before the storm. Options on the table are restoring the working waterfront, funding workforce training toward health care and marine trades, and a visitor marketing campaign. Residents who lost boats want the waterfront.",
+    "prompt": "Which considerations should carry weight in the decision? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "That the pre-storm trajectory was already downward, so restoring the prior base restores a decline as well as a livelihood",
+        "rationale": "Include. Recovery funding is the rare moment when the capital exists to change a trajectory, and spending it to rebuild exactly what was there forgoes that."
+      },
+      {
+        "id": "b",
+        "text": "That the funds carry their own eligibility, national objective, and expenditure deadline constraints, which narrow the real menu",
+        "rationale": "Include. Disaster recovery money is not general-purpose capital; a plan that cannot be documented or spent in time is not an option regardless of its merits."
+      },
+      {
+        "id": "c",
+        "text": "That workforce training pays out on a timescale longer than the visible recovery the community is measuring, and needs to be presented that way",
+        "rationale": "Include. Training placed against an expectation of immediate restoration will read as the city choosing something else over the residents who lost boats."
+      },
+      {
+        "id": "d",
+        "text": "That the strongest claim on recovery funds belongs to those who suffered the most direct losses",
+        "rationale": "Exclude as a decision rule. It is a real moral intuition and it is why the room feels the way it does, but recovery funds are for the community's economic future, and allocating by depth of individual loss is neither what the program authorizes nor a strategy."
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Recovery is not restoration, and the gap between those words is where the hardest post-disaster decisions live. The money arrives at the one moment a small city has real capital and real permission to change direction — and it arrives attached to people who have just lost their livelihoods and want them back. Both things are true. Competent practice does not resolve that by choosing a side: it typically funds a defensible mix, states openly that some of the pre-storm base is not coming back and why, and refuses to let the eligibility rules do the arguing on its behalf. The tradeoff is unavoidable and should be said out loud — every dollar toward a different economic base is a dollar not restoring a boat, and a manager who lets that go unspoken will be understood as having hidden it. Option D is excluded as a *rule*, not as a concern; individual loss belongs in how the transition is cushioned, not in how the economic strategy is chosen.",
+    "further_reading": [
+      {
+        "title": "HUD Exchange — CDBG-DR Economic Revitalization Guide",
+        "url": "https://www.hudexchange.info/programs/cdbg-dr/economic-revitalization-guide/"
+      }
+    ],
+    "tags": [
+      "defensible-alternatives-exist"
+    ],
+    "source_tier": "public-domain"
+  },
+  {
+    "id": "permitting-timeline-economic-development",
+    "type": "multiple-choice",
+    "community_type": "high-growth-sunbelt",
+    "competencies": [
+      "community/permitting",
+      "performance/kpi-design",
+      "services/service-delivery-models",
+      "community/economic-development"
+    ],
+    "difficulty": 2,
+    "scenario": "A developer tells you Copper Mesa lost a 60,000 square foot project to a neighboring city. No incentive was requested or offered by either jurisdiction. The neighbor issued a comparable permit in eleven weeks; Copper Mesa's median for that class is thirty-one weeks, and its zoning required a variance the neighbor's did not. Your council has just asked staff to design an incentive program.",
+    "prompt": "What should you recommend?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Measure and publish the entitlement timeline, fix the steps that produce the gap, and align the zoning that forced the variance — before designing any incentive.",
+        "rationale": "Correct. Carrying cost over twenty extra weeks is a real, quantifiable price the city is charging every applicant, and it is one of the few economic development levers entirely within the city's control."
+      },
+      {
+        "id": "b",
+        "text": "Design the incentive program as directed, sized to offset the carrying cost of the longer timeline.",
+        "rationale": "Pays public money to compensate applicants for a problem the city is causing, permanently, and only for the applicants who ask. The underlying cost stays for everyone else."
+      },
+      {
+        "id": "c",
+        "text": "Benchmark incentive programs in comparable cities so the council can see what a competitive package looks like.",
+        "rationale": "Answers the question asked and not the one the situation poses. The project was lost on timeline, and a benchmarking exercise will confirm that other cities also offer incentives without touching that."
+      },
+      {
+        "id": "d",
+        "text": "Add staff to the permitting counter to reduce the timeline.",
+        "rationale": "May turn out to be part of the answer, but assumes the constraint is headcount. Long timelines are as often sequential reviews, a variance the code should not require, or waiting on an applicant — measure before hiring."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Economic development is habitually equated with deals, and the most reliable lever is usually process. Twenty extra weeks of entitlement is carrying cost the developer can price exactly, it applies to every project rather than the ones that negotiate, and reducing it costs far less than an incentive program. The zoning detail matters as much as the calendar: a variance requirement is a policy choice that adds risk as well as time, and no amount of counter staffing fixes it. The tradeoff is political rather than technical — the council asked for an incentive program, and coming back with process reform reads as staff declining the assignment. That is worth managing directly: bring the timeline data, name the lost project in those terms, and offer the incentive analysis as the second phase rather than a refusal. The measurement itself is the durable win; a city that publishes its median entitlement timeline has created the pressure to keep it short.",
+    "further_reading": [
+      {
+        "title": "ICMA — Revitalization and Main Street transformation",
+        "url": "https://icma.org/articles/pm-magazine/revitalization-and-main-street-transformation"
+      }
+    ],
+    "tags": [
+      "defensible-alternatives-exist"
+    ],
+    "source_tier": "link-only"
+  },
+  {
+    "id": "regional-development-organization-tradeoff",
+    "type": "multi-select",
+    "community_type": "rural-regional-cooperation",
+    "competencies": [
+      "igr/regional-organizations",
+      "community/economic-development",
+      "leadership/council-relations",
+      "finance"
+    ],
+    "difficulty": 2,
+    "scenario": "Little Vernon's regional development organization offers three things the town cannot build alone: a site-readiness program, a workforce accelerator, and a broadband partnership. Participating means the town's projects compete for regional board selection rather than being chosen locally, and the town holds one seat of fourteen.",
+    "prompt": "Which are sound reasons to participate? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The town cannot staff site readiness, workforce, or broadband on its own at any realistic budget",
+        "rationale": "Include. For a town this size the regional organization is not a preference among delivery models; it is the only route to the function existing at all."
+      },
+      {
+        "id": "b",
+        "text": "Regional programs reach a scale that attracts state and federal funding a single small town cannot compete for",
+        "rationale": "Include. Award programs increasingly favor regional applicants, and the practical choice is often a regional project or no project."
+      },
+      {
+        "id": "c",
+        "text": "One seat of fourteen still puts the town in the room where the sequence is decided, which is more influence than it has outside",
+        "rationale": "Include. The realistic comparison is one-fourteenth of a decision that happens versus full control of one that does not."
+      },
+      {
+        "id": "d",
+        "text": "Participation guarantees the town's projects will be funded in turn, since regional bodies distribute across members",
+        "rationale": "Exclude. Nothing here guarantees that, and a manager who sells participation to the council on an implied rotation will be explaining a skipped year later."
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "For a small-city manager the regional development organization — a council of governments, planning district, or economic development district — is often the single most consequential intergovernmental relationship they have, and it is the one least taught. The trade is explicit: capacity the town cannot otherwise obtain, in exchange for real loss of control over sequencing. Naming that honestly to the council is what keeps the relationship durable, because the first year the town is passed over, a council that was promised influence will want out, while a council that was told the terms will understand it as the arrangement working normally. The other half of the job is unglamorous and decisive — showing up. A town that sends its manager to every meeting and staffs its share of the work is in a materially different position on that board than one that joins and disappears, and that difference is the only lever a one-of-fourteen seat has.",
+    "further_reading": [
+      {
+        "title": "NADO — Impact Awards",
+        "url": "https://www.nado.org/awards/"
+      }
+    ],
+    "tags": [
+      "defensible-alternatives-exist"
+    ],
+    "source_tier": "link-only"
+  }
+]

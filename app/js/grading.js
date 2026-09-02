@@ -124,16 +124,29 @@ export function hasResponse(question, response) {
   }
 }
 
+/**
+ * A bare currency sign belongs in front of the figure; everything else — %, FTE,
+ * $M, jobs — reads as a suffix.
+ */
+export const unitIsPrefix = (unit) => unit === '$';
+
+/** A number with its unit attached on the correct side. */
+export function withUnit(value, unit) {
+  if (!unit) return String(value);
+  return unitIsPrefix(unit) ? `${unit}${value}` : `${value} ${unit}`;
+}
+
 /** How a numeric band reads in the feedback panel, units included. */
 export function numericKeyText(spec, unit) {
-  const u = unit ? ` ${unit}` : '';
   const range = spec.answer_range;
   if (range && Number.isFinite(range.min) && Number.isFinite(range.max)) {
-    return `${range.min}–${range.max}${u}`;
+    return unitIsPrefix(unit)
+      ? `${withUnit(range.min, unit)}–${withUnit(range.max, unit)}`
+      : `${range.min}–${range.max}${unit ? ` ${unit}` : ''}`;
   }
   return Number.isFinite(spec.answer_tolerance)
-    ? `${spec.answer}${u} (± ${spec.answer_tolerance})`
-    : `${spec.answer}${u}`;
+    ? `${withUnit(spec.answer, unit)} (± ${spec.answer_tolerance})`
+    : withUnit(spec.answer, unit);
 }
 
 /** Human-readable form of the answer key, for the feedback panel. */

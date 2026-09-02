@@ -17,9 +17,11 @@ export const ROOT = '../';
 /** Used only if the manifest cannot be loaded. Kept in sync with it. */
 export const FALLBACK_CONTENT = {
   taxonomy: '../taxonomy/competencies.json',
+  communityTypes: '../taxonomy/community-types.json',
   questionFiles: [
     '../quiz-data/questions.sample.json',
     '../quiz-data/questions.downtown-redevelopment.json',
+    '../quiz-data/questions.community-economic-development.json',
   ],
   caseStudyDir: '../case-studies/',
 };

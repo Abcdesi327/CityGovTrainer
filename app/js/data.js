@@ -91,6 +91,7 @@ async function resolveContent() {
     return {
       resolved: {
         taxonomy: ROOT + m.taxonomy,
+        communityTypes: m.communityTypes ? ROOT + m.communityTypes : null,
         questionFiles: m.questionFiles.map((f) => ROOT + f),
         caseStudyDir: ROOT + (m.caseStudyDir || 'case-studies/'),
       },
@@ -112,6 +113,17 @@ export async function loadContent() {
   content = resolved;
 
   const taxonomy = await fetchJSON(content.taxonomy);
+
+  // Second tagging axis. Optional: a bank with no community types still runs,
+  // it just does not get the breakdown.
+  let communityTypes = [];
+  if (content.communityTypes) {
+    try {
+      communityTypes = (await fetchJSON(content.communityTypes)).community_types || [];
+    } catch (err) {
+      communityTypes = [];
+    }
+  }
 
   const competencies = taxonomy.competencies || [];
   const known = new Set(competencies.map((c) => c.id));
@@ -145,7 +157,12 @@ export async function loadContent() {
 
   const byRoot = new Map(competencies.map((c) => [c.id, c]));
 
-  return { competencies, byRoot, difficultyLevels, questions, warnings };
+  const byCommunityType = new Map(communityTypes.map((c) => [c.id, c]));
+
+  return {
+    competencies, byRoot, difficultyLevels, questions, warnings,
+    communityTypes, byCommunityType,
+  };
 }
 
 /** Root competency ids a question counts toward, de-duplicated. */

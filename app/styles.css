@@ -226,6 +226,15 @@ main { padding: 2rem 0 4rem; }
   background: var(--surface-2); color: var(--ink-soft); border: 1px solid var(--line);
 }
 .badge-d3 { background: var(--warn-soft); color: var(--warn); border-color: transparent; }
+/* Where the scenario is set — a second axis alongside difficulty. */
+.badge-place {
+  background: var(--accent-soft);
+  color: color-mix(in srgb, var(--accent) 75%, var(--ink));
+  border-color: transparent;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 600;
+}
 .tag-list { display: inline-flex; flex-wrap: wrap; gap: .35rem; }
 .tag { font-size: .74rem; color: var(--ink-soft); }
 .tag + .tag::before { content: "·"; margin-right: .35rem; }

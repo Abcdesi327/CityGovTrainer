@@ -28,6 +28,10 @@ ALLOWED = set(schema["properties"])
 TYPES = set(schema["properties"]["type"]["enum"])
 TIERS = set(schema["properties"]["source_tier"]["enum"])
 
+ctypes = set()
+if os.path.exists("taxonomy/community-types.json"):
+    ctypes = {c["id"] for c in json.load(open("taxonomy/community-types.json"))["community_types"]}
+
 tax = json.load(open("taxonomy/competencies.json"))
 valid = set()
 for c in tax["competencies"]:
@@ -40,6 +44,7 @@ if not paths:
     sys.exit("no question files found")
 
 errs, warns, ids, questions = [], [], {}, []
+untyped = []
 
 for path in paths:
     for q in json.load(open(path)):
@@ -68,6 +73,16 @@ for path in paths:
         for c in q.get("competencies", []):
             if c not in valid:
                 errs.append(f"{where}: unknown competency {c!r}")
+
+        ct = q.get("community_type")
+        if ct and ctypes and ct not in ctypes:
+            errs.append(f"{where}: unknown community_type {ct!r}")
+        elif not ct and q.get("scenario"):
+            # A question with no scenario is place-independent by construction —
+            # a definition does not happen anywhere. One with a scenario and no
+            # community_type is usually an oversight, so collect them into a
+            # single line rather than one warning each.
+            untyped.append(qid)
 
         if "source_tier" not in q:
             warns.append(f"{where}: no source_tier (see docs/AUTHORING.md)")
@@ -180,6 +195,15 @@ if os.path.exists("quiz-data/manifest.json"):
     for f in sorted(glob.glob("quiz-data/questions*.json")):
         if f not in listed:
             errs.append(f"{f} exists but manifest.json does not list it — the app will not load it")
+    # config.js keeps a fallback copy of the file list for when the manifest
+    # cannot be fetched. It drifts silently unless something checks it.
+    cfg = "app/js/config.js"
+    if os.path.exists(cfg):
+        cfg_text = open(cfg).read()
+        for f in sorted(listed):
+            if f.split("/")[-1] not in cfg_text:
+                errs.append(f"{f} is in manifest.json but not in FALLBACK_CONTENT in {cfg}")
+
     for key in ("taxonomy", "caseStudyDir"):
         target = manifest.get(key)
         if not target or not os.path.exists(target):
@@ -193,6 +217,15 @@ print("difficulty:", dict(sorted(Counter(q.get("difficulty") for q in questions)
 print("source tiers:", dict(Counter(q.get("source_tier", "(unset)") for q in questions)))
 roots = Counter(c.split("/")[0] for q in questions for c in q.get("competencies", []))
 print("competency roots:", dict(sorted(roots.items())))
+if ctypes:
+    seen_ct = Counter(q["community_type"] for q in questions if q.get("community_type"))
+    print("community types:", dict(sorted(seen_ct.items())))
+    unused = sorted(ctypes - set(seen_ct))
+    if unused:
+        print("community types with no questions:", ", ".join(unused))
+    if untyped:
+        warns.append(f"{len(untyped)} question(s) have a scenario but no community_type: "
+                     + ", ".join(untyped))
 missing_cov = [c["id"] for c in tax["competencies"] if c["id"] not in roots]
 if missing_cov:
     print("no questions yet:", ", ".join(missing_cov))

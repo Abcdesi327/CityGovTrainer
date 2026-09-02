@@ -1,6 +1,6 @@
 {
-  "$comment": "Topic taxonomy for tagging questions. Structure loosely follows the functional areas used in local-government management education (leadership, ethics, intergovernmental relations, health and safety, finance, community futures, essential services). Adjust IDs before you have real content — renaming them later means a data migration. Subtopics are additive and safe to extend; the 0.2.0 set was widened for the second-wave sources in data-sources/SOURCES.md.",
-  "version": "0.2.0",
+  "$comment": "Topic taxonomy for tagging questions. Structure loosely follows the functional areas used in local-government management education (leadership, ethics, intergovernmental relations, health and safety, finance, community futures, essential services). Adjust IDs before you have real content — renaming them later means a data migration. Subtopics are additive and safe to extend; the set was widened for the second-wave sources (0.2.0) and again for the community and economic development wave (0.3.0) in data-sources/SOURCES.md.",
+  "version": "0.3.0",
   "competencies": [
     {
       "id": "ethics",
@@ -25,7 +25,8 @@
         "procurement",
         "fines-and-fees",
         "budget-process",
-        "cost-allocation"
+        "cost-allocation",
+        "incentives"
       ]
     },
     {
@@ -58,7 +59,8 @@
         "state-preemption",
         "interlocal-agreements",
         "grants",
-        "regional-planning"
+        "regional-planning",
+        "regional-organizations"
       ]
     },
     {
@@ -97,7 +99,9 @@
         "demographics",
         "tax-increment-financing",
         "brownfields",
-        "shrinking-cities"
+        "shrinking-cities",
+        "permitting",
+        "disaster-recovery"
       ]
     },
     {

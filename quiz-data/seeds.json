@@ -1,6 +1,6 @@
 {
-  "$comment": "Scenario backlog: agreed question seeds that are not yet written. This is authoring input, not app content — the runner never loads this file. A seed graduates when the questions exist in a quiz-data question file, at which point set status to \"written\" and list the ids. Seeds came from the second-wave source review; see data-sources/SOURCES.md for the sources themselves. competencies are taxonomy ids and are validated against taxonomy/competencies.json; types and difficulty are intentions, not commitments. Naming: composites use fictional cities — Cedar Landing (~5,100, downtown redevelopment) and Riverbend (~38,000, fiscal cliff) exist in case-studies/; Rowan Falls (~9,000, state-route main street) is referenced by four questions whose case study has not landed yet.",
-  "version": "0.1.0",
+  "$comment": "Scenario backlog: agreed question seeds that are not yet written. This is authoring input, not app content — the runner never loads this file. A seed graduates when the questions exist in a quiz-data question file, at which point set status to \"written\" and list the ids. Seeds came from the second- and third-wave source reviews; see data-sources/SOURCES.md for the sources themselves. competencies are taxonomy ids and are validated against taxonomy/competencies.json; types and difficulty are intentions, not commitments. Naming: composites use fictional cities — Cedar Landing (~5,100, downtown redevelopment) and Riverbend (~38,000, fiscal cliff) exist in case-studies/; Rowan Falls (~9,000, state-route main street) is referenced by four questions whose case study has not landed yet. Third-wave composites add Ashgrove, Little Vernon, Fairhaven, Millbrook, Wexford, Copper Mesa, Bay Point and Tallow County, each tied to a community_type from taxonomy/community-types.json.",
+  "version": "0.2.0",
   "seeds": [
     {
       "id": "reserve-floor-drawdown",
@@ -369,6 +369,434 @@
         "ordering",
         "open-response"
       ],
+      "status": "unwritten"
+    },
+    {
+      "id": "verified-number",
+      "code": "CD1",
+      "title": "The verified number",
+      "theme": "community-development",
+      "summary": "A council member cites the $18-to-$1 downtown reinvestment ratio in a budget hearing. The manager knows the figure is self-reported and unverified, and also believes the program is probably worth funding.",
+      "grounding": [
+        "Main Street America collective impact statistics",
+        "Van Leuven / Bradbury critique"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "community/economic-development",
+        "ethics/transparency",
+        "performance/program-evaluation"
+      ],
+      "types": [
+        "multiple-choice",
+        "open-response"
+      ],
+      "community_type": "college-town",
+      "difficulty": 3,
+      "note": "Flagship question for this batch.",
+      "status": "written",
+      "questions": [
+        "downtown-reinvestment-ratio-evidence"
+      ]
+    },
+    {
+      "id": "provider-walked-away",
+      "code": "CD2",
+      "title": "The provider walked away",
+      "theme": "community-development",
+      "summary": "A 360-person town's private wastewater provider ceases operations. Continuity of service, capital to acquire or replace, and a CDBG application with a national objective the town must actually meet.",
+      "grounding": [
+        "HUD CDBG project profile — Town of Carlisle"
+      ],
+      "source_tier": "public-domain",
+      "competencies": [
+        "services/utilities",
+        "finance/capital-planning",
+        "igr/grants",
+        "community"
+      ],
+      "types": [
+        "ordering",
+        "multi-select"
+      ],
+      "community_type": "rural-regional-cooperation",
+      "difficulty": 3,
+      "status": "written",
+      "questions": [
+        "wastewater-provider-ceases-operations"
+      ]
+    },
+    {
+      "id": "national-objective",
+      "code": "CD3",
+      "title": "National objective",
+      "theme": "community-development",
+      "summary": "A popular streetscape in an inner-ring suburb is proposed for CDBG funding. Staff assumed area benefit without running the LMI numbers, and the tract data is marginal.",
+      "grounding": [
+        "HUD CDBG eligibility and national objective framework"
+      ],
+      "source_tier": "public-domain",
+      "competencies": [
+        "igr/grants",
+        "finance",
+        "ethics/transparency",
+        "community"
+      ],
+      "types": [
+        "multiple-choice",
+        "numeric"
+      ],
+      "community_type": "inner-ring-suburb",
+      "difficulty": 3,
+      "status": "written",
+      "questions": [
+        "cdbg-national-objective-area-benefit",
+        "cdbg-lmi-area-benefit-threshold"
+      ]
+    },
+    {
+      "id": "collaboration-without-convener",
+      "code": "CD4",
+      "title": "Collaboration without a convener",
+      "theme": "community-development",
+      "summary": "Three nonprofits, a hospital, a community college and the city all work the same workforce problem separately. Someone has to convene, and the city has the least money and the most legitimacy.",
+      "grounding": [
+        "Working Cities Challenge cross-sector model",
+        "Mt. Auburn Associates evaluation"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "leadership/change-management",
+        "engagement/participation-design",
+        "igr/interlocal-agreements"
+      ],
+      "types": [
+        "ordering",
+        "open-response"
+      ],
+      "community_type": "legacy-industrial",
+      "difficulty": 3,
+      "status": "written",
+      "questions": [
+        "convening-without-money"
+      ]
+    },
+    {
+      "id": "ten-year-target",
+      "code": "CD5",
+      "title": "Ten-year target, two-year manager",
+      "theme": "community-development",
+      "summary": "A collaborative committed publicly to a ten-year outcome target. The manager arrives in year three, interim indicators are ambiguous, and the council wants to know whether to keep funding it.",
+      "grounding": [
+        "Chelsea Thrives 30%-over-10-years goal",
+        "Middletown CT poverty target"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "performance/program-evaluation",
+        "leadership/council-relations",
+        "finance/budget-process"
+      ],
+      "types": [
+        "multi-select",
+        "open-response"
+      ],
+      "community_type": "legacy-industrial",
+      "difficulty": 3,
+      "status": "written",
+      "questions": [
+        "ten-year-target-interim-indicators"
+      ]
+    },
+    {
+      "id": "lead-service-lines",
+      "code": "CD6",
+      "title": "Lead service lines",
+      "theme": "community-development",
+      "summary": "A state mandate lands on a city with an aging system, no complete inventory, and disproportionate exposure in lower-income neighborhoods. Sequencing is an engineering, equity and IGR problem at once.",
+      "grounding": [
+        "Chicago Fed community development work on LSL mandates"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "services/utilities",
+        "safety/public-health",
+        "community",
+        "finance/capital-planning",
+        "igr"
+      ],
+      "types": [
+        "ordering",
+        "open-response"
+      ],
+      "community_type": "large-legacy-metro",
+      "difficulty": 3,
+      "note": "The strongest community-development / public-works crossover available.",
+      "status": "written",
+      "questions": [
+        "lead-service-line-sequencing"
+      ]
+    },
+    {
+      "id": "data-capacity",
+      "code": "CD7",
+      "title": "Data capacity",
+      "theme": "community-development",
+      "summary": "A rural county wants to target neighborhood investment but has no usable local data, and weaker data quality than an urban peer would have.",
+      "grounding": [
+        "Federal Reserve Board, Putting Data to Work",
+        "rural data-quality caveats"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "performance/data-culture",
+        "community",
+        "engagement/participation-design"
+      ],
+      "types": [
+        "multiple-choice"
+      ],
+      "community_type": "persistent-poverty-rural",
+      "difficulty": 2,
+      "status": "written",
+      "questions": [
+        "rural-data-capacity-targeting"
+      ]
+    },
+    {
+      "id": "but-for",
+      "code": "ED1",
+      "title": "But for",
+      "theme": "economic-development",
+      "summary": "A manufacturer requests a ten-year abatement, stating it will locate elsewhere without it. Site selection consultant, no verifiable alternative site, council enthusiastic.",
+      "grounding": [
+        "Bartik 'but for' percentages",
+        "Pew additionality framework"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "finance/incentives",
+        "ethics/transparency",
+        "community/economic-development"
+      ],
+      "types": [
+        "open-response",
+        "multiple-choice"
+      ],
+      "community_type": "high-growth-sunbelt",
+      "difficulty": 3,
+      "status": "written",
+      "questions": [
+        "abatement-but-for-additionality"
+      ]
+    },
+    {
+      "id": "impact-study-multiplier",
+      "code": "ED2",
+      "title": "The multiplier in the impact study",
+      "theme": "economic-development",
+      "summary": "A developer's impact study uses a job multiplier well above what the literature supports. The manager must respond to a study, not a proposal.",
+      "grounding": [
+        "Bartik and Sotherland, Realistic Local Job Multipliers"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "finance/incentives",
+        "performance/program-evaluation",
+        "ethics/transparency"
+      ],
+      "types": [
+        "numeric-multi"
+      ],
+      "community_type": "high-growth-sunbelt",
+      "difficulty": 3,
+      "status": "written",
+      "questions": [
+        "impact-study-multiplier-cost-per-job"
+      ]
+    },
+    {
+      "id": "race-to-the-bottom",
+      "code": "ED3",
+      "title": "Race to the bottom",
+      "theme": "economic-development",
+      "summary": "The adjacent jurisdiction has offered a package to a business currently in your city. Matching costs more than the business is worth; not matching loses it.",
+      "grounding": [
+        "Mast, Race to the Bottom?",
+        "Pew displacement concept"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "finance/incentives",
+        "igr/interlocal-agreements",
+        "ethics"
+      ],
+      "types": [
+        "multi-select",
+        "open-response"
+      ],
+      "community_type": "inner-ring-suburb",
+      "difficulty": 3,
+      "status": "written",
+      "questions": [
+        "neighbor-jurisdiction-incentive-poaching"
+      ]
+    },
+    {
+      "id": "clawback",
+      "code": "ED4",
+      "title": "Clawback",
+      "theme": "economic-development",
+      "summary": "Four years into a ten-year agreement the firm has hit its investment commitment but not its job commitment, and it is the largest private employer in town.",
+      "grounding": [
+        "Pew evaluation practice",
+        "NCSL evaluations database"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "finance/incentives",
+        "ethics/transparency",
+        "hr",
+        "leadership/council-relations"
+      ],
+      "types": [
+        "ordering",
+        "open-response"
+      ],
+      "community_type": "legacy-industrial",
+      "difficulty": 3,
+      "status": "written",
+      "questions": [
+        "clawback-partial-compliance"
+      ]
+    },
+    {
+      "id": "recovery-not-restoration",
+      "code": "ED5",
+      "title": "Recovery is not restoration",
+      "theme": "economic-development",
+      "summary": "Eighteen months post-disaster, CDBG-DR funds must be committed. Rebuild the pre-storm base, fund workforce training toward a different one, or market to restore visitors.",
+      "grounding": [
+        "HUD CDBG-DR Economic Revitalization Guide"
+      ],
+      "source_tier": "public-domain",
+      "competencies": [
+        "community/disaster-recovery",
+        "finance/capital-planning",
+        "igr/grants",
+        "leadership/change-management"
+      ],
+      "types": [
+        "multi-select",
+        "open-response"
+      ],
+      "community_type": "disaster-exposed-coastal",
+      "difficulty": 3,
+      "status": "written",
+      "questions": [
+        "disaster-recovery-not-restoration"
+      ]
+    },
+    {
+      "id": "permitting-is-economic-development",
+      "code": "ED6",
+      "title": "Permitting is economic development",
+      "theme": "economic-development",
+      "summary": "No incentive is on the table. A developer is comparing two jurisdictions on entitlement timeline and carrying cost alone.",
+      "grounding": [
+        "Permitting and review friction literature"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "community/permitting",
+        "performance/kpi-design",
+        "services/service-delivery-models"
+      ],
+      "types": [
+        "multiple-choice",
+        "ordering"
+      ],
+      "community_type": "high-growth-sunbelt",
+      "difficulty": 2,
+      "note": "The correct answer involves no incentive at all — a good trap for candidates who equate economic development with deals.",
+      "status": "written",
+      "questions": [
+        "permitting-timeline-economic-development"
+      ]
+    },
+    {
+      "id": "regional-or-municipal",
+      "code": "ED7",
+      "title": "Regional or municipal",
+      "theme": "economic-development",
+      "summary": "Site readiness, a workforce accelerator and a broadband partnership are all available through the regional development organization, but participating means ceding project selection to a regional board.",
+      "grounding": [
+        "NADO Impact Awards — DETCOG SiteSelect, Coastal Bend accelerator, Gage County broadband"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "igr/regional-organizations",
+        "community/economic-development",
+        "leadership/council-relations"
+      ],
+      "types": [
+        "multi-select",
+        "open-response"
+      ],
+      "community_type": "rural-regional-cooperation",
+      "difficulty": 2,
+      "status": "written",
+      "questions": [
+        "regional-development-organization-tradeoff"
+      ]
+    },
+    {
+      "id": "across-the-boundary",
+      "code": "ED8",
+      "title": "Across the boundary",
+      "theme": "economic-development",
+      "summary": "A city and an adjacent tribal nation both claim regulatory interest in a development straddling the boundary, with a shared utility line and no service agreement.",
+      "grounding": [
+        "HPAIED work on sovereignty and jurisdiction",
+        "Honoring Nations IGR cases"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "igr",
+        "ethics",
+        "community"
+      ],
+      "types": [
+        "ordering",
+        "open-response"
+      ],
+      "community_type": "tribal-adjacent",
+      "difficulty": 3,
+      "note": "Deliberately not written yet. The source review asks that tribal material wait for the schema to settle and get a read from someone with tribal government experience before shipping; that review has not happened. Write from the municipal seat — never put the user in the tribal government's chair.",
+      "status": "unwritten"
+    },
+    {
+      "id": "financing-without-lihtc",
+      "code": "ED9",
+      "title": "Financing without the usual tool",
+      "theme": "economic-development",
+      "summary": "An affordable housing deal that cannot access LIHTC. What else assembles the capital stack, and what does the city control?",
+      "grounding": [
+        "New York Fed non-LIHTC case studies (Schenectady, Brooklyn, Jersey City)"
+      ],
+      "source_tier": "link-only",
+      "competencies": [
+        "finance/capital-planning",
+        "community/housing",
+        "services"
+      ],
+      "types": [
+        "multi-select",
+        "numeric"
+      ],
+      "community_type": "large-legacy-metro",
+      "difficulty": 3,
+      "note": "Needs a capital stack worked through carefully enough that the numeric part is defensible.",
       "status": "unwritten"
     }
   ]

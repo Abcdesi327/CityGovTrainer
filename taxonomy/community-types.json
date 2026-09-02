@@ -1,0 +1,73 @@
+{
+  "$comment": "A second tagging axis, orthogonal to competencies: what kind of place the scenario is set in. A downtown vacancy problem in a legacy industrial city and the same problem in a high-growth exurb are different questions with different right answers, and a candidate trained on only one carries a single implicit model of 'a city' into a career that may not match it. Batches should spread across this axis the way they already spread across question type; scripts/validate_questions.py reports the distribution. Ids are stable — renaming one is a data migration, same as a competency.",
+  "version": "0.1.0",
+  "community_types": [
+    {
+      "id": "legacy-industrial",
+      "label": "Legacy industrial small city",
+      "constraint": "Lost its anchor employer decades ago; civic and administrative capacity eroded with the tax base."
+    },
+    {
+      "id": "persistent-poverty-rural",
+      "label": "Persistent-poverty rural county",
+      "constraint": "Thin institutional capacity and distance from markets; few staff wear many hats."
+    },
+    {
+      "id": "small-town-county-seat",
+      "label": "Small town or county seat",
+      "constraint": "Thin staff capacity with functions shared across roles; the downtown is the visible economy; decisions are made among people who know each other.",
+      "note": "Added beyond the twelve-type source matrix, which had no slot for it despite it being the most common setting in this question bank. Backed by the UNC SOG small town cases and the CVIOG RSVP reports."
+    },
+    {
+      "id": "rural-regional-cooperation",
+      "label": "Rural, regional-cooperation dependent",
+      "constraint": "Too small to staff functions alone; most capacity is mediated through a regional development organization."
+    },
+    {
+      "id": "tribal-adjacent",
+      "label": "Municipality adjacent to a tribal nation",
+      "constraint": "Sovereignty, jurisdiction, and consultation obligations shape every cross-boundary decision.",
+      "note": "Write from the municipal seat. A tribal nation is a distinct sovereign, not a city with different rules, and questions that treat it as one are both wrong and offensive."
+    },
+    {
+      "id": "immigrant-gateway",
+      "label": "Immigrant gateway",
+      "constraint": "Service demand outpaces revenue; language access is a baseline operating requirement."
+    },
+    {
+      "id": "high-growth-sunbelt",
+      "label": "High-growth Sunbelt city",
+      "constraint": "Infrastructure lags growth; annexation and impact fees are live questions."
+    },
+    {
+      "id": "inner-ring-suburb",
+      "label": "Inner-ring suburb in decline",
+      "constraint": "Aging infrastructure inside fixed boundaries, with no growth story to fund it."
+    },
+    {
+      "id": "disaster-exposed-coastal",
+      "label": "Disaster-exposed coastal community",
+      "constraint": "Recovery cycles dominate the capital program; every rebuild is a resilience decision."
+    },
+    {
+      "id": "resort-seasonal",
+      "label": "Resort or seasonal economy",
+      "constraint": "Peak-load service demand, housing costs detached from local wages, a thin year-round base."
+    },
+    {
+      "id": "resource-dependent",
+      "label": "Resource or energy-dependent community",
+      "constraint": "Boom-bust revenue and single-sector exposure."
+    },
+    {
+      "id": "large-legacy-metro",
+      "label": "Large legacy metro",
+      "constraint": "Scale, sharp neighborhood inequality, and concentrated vacancy."
+    },
+    {
+      "id": "college-town",
+      "label": "College town",
+      "constraint": "Nonprofit-heavy tax base and town-gown politics."
+    }
+  ]
+}

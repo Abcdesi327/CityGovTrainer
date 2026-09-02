@@ -52,6 +52,7 @@ export function summarize(session) {
   const totals = { correct: 0, incorrect: 0, graded: 0, ungraded: 0 };
   const byCompetency = new Map();
   const byDifficulty = new Map();
+  const byCommunityType = new Map();
 
   const bump = (map, key, status) => {
     if (!map.has(key)) {
@@ -78,6 +79,7 @@ export function summarize(session) {
 
     for (const root of questionRoots(q)) bump(byCompetency, root, status);
     bump(byDifficulty, q.difficulty, status);
+    if (q.community_type) bump(byCommunityType, q.community_type, status);
   }
 
   const selfAssessed = { covered: 0, partial: 0, missed: 0, unrated: 0 };
@@ -87,5 +89,5 @@ export function summarize(session) {
     selfAssessed[rec.selfAssess || 'unrated'] += 1;
   }
 
-  return { totals, byCompetency, byDifficulty, selfAssessed };
+  return { totals, byCompetency, byDifficulty, byCommunityType, selfAssessed };
 }

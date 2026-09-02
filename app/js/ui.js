@@ -1,5 +1,5 @@
 import { shuffle } from './data.js';
-import { answerKeyText, numericKeyText } from './grading.js';
+import { answerKeyText, numericKeyText, unitIsPrefix, withUnit } from './grading.js';
 
 /* ── tiny DOM helpers ─────────────────────────────────────────────── */
 
@@ -179,18 +179,22 @@ function orderingInput(container, question, initial) {
   };
 }
 
+/** An input with its unit on the correct side. */
+function unitWrap(input, unit) {
+  return el('span', { class: 'input-with-unit' }, [
+    unit && unitIsPrefix(unit) ? el('span', { class: 'unit', text: unit }) : null,
+    input,
+    unit && !unitIsPrefix(unit) ? el('span', { class: 'unit', text: unit }) : null,
+  ]);
+}
+
 function numericInput(container, question, initial) {
   const input = el('input', {
     type: 'number', step: 'any', class: 'text-input', id: `num-${question.id}`,
     placeholder: 'Your estimate', inputmode: 'decimal',
     value: initial == null ? '' : String(initial),
   });
-  container.append(el('div', { class: 'numeric-row' }, [
-    el('span', { class: 'input-with-unit' }, [
-      input,
-      question.answer_unit ? el('span', { class: 'unit', text: question.answer_unit }) : null,
-    ]),
-  ]));
+  container.append(el('div', { class: 'numeric-row' }, [unitWrap(input, question.answer_unit)]));
   const band = question.answer_range
     ? `Judged against a range — the method matters more than the arithmetic.`
     : (Number.isFinite(question.answer_tolerance)
@@ -219,10 +223,7 @@ function numericMultiInput(container, question, initial) {
       inputs.set(part.id, input);
       return el('div', { class: 'part-row' }, [
         el('label', { class: 'part-label', for: id, text: part.label }),
-        el('span', { class: 'input-with-unit' }, [
-          input,
-          part.unit ? el('span', { class: 'unit', text: part.unit }) : null,
-        ]),
+        unitWrap(input, part.unit),
       ]);
     })),
   );
@@ -303,10 +304,9 @@ export function renderFeedback(container, question, record, { onSelfAssess } = {
   }
 
   if (question.type === 'numeric') {
-    const unit = question.answer_unit ? ` ${question.answer_unit}` : '';
     container.append(el('p', { class: 'numeric-verdict' }, [
       el('span', { class: 'muted', text: 'You answered ' }),
-      el('strong', { text: `${response}${unit}` }),
+      el('strong', { text: withUnit(response, question.answer_unit) }),
       el('span', { class: 'muted', text: ' · accepted ' }),
       el('strong', { text: answerKeyText(question, optionText) }),
     ]));
@@ -318,7 +318,6 @@ export function renderFeedback(container, question, record, { onSelfAssess } = {
       el('p', { class: 'kicker', text: `${result.correct} of ${result.total} figures` }),
       el('ul', { class: 'rationales' }, (question.parts || []).map((part) => {
         const got = byId.get(part.id) || {};
-        const unit = part.unit ? ` ${part.unit}` : '';
         return el('li', { class: got.ok ? 'rationale is-key' : 'rationale' }, [
           el('div', { class: 'rationale-head' }, [
             el('span', { class: 'rationale-text', text: part.label }),
@@ -328,7 +327,7 @@ export function renderFeedback(container, question, record, { onSelfAssess } = {
             }),
           ]),
           el('p', { class: 'rationale-body' }, [
-            el('span', { text: `You gave ${got.value === '' || got.value == null ? '—' : got.value}${unit} · accepted ${numericKeyText(part, part.unit)}` }),
+            el('span', { text: `You gave ${got.value === '' || got.value == null ? '—' : withUnit(got.value, part.unit)} · accepted ${numericKeyText(part, part.unit)}` }),
           ]),
           part.rationale ? el('p', { class: 'rationale-body', text: part.rationale }) : null,
         ]);
@@ -416,9 +415,35 @@ export function renderFeedback(container, question, record, { onSelfAssess } = {
 
 /* ── results ──────────────────────────────────────────────────────── */
 
-export function renderResults(container, session, summary, { byRoot, onRetryMissed, onRestart, onReview }) {
+/** One "where you stand" card: sorted bars with a correct/graded tally. */
+function barCard(title, note, rows) {
+  return el('div', { class: 'card' }, [
+    el('h2', { class: 'card-title', text: title }),
+    note ? el('p', { class: 'muted small', text: note }) : null,
+    el('ul', { class: 'bars' }, rows.map((r) => el('li', { class: 'bar-row' }, [
+      el('span', { class: 'bar-label', text: r.label }),
+      el('span', { class: 'bar-track' }, [
+        el('span', {
+          class: 'bar-fill',
+          style: `width:${r.graded ? Math.round((r.correct / r.graded) * 100) : 0}%`,
+        }),
+      ]),
+      el('span', {
+        class: 'bar-value',
+        text: r.graded ? `${r.correct}/${r.graded}` : `${r.ungraded} open`,
+      }),
+    ]))),
+  ]);
+}
+
+const weakestFirst = (a, b) => (a.rate ?? 2) - (b.rate ?? 2);
+const withRate = (b) => ({ ...b, rate: b.graded ? b.correct / b.graded : null });
+
+export function renderResults(container, session, summary, {
+  byRoot, byCommunityType, onRetryMissed, onRestart, onReview,
+}) {
   clear(container);
-  const { totals, byCompetency, byDifficulty, selfAssessed } = summary;
+  const { totals, byCompetency, byDifficulty, byCommunityType: byType, selfAssessed } = summary;
   const pct = totals.graded ? Math.round((totals.correct / totals.graded) * 100) : null;
 
   container.append(el('div', { class: 'card results-head' }, [
@@ -438,48 +463,32 @@ export function renderResults(container, session, summary, { byRoot, onRetryMiss
 
   if (byCompetency.size) {
     const rows = [...byCompetency.entries()]
-      .map(([root, b]) => ({
-        root,
-        label: byRoot.get(root)?.label || root,
-        ...b,
-        rate: b.graded ? b.correct / b.graded : null,
-      }))
-      .sort((a, b) => (a.rate ?? 2) - (b.rate ?? 2));
+      .map(([root, b]) => ({ label: byRoot.get(root)?.label || root, ...withRate(b) }))
+      .sort(weakestFirst);
+    container.append(barCard(
+      'Where you are thin',
+      'Weakest competency first. Coverage this shallow is indicative, not diagnostic.',
+      rows,
+    ));
+  }
 
-    container.append(el('div', { class: 'card' }, [
-      el('h2', { class: 'card-title', text: 'Where you are thin' }),
-      el('p', { class: 'muted small', text: 'Weakest competency first. Coverage this shallow is indicative, not diagnostic.' }),
-      el('ul', { class: 'bars' }, rows.map((r) => el('li', { class: 'bar-row' }, [
-        el('span', { class: 'bar-label', text: r.label }),
-        el('span', { class: 'bar-track' }, [
-          el('span', {
-            class: 'bar-fill',
-            style: `width:${r.rate == null ? 0 : Math.round(r.rate * 100)}%`,
-          }),
-        ]),
-        el('span', { class: 'bar-value', text: r.graded
-          ? `${r.correct}/${r.graded}`
-          : `${r.ungraded} open` }),
-      ]))),
-    ]));
+  if (byType && byType.size > 1) {
+    const rows = [...byType.entries()]
+      .map(([id, b]) => ({ label: byCommunityType?.get(id)?.label || id, ...withRate(b) }))
+      .sort(weakestFirst);
+    container.append(barCard(
+      'By kind of community',
+      'The same problem has different right answers in different places. A low row here is a '
+      + 'setting you have not practised, not a topic you do not know.',
+      rows,
+    ));
   }
 
   if (byDifficulty.size) {
-    container.append(el('div', { class: 'card' }, [
-      el('h2', { class: 'card-title', text: 'By difficulty' }),
-      el('ul', { class: 'bars' }, [...byDifficulty.entries()]
-        .sort((a, b) => a[0] - b[0])
-        .map(([level, b]) => el('li', { class: 'bar-row' }, [
-          el('span', { class: 'bar-label', text: `${level} · ${DIFFICULTY_LABEL[level] || ''}` }),
-          el('span', { class: 'bar-track' }, [
-            el('span', {
-              class: 'bar-fill',
-              style: `width:${b.graded ? Math.round((b.correct / b.graded) * 100) : 0}%`,
-            }),
-          ]),
-          el('span', { class: 'bar-value', text: b.graded ? `${b.correct}/${b.graded}` : `${b.ungraded} open` }),
-        ]))),
-    ]));
+    const rows = [...byDifficulty.entries()]
+      .sort((a, b) => a[0] - b[0])
+      .map(([level, b]) => ({ label: `${level} · ${DIFFICULTY_LABEL[level] || ''}`, ...b }));
+    container.append(barCard('By difficulty', null, rows));
   }
 
   container.append(el('div', { class: 'card' }, [
